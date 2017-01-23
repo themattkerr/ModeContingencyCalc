@@ -79,7 +79,7 @@ public:
     bool    getUseBusinessDays(int nContingencyNum);
     
 //-----------------------------------------------------------------------------------------
-    void enterContingencyText(QString strContingencyText);
+    //void enterContingencyText(QString strContingencyText);
 
     void sortContingenciesAcending();
     void sortContingenciesDecending();
@@ -100,6 +100,16 @@ private:
     QString m_strPropertyAddress;
 
     Contingency m_Contingency[MAX_NUM_CONTINGENCIES];
+
+
+    QString setContingencyReportText(QString strContingencyTitle);
+
+   /* QStringList m_strlCustomItems;
+    strlCustomItems << "-" << "Final Walk-through" << "Radon Test" << "Condo Docs" <<
+                       "Well & Septic" << "Comfort Letter" << "Environmental Test" <<
+                       "Attorney Review" << "Home-Owner Insurance" << "Condition Report" <<
+                       "Sewer" << "Zoning" << "Survey" << "Loan Rate Lock Expiration";*/
+    void calculateDaysFromDate(int nContingencyNum );
 };
 
 

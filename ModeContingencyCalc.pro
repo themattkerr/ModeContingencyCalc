@@ -24,8 +24,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        maincontingencywindow.cpp
+        maincontingencywindow.cpp \
+    contingencydata.cpp \
+    mattcalculations.cpp \
+    reportoutput.cpp \
+    saveandloadfunctions.cpp
 
-HEADERS  += maincontingencywindow.h
+HEADERS  += maincontingencywindow.h \
+    constsants.h \
+    contingencydata.h \
+    mattcalculations.h \
+    reportoutput.h \
+    saveandloadfunctions.h \
+    textforcontingencies.h
 
-FORMS    += maincontingencywindow.ui
+FORMS    += maincontingencywindow.ui \
+    reportoutput.ui
