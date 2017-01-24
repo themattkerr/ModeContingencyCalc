@@ -17,6 +17,8 @@ public:
 
 private:
     Ui::MainContingencyWindow *ui;
+    void loadTitles();
+    void setDefaults();
 };
 
 #endif // MAINCONTINGENCYWINDOW_H

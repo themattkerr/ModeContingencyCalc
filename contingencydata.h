@@ -5,6 +5,11 @@
 #define LONG_DATE_FORMAT "ddd MMMM d, yyyy"
 #define FROM_CLOSING_MESSAGE "From Closing"
 #define FROM_AO_MESSAGE ""
+    QDate   m_dtDateOfContingency;
+    QTime   m_tTimeOfDay;
+    int     m_nNumOfDays;
+    QString m_strReportInfo;
+
 #define MAX_NUM_CONTINGENCIES 16
 
 #include <QDate>
@@ -20,18 +25,18 @@ enum CalculateFrom {
 };
 
 class Contingency{
+public:
 
     Contingency();
     ~Contingency();
 
     QString m_strContingencyTitle;
-    QDate   m_dtDateOfContingency;
-    QTime   m_tTimeOfDay;
-    int     m_nNumOfDays;
-    QString m_strReportInfo;
-
     int     m_nCalcFrom;
     bool    m_bUseBusinessDays;
+    QString m_strBusinessDayReasons;
+    QDate   m_dtDateOfContingency;
+    int     m_nNumOfDays;
+    QString m_strReportInfo;
 };
 
 class ContingencyData
@@ -110,6 +115,7 @@ private:
                        "Attorney Review" << "Home-Owner Insurance" << "Condition Report" <<
                        "Sewer" << "Zoning" << "Survey" << "Loan Rate Lock Expiration";*/
     void calculateDaysFromDate(int nContingencyNum );
+    void calculateDateFromDays(int nContingencyNum , QString &strReasons);
 };
 
 
