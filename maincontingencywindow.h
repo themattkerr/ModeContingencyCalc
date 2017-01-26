@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QList>
+#include <QStringList>
 #include "contingencydata.h"
 
 #include <QComboBox>

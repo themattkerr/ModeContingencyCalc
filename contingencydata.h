@@ -10,7 +10,7 @@
 //    int     m_nNumOfDays;
 //    QString m_strReportInfo;
 
-#define MAX_NUM_CONTINGENCIES 16
+#define MAX_NUM_CONTINGENCIES 20
 
 #include <QDate>
 #include <QString>

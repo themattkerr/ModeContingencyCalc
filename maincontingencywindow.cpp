@@ -9,6 +9,7 @@ MainContingencyWindow::MainContingencyWindow(QWidget *parent) :
     m_nRowsToShow = 1;
     showRows();
     setupComboBoxQList();
+    loadTitles();
 
     adjustSize();
 }
@@ -23,6 +24,17 @@ void MainContingencyWindow::setDefaults()
 }
 void MainContingencyWindow::loadTitles()
 {
+    QStringList strlTitles;
+    strlTitles << "-" << "Financing" << "Appraisal" << "Earnest Money" << "Inspection" << "Final Walk-through" << "Radon Test" << "Condo Docs" <<
+                  "Well & Septic" << "Comfort Letter" << "Environmental Test" <<
+                  "Attorney Review" << "Home-Owner Insurance" << "Condition Report" <<
+                  "Sewer" << "Zoning" << "Survey" << "Loan Rate Lock Expiration";
+
+    for (int iii =0; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+        m_allComboxes[iii]->addItems(strlTitles);
+    }
+
 
 }
 void MainContingencyWindow::showRows()
