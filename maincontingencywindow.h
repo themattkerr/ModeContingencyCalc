@@ -30,13 +30,14 @@ private slots:
     void on_pushButton_Show_5_Fewer_clicked();
 
 private:
+
     Ui::MainContingencyWindow *ui;
+    Contingency m_contData;
     void loadTitles();
     void setDefaults();
     void showRows();
-    //void setupComboBoxQList();
-    //QList <QComboBox*> m_allComboxes;
-    int     m_nRowsToShow;
+
+
 
     void setupComboBoxQList();
     QList <QComboBox*> m_allComboxes;
@@ -53,6 +54,8 @@ private:
     void setupBusinessDaysCheckboxQList();
     QList <QCheckBox*> m_allBusinessDaysCheckBoxes;
 
+    int     m_nRowsToShow;
+    //Contingency m_contData;
 };
 
 #endif // MAINCONTINGENCYWINDOW_H

@@ -5,9 +5,12 @@
 #include "contingencydata.h"
 #include "mattcalculations.h"
 
-//ContingencyData() {}
+Contingency::Contingency(){}
+Contingency::~Contingency(){}
 
-//~ContingencyData(){}
+ContingencyData::ContingencyData() {}
+
+ ContingencyData::~ContingencyData(){}
 
 //----Public Enter Functions-------------------------------------------------------------------------------------
 void ContingencyData::enterAODate(QDate dtAODate)

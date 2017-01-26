@@ -42,9 +42,8 @@ public:
 class ContingencyData
 {
 public:
-    ContingencyData() {}
-
-    ~ContingencyData(){}
+    ContingencyData();
+    ~ContingencyData();
 
 //-----------------------------------------------------------------------------------------
     void enterAODate(QDate dtAODate);
@@ -94,6 +93,7 @@ public:
     QString generateReport();
     
 private:
+
 
     QDate m_dtAODate;
     QDate m_dtClosingDate;
