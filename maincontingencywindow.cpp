@@ -8,6 +8,7 @@ MainContingencyWindow::MainContingencyWindow(QWidget *parent) :
     ui->setupUi(this);
     m_nRowsToShow = 1;
     showRows();
+    setupComboBoxQList();
 
     adjustSize();
 }
@@ -75,6 +76,38 @@ void MainContingencyWindow::setupComboBoxQList()
     m_allComboxes.append(ui->cont19TitleComboBox);
     m_allComboxes.append(ui->cont20TitleComboBox);
 }
+
+void setupDateEditQList()
+{
+
+}
+
+void setupDaysSpinBoxQList()
+{
+
+}
+
+
+void setupAORadioButtonQList()
+{
+
+}
+
+void setupClosingRadioButtonQList()
+{
+
+}
+
+void setupHardDateRadioButtonQList()
+{
+
+}
+
+void setupBusinessDaysCheckboxQList()
+{
+
+}
+
 
 void MainContingencyWindow::on_pushButton_Show_5_More_clicked()
 {
