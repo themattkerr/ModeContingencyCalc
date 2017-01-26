@@ -7,8 +7,14 @@
     <x>0</x>
     <y>0</y>
     <width>1137</width>
-    <height>1042</height>
+    <height>1070</height>
    </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
   </property>
   <property name="windowTitle">
    <string>MainContingencyWindow</string>
@@ -21,6 +27,12 @@
        <layout class="QGridLayout" name="gridLayout">
         <item row="0" column="0" colspan="2">
          <widget class="QLabel" name="labelAcceptedOfferLabel">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
           <property name="text">
            <string>Accepted Offer Date</string>
           </property>
@@ -102,6 +114,12 @@
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
             <widget class="QGroupBox" name="groupBox1">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <layout class="QFormLayout" name="formLayout">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont1TitleComboBox"/>
@@ -110,7 +128,11 @@
                <widget class="QDateEdit" name="cont1dateEdit"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont1DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont1DaysSpinBox">
+                <property name="buttonSymbols">
+                 <enum>QAbstractSpinBox::UpDownArrows</enum>
+                </property>
+               </widget>
               </item>
               <item row="2" column="1">
                <widget class="QRadioButton" name="cont1FromAOradioButton">
@@ -121,6 +143,12 @@
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont1FromClosingRadioButton">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
@@ -145,6 +173,12 @@
            </item>
            <item>
             <widget class="QGroupBox" name="groupBox2">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
              <layout class="QFormLayout" name="formLayout_2">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont2TitleComboBox"/>
@@ -230,7 +264,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox4">
              <layout class="QFormLayout" name="formLayout_4">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont4TitleComboBox"/>
@@ -273,7 +307,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox5">
              <layout class="QFormLayout" name="formLayout_5">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont5TitleComboBox"/>
@@ -322,7 +356,7 @@
          <widget class="QFrame" name="Row2">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox6">
              <layout class="QFormLayout" name="formLayout_6">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont6TitleComboBox"/>
@@ -365,7 +399,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox7">
              <layout class="QFormLayout" name="formLayout_8">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont7TitleComboBox"/>
@@ -408,7 +442,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox8">
              <layout class="QFormLayout" name="formLayout_7">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont8TitleComboBox"/>
@@ -451,7 +485,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox9">
              <layout class="QFormLayout" name="formLayout_10">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont9TitleComboBox"/>
@@ -494,7 +528,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox10">
              <layout class="QFormLayout" name="formLayout_9">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont10TitleComboBox"/>
@@ -543,7 +577,7 @@
          <widget class="QFrame" name="Row3">
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox11">
              <layout class="QFormLayout" name="formLayout_11">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont11TitleComboBox"/>
@@ -586,7 +620,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox12">
              <layout class="QFormLayout" name="formLayout_13">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont12TitleComboBox"/>
@@ -629,7 +663,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox13">
              <layout class="QFormLayout" name="formLayout_12">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont13TitleComboBox"/>
@@ -672,7 +706,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox14">
              <layout class="QFormLayout" name="formLayout_15">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont14TitleComboBox"/>
@@ -715,7 +749,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox15">
              <layout class="QFormLayout" name="formLayout_14">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont15TitleComboBox"/>
@@ -764,7 +798,7 @@
          <widget class="QFrame" name="Row4">
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox16">
              <layout class="QFormLayout" name="formLayout_16">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont16TitleComboBox"/>
@@ -807,7 +841,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox17">
              <layout class="QFormLayout" name="formLayout_18">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont17TitleComboBox"/>
@@ -850,7 +884,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox18">
              <layout class="QFormLayout" name="formLayout_17">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont18TitleComboBox"/>
@@ -893,7 +927,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox19">
              <layout class="QFormLayout" name="formLayout_20">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont19TitleComboBox"/>
@@ -936,7 +970,7 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox">
+            <widget class="QGroupBox" name="groupBox20">
              <layout class="QFormLayout" name="formLayout_19">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont20TitleComboBox"/>
@@ -1055,7 +1089,7 @@
      <x>0</x>
      <y>0</y>
      <width>1137</width>
-     <height>21</height>
+     <height>26</height>
     </rect>
    </property>
   </widget>
