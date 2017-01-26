@@ -2,6 +2,7 @@
 #define MAINCONTINGENCYWINDOW_H
 
 #include <QMainWindow>
+<<<<<<< HEAD
 #include <QList>
 #include <QComboBox>
 #include <QDateEdit>
@@ -13,6 +14,8 @@
 #include "contingencydata.h"
 
 #define COMBOBOX_TITLES  << "-" << "Inspection" << "Financing" << "Appraisal" << "Earnest Money" << "Final Walk-through" << "Radon Test" << "Condo Docs" << "Well & Septic" << "Comfort Letter" << "Environmental Test" << "Attorney Review" << "Home-Owner Insurance" << "Condition Report" << "Sewer" << "Zoning" << "Survey" << "Loan Rate Lock Expiration";
+=======
+>>>>>>> parent of 514b059... GUI labeling
 
 namespace Ui {
 class MainContingencyWindow;
@@ -26,15 +29,11 @@ public:
     explicit MainContingencyWindow(QWidget *parent = 0);
     ~MainContingencyWindow();
 
-private slots:
-    void on_pushButton_Show_5_More_clicked();
-
-    void on_pushButton_Show_5_Fewer_clicked();
-
 private:
     Ui::MainContingencyWindow *ui;
     void loadTitles();
     void setDefaults();
+<<<<<<< HEAD
     void showRows();
 
     void setupComboBoxQList();
@@ -55,6 +54,8 @@ private:
 
     int     m_nRowsToShow;
 
+=======
+>>>>>>> parent of 514b059... GUI labeling
 };
 
 #endif // MAINCONTINGENCYWINDOW_H

@@ -113,6 +113,7 @@
          <widget class="QFrame" name="Row1">
           <layout class="QHBoxLayout" name="horizontalLayout">
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox1">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -120,6 +121,9 @@
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont1TitleComboBox"/>
@@ -172,6 +176,7 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox2">
              <property name="sizePolicy">
               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -179,6 +184,9 @@
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_2">
               <item row="0" column="0" colspan="2">
                <widget class="QComboBox" name="cont2TitleComboBox"/>
@@ -221,40 +229,40 @@
             </widget>
            </item>
            <item>
-            <widget class="QGroupBox" name="groupBox3">
+            <widget class="QGroupBox" name="">
              <layout class="QFormLayout" name="formLayout_3">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont3TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_3"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont3dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_5"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont3DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_4"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont3FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_7">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont3FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_8">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont3HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_9">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont3BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_3">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -264,40 +272,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox4">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_4">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont4TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_4"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont4dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_6"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont4DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_5"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont4FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_10">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont4FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_11">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont4HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_12">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont4BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_4">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -307,40 +319,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox5">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_5">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont5TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_5"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont5dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_7"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont5DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_6"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont5FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_13">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont5FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_14">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont5HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_15">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont5BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_5">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -356,40 +372,44 @@
          <widget class="QFrame" name="Row2">
           <layout class="QHBoxLayout" name="horizontalLayout_2">
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox6">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_6">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont6TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_6"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont6dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_8"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont6DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_7"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont6FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_16">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont6FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_17">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont6HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_18">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont6BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_6">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -399,40 +419,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox7">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_8">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont7TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_8"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont7dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_10"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont7DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_9"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont7FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_22">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont7FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_23">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont7HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_24">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont7BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_8">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -442,40 +466,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox8">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_7">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont8TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_7"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont8dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_9"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont8DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_8"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont8FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_19">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont8FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_20">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont8HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_21">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont8BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_7">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -485,40 +513,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox9">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_10">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont9TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_10"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont9dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_12"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont9DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_11"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont9FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_28">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont9FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_29">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont9HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_30">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont9BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_10">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -528,40 +560,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox10">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_9">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont10TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_9"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont10dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_11"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont10DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_10"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont10FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_25">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont10FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_26">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont10HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_27">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont10BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_9">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -577,40 +613,44 @@
          <widget class="QFrame" name="Row3">
           <layout class="QHBoxLayout" name="horizontalLayout_3">
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox11">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_11">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont11TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_11"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont11dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_13"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont11DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_12"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont11FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_31">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont11FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_32">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont11HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_33">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont11BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_11">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -620,40 +660,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox12">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_13">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont12TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_13"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont12dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_15"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont12DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_14"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont12FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_37">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont12FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_38">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont12HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_39">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont12BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_13">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -663,40 +707,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox13">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_12">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont13TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_12"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont13dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_14"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont13DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_13"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont13FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_34">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont13FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_35">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont13HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_36">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont13BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_12">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -706,40 +754,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox14">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_15">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont14TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_15"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont14dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_17"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont14DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_16"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont14FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_43">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont14FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_44">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont14HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_45">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont14BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_15">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -749,40 +801,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox15">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_14">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont15TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_14"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont15dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_16"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont15DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_15"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont15FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_40">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont15FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_41">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont15HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_42">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont15BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_14">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -798,40 +854,44 @@
          <widget class="QFrame" name="Row4">
           <layout class="QHBoxLayout" name="horizontalLayout_4">
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox16">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_16">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont16TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_16"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont16dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_18"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont16DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_17"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont16FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_46">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont16FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_47">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont16HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_48">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont16BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_16">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -841,40 +901,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox17">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_18">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont17TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_18"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont17dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_20"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont17DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_19"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont17FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_52">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont17FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_53">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont17BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_18">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont17HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_54">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
@@ -884,40 +948,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox18">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_17">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont18TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_17"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont18dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_19"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont18DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_18"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont18FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_49">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont18FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_50">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont18HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_51">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont18BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_17">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -927,40 +995,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox19">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_20">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont19TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_20"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont19dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_22"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont19DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_21"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont19FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_58">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont19FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_59">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont19HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_60">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont19BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_20">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -970,40 +1042,44 @@
             </widget>
            </item>
            <item>
+<<<<<<< HEAD
             <widget class="QGroupBox" name="groupBox20">
+=======
+            <widget class="QGroupBox" name="">
+>>>>>>> parent of 514b059... GUI labeling
              <layout class="QFormLayout" name="formLayout_19">
               <item row="0" column="0" colspan="2">
-               <widget class="QComboBox" name="cont20TitleComboBox"/>
+               <widget class="QComboBox" name="comboBox_19"/>
               </item>
               <item row="1" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont20dateEdit"/>
+               <widget class="QDateEdit" name="dateEdit_21"/>
               </item>
               <item row="2" column="0">
-               <widget class="QSpinBox" name="cont20DaysSpinBox"/>
+               <widget class="QSpinBox" name="spinBox_20"/>
               </item>
               <item row="2" column="1">
-               <widget class="QRadioButton" name="cont20FromAOradioButton">
+               <widget class="QRadioButton" name="radioButton_55">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
               <item row="3" column="1">
-               <widget class="QRadioButton" name="cont20FromClosingRadioButton">
+               <widget class="QRadioButton" name="radioButton_56">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
               <item row="4" column="1">
-               <widget class="QRadioButton" name="cont20HardDateRadioButton">
+               <widget class="QRadioButton" name="radioButton_57">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
               <item row="5" column="0" colspan="2">
-               <widget class="QCheckBox" name="cont20BusinessDayCheckBox">
+               <widget class="QCheckBox" name="checkBox_19">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
@@ -1018,16 +1094,16 @@
         <item>
          <layout class="QHBoxLayout" name="horizontalLayout_8">
           <item>
-           <widget class="QPushButton" name="pushButton_Show_5_Fewer">
+           <widget class="QPushButton" name="pushButton_Show6Thru10">
             <property name="text">
-             <string>Show 5 Fewer</string>
+             <string>Show More</string>
             </property>
            </widget>
           </item>
           <item>
-           <widget class="QPushButton" name="pushButton_Show_5_More">
+           <widget class="QPushButton" name="pushButton_11">
             <property name="text">
-             <string>Show 5 More</string>
+             <string>Show Less</string>
             </property>
            </widget>
           </item>
@@ -1051,16 +1127,16 @@
       <item>
        <layout class="QHBoxLayout" name="horizontalLayout_9">
         <item>
-         <widget class="QPushButton" name="pushButton_Sort_Contingencies">
+         <widget class="QPushButton" name="pushButton_9">
           <property name="text">
            <string>Sort Contingencies</string>
           </property>
          </widget>
         </item>
         <item>
-         <widget class="QPushButton" name="pushButton_Generate_Report">
+         <widget class="QPushButton" name="pushButton">
           <property name="text">
-           <string>Generate Report</string>
+           <string>Genderate Report</string>
           </property>
          </widget>
         </item>
