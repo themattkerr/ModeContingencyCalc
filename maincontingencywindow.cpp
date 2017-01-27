@@ -133,6 +133,7 @@ void MainContingencyWindow::showRows()
     }
     adjustSize();
 }
+
 void MainContingencyWindow::setupComboBoxQList()
 {
     m_allComboxes.append(ui->cont1TitleComboBox);
@@ -156,7 +157,6 @@ void MainContingencyWindow::setupComboBoxQList()
     m_allComboxes.append(ui->cont19TitleComboBox);
     m_allComboxes.append(ui->cont20TitleComboBox);
 }
-
 void MainContingencyWindow::setupDateEditQList()
 {
     m_allDateEdit.append(ui->cont1dateEdit);
@@ -180,7 +180,6 @@ void MainContingencyWindow::setupDateEditQList()
     m_allDateEdit.append(ui->cont19dateEdit);
     m_allDateEdit.append(ui->cont20dateEdit);
 }
-
 void MainContingencyWindow::setupDaysSpinBoxQList()
 {
     m_allSpinBoxes.append(ui->cont1DaysSpinBox);
@@ -204,7 +203,6 @@ void MainContingencyWindow::setupDaysSpinBoxQList()
     m_allSpinBoxes.append(ui->cont19DaysSpinBox);
     m_allSpinBoxes.append(ui->cont20DaysSpinBox);
 }
-
 void MainContingencyWindow::setupAORadioButtonQList()
 {
     m_allAORadioButtons.append(ui->cont1FromAOradioButton);
@@ -228,7 +226,6 @@ void MainContingencyWindow::setupAORadioButtonQList()
     m_allAORadioButtons.append(ui->cont19FromAOradioButton);
     m_allAORadioButtons.append(ui->cont20FromAOradioButton);
 }
-
 void MainContingencyWindow::setupClosingRadioButtonQList()
 {
     m_allClosingRadioButtons.append(ui->cont1FromClosingRadioButton);
@@ -252,7 +249,6 @@ void MainContingencyWindow::setupClosingRadioButtonQList()
     m_allClosingRadioButtons.append(ui->cont19FromClosingRadioButton);
     m_allClosingRadioButtons.append(ui->cont20FromClosingRadioButton);
 }
-
 void MainContingencyWindow::setupHardDateRadioButtonQList()
 {
     m_allHardDateRadioButtons.append(ui->cont1HardDateRadioButton);
@@ -275,9 +271,7 @@ void MainContingencyWindow::setupHardDateRadioButtonQList()
     m_allHardDateRadioButtons.append(ui->cont18HardDateRadioButton);
     m_allHardDateRadioButtons.append(ui->cont19HardDateRadioButton);
     m_allHardDateRadioButtons.append(ui->cont20HardDateRadioButton);
-
 }
-
 void MainContingencyWindow::setupBusinessDaysCheckboxQList()
 {
     m_allBusinessDaysCheckBoxes.append(ui->cont1BusinessDayCheckBox);
@@ -300,7 +294,6 @@ void MainContingencyWindow::setupBusinessDaysCheckboxQList()
     m_allBusinessDaysCheckBoxes.append(ui->cont18BusinessDayCheckBox);
     m_allBusinessDaysCheckBoxes.append(ui->cont19BusinessDayCheckBox);
     m_allBusinessDaysCheckBoxes.append(ui->cont20BusinessDayCheckBox);
-
 }
 
 //======== Signal/Slot Functions =========================
