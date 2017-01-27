@@ -81,12 +81,7 @@ public:
 //-----------------------------------------------------------------------------------------
     //void enterContingencyText(QString strContingencyText);
 
-    void sortContingenciesAcending();
-    void sortContingenciesDecending();
-
-    void refreshData();
-
-    QString generateReport();
+    void setDefaults();
     
 private:
 
@@ -105,13 +100,17 @@ private:
 
     QString setContingencyReportText(QString strContingencyTitle);
 
-   /* QStringList m_strlCustomItems;
-    strlCustomItems << "-" << "Final Walk-through" << "Radon Test" << "Condo Docs" <<
-                       "Well & Septic" << "Comfort Letter" << "Environmental Test" <<
-                       "Attorney Review" << "Home-Owner Insurance" << "Condition Report" <<
-                       "Sewer" << "Zoning" << "Survey" << "Loan Rate Lock Expiration";*/
+
     void calculateDaysFromDate(int nContingencyNum );
     void calculateDateFromDays(int nContingencyNum , QString &strReasons);
+
+    void sortContingenciesAcending();
+    void sortContingenciesDecending();
+
+    void refreshData();
+
+    QString generateReport();
+
 };
 
 

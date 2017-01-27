@@ -32,10 +32,14 @@ void MainContingencyWindow::setupGUI()
     setupBusinessDaysCheckboxQList();
 
     loadTitles();
+
+    loadDefaults();
 }
 
 void MainContingencyWindow::loadDefaults()
 {
+    m_contData.setDefaults();
+    refreshFields();
 
 }
 void MainContingencyWindow::loadTitles()
@@ -65,6 +69,42 @@ void MainContingencyWindow::loadTitles()
         m_allComboxes[iii]->addItems(strlTitles);
     }
 }
+void MainContingencyWindow::refreshFields()
+{
+    ui->dateEditAODate->setDate(m_contData.getAODate());
+    ui->spinBoxDaysToClosing->setValue(m_contData.getDaysClosing());
+    ui->dateEditClosingDate->setDate(m_contData.getClosingDate());
+    ui->lineEditPropertyAddress->setText(m_contData.getPropertyAddress());
+    ui->lineEditMLSNum->setText(m_contData.getMLSNumber());
+    ui->lineEditListingBrokerTrustName->setText(m_contData.getListingBrokerTrustName());
+
+    for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+        m_allComboxes[iii]->setCurrentText(m_contData.getContingencyTitle(iii));
+        m_allDateEdit[iii]->setDate(m_contData.getDateOfContingency(iii) );
+        m_allSpinBoxes[iii]->setValue(m_contData.getNumOfDays(iii));
+
+        m_allAORadioButtons[iii]->setChecked(false);
+        m_allClosingRadioButtons[iii]->setChecked(false);
+        m_allHardDateRadioButtons[iii]->setChecked(false);
+
+        switch (m_contData.getCalcFrom(iii)) {
+        case CALC_FROM_AO:          {m_allAORadioButtons[iii]->setChecked(true);        break;}
+        case CALC_FROM_CLOSING:     {m_allClosingRadioButtons[iii]->setChecked(true);   break;}
+        case HARD_DATE:             {m_allHardDateRadioButtons[iii]->setChecked(true);  break;}
+
+            break;
+        default:
+            break;
+        }
+
+        m_allBusinessDaysCheckBoxes[iii]->setChecked(m_contData.getUseBusinessDays(iii));
+    }
+
+
+
+}
+
 void MainContingencyWindow::showRows()
 {
     if (m_nRowsToShow == 1)

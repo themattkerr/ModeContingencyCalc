@@ -32,11 +32,12 @@ private slots:
 private:
 
     Ui::MainContingencyWindow *ui;
-    Contingency m_contData;
+    ContingencyData m_contData;
     void setupGUI();
     void loadTitles();
     void loadDefaults();
     void showRows();
+    void refreshFields();
 
 
 

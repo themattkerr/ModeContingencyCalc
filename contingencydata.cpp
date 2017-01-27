@@ -140,6 +140,80 @@ bool    ContingencyData::getUseBusinessDays(int nContingencyNum)
 {
     return m_Contingency[nContingencyNum].m_bUseBusinessDays;
 }
+//----Public functions ------------------------------------------------------------------------------------
+void ContingencyData::setDefaults()
+{
+     m_dtAODate = QDate::currentDate();
+
+     m_nDaysClosing = 60;
+     m_dtClosingDate = m_dtAODate.addDays(m_nDaysClosing);
+
+     m_strListingBrokerTrustName = "";
+     m_strEarnestMoneyAmout = "";
+     m_strMLSNumber = "";
+     m_strPropertyAddress = "";
+
+     Contingency *x =  &m_Contingency[0];
+     x->m_strContingencyTitle = "Earnest Money";
+     x->m_nNumOfDays = 5;
+     x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
+     x->m_nCalcFrom = CALC_FROM_AO;
+     x->m_strReportInfo.clear();
+     x->m_bUseBusinessDays = false;
+     x->m_strBusinessDayReasons.clear();
+
+     x =  &m_Contingency[1];
+     x->m_strContingencyTitle = "Financing";
+     x->m_nNumOfDays = 45;
+     x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
+     x->m_nCalcFrom = CALC_FROM_AO;
+     x->m_strReportInfo.clear();
+     x->m_bUseBusinessDays = false;
+     x->m_strBusinessDayReasons.clear();
+
+     x =  &m_Contingency[2];
+     x->m_strContingencyTitle = "Appraisal";
+     x->m_nNumOfDays = 40;
+     x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
+     x->m_nCalcFrom = CALC_FROM_AO;
+     x->m_strReportInfo.clear();
+     x->m_bUseBusinessDays = false;
+     x->m_strBusinessDayReasons.clear();
+
+     x =  &m_Contingency[3];
+     x->m_strContingencyTitle = "Inspection";
+     x->m_nNumOfDays = 14;
+     x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
+     x->m_nCalcFrom = CALC_FROM_AO;
+     x->m_strReportInfo.clear();
+     x->m_bUseBusinessDays = false;
+     x->m_strBusinessDayReasons.clear();
+
+     x =  &m_Contingency[4];
+     x->m_strContingencyTitle = "Radon Test";
+     x->m_nNumOfDays = 14;
+     x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
+     x->m_nCalcFrom = CALC_FROM_AO;
+     x->m_strReportInfo.clear();
+     x->m_bUseBusinessDays = false;
+     x->m_strBusinessDayReasons.clear();
+
+    for(int iii = 5; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+        x =  &m_Contingency[iii];
+        x->m_strContingencyTitle = "-";
+        x->m_nNumOfDays = 0;
+        x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
+        x->m_nCalcFrom = CALC_FROM_AO;
+        x->m_strReportInfo.clear();
+        x->m_bUseBusinessDays = false;
+        x->m_strBusinessDayReasons.clear();
+    }
+
+
+    x=0;
+
+}
 
 //----Private Fucntions-------------------------------------------------------------------------------------
 QString ContingencyData::setContingencyReportText(QString strContingencyTitle)
