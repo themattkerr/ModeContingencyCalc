@@ -5,6 +5,7 @@
 
 #include <qstring.h>
 #include <QDate>
+
 enum curency{
     US_DOLLARS = 0,
 };

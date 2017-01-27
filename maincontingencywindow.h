@@ -33,8 +33,9 @@ private:
 
     Ui::MainContingencyWindow *ui;
     Contingency m_contData;
+    void setupGUI();
     void loadTitles();
-    void setDefaults();
+    void loadDefaults();
     void showRows();
 
 

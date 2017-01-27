@@ -6,6 +6,21 @@ MainContingencyWindow::MainContingencyWindow(QWidget *parent) :
     ui(new Ui::MainContingencyWindow)
 {
     ui->setupUi(this);
+
+    setupGUI();
+
+
+    adjustSize();
+}
+
+MainContingencyWindow::~MainContingencyWindow()
+{
+    delete ui;
+}
+
+//========GUI Setup Functions =============================================
+void MainContingencyWindow::setupGUI()
+{
     m_nRowsToShow = 1;
     showRows();
     setupComboBoxQList();
@@ -17,32 +32,38 @@ MainContingencyWindow::MainContingencyWindow(QWidget *parent) :
     setupBusinessDaysCheckboxQList();
 
     loadTitles();
-
-    adjustSize();
 }
 
-MainContingencyWindow::~MainContingencyWindow()
-{
-    delete ui;
-}
-void MainContingencyWindow::setDefaults()
+void MainContingencyWindow::loadDefaults()
 {
 
 }
 void MainContingencyWindow::loadTitles()
 {
     QStringList strlTitles;
-    strlTitles << "-" << "Financing" << "Appraisal" << "Earnest Money" << "Inspection" << "Final Walk-through" << "Radon Test" << "Condo Docs" <<
-                  "Well & Septic" << "Comfort Letter" << "Environmental Test" <<
-                  "Attorney Review" << "Home-Owner Insurance" << "Condition Report" <<
-                  "Sewer" << "Zoning" << "Survey" << "Loan Rate Lock Expiration";
+    strlTitles << "-"
+               << "Earnest Money"
+               << "Condition Report"
+               << "Financing"
+               << "Appraisal"
+               << "Inspection"
+               << "Radon Test"
+               << "Well & Septic"
+               << "Final Walk-through"
+               << "Home-Owner Insurance"
+               << "Condo Docs"
+               << "Comfort Letter"
+               << "Environmental Test"
+               << "Attorney Review"
+               << "Sewer"
+               << "Zoning"
+               << "Survey"
+               << "Loan Rate Lock Expiration";
 
     for (int iii =0; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
         m_allComboxes[iii]->addItems(strlTitles);
     }
-
-
 }
 void MainContingencyWindow::showRows()
 {
@@ -242,6 +263,7 @@ void MainContingencyWindow::setupBusinessDaysCheckboxQList()
 
 }
 
+//======== Signal/Slot Functions =========================
 
 void MainContingencyWindow::on_pushButton_Show_5_More_clicked()
 {

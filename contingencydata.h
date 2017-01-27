@@ -5,10 +5,6 @@
 #define LONG_DATE_FORMAT "ddd MMMM d, yyyy"
 #define FROM_CLOSING_MESSAGE "From Closing"
 #define FROM_AO_MESSAGE ""
-//    QDate   m_dtDateOfContingency;
-//    QTime   m_tTimeOfDay;
-//    int     m_nNumOfDays;
-//    QString m_strReportInfo;
 
 #define MAX_NUM_CONTINGENCIES 20
 
