@@ -24,6 +24,7 @@ void MainContingencyWindow::setupGUI()
     setupComboBoxQList();
     setupCustomLineEditQList();
     setupDateEditQList();
+    setupDateLabelQList();
     setupDaysSpinBoxQList();
     setupAORadioButtonQList();
     setupClosingRadioButtonQList();
@@ -116,6 +117,14 @@ void MainContingencyWindow::refreshFields()
         }
 
         m_allBusinessDaysCheckBoxes[iii]->setChecked(m_contData.getUseBusinessDays(iii));
+        loadDateLabels();
+    }
+}
+void MainContingencyWindow::loadDateLabels()
+{
+    for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+        m_allDateLabels[iii]->setText(m_contData.getDateOfContingency(iii).toString( LONG_DATE_FORMAT)  );
     }
 }
 
@@ -216,6 +225,29 @@ void MainContingencyWindow::setupDateEditQList()
     m_allDateEdit.append(ui->cont18dateEdit);
     m_allDateEdit.append(ui->cont19dateEdit);
     m_allDateEdit.append(ui->cont20dateEdit);
+}
+void MainContingencyWindow::setupDateLabelQList()
+{
+    m_allDateLabels.append(ui->cont1DateLabel);
+    m_allDateLabels.append(ui->cont2DateLabel);
+    m_allDateLabels.append(ui->cont3DateLabel);
+    m_allDateLabels.append(ui->cont4DateLabel);
+    m_allDateLabels.append(ui->cont5DateLabel);
+    m_allDateLabels.append(ui->cont6DateLabel);
+    m_allDateLabels.append(ui->cont7DateLabel);
+    m_allDateLabels.append(ui->cont8DateLabel);
+    m_allDateLabels.append(ui->cont9DateLabel);
+    m_allDateLabels.append(ui->cont10DateLabel);
+    m_allDateLabels.append(ui->cont11DateLabel);
+    m_allDateLabels.append(ui->cont12DateLabel);
+    m_allDateLabels.append(ui->cont13DateLabel);
+    m_allDateLabels.append(ui->cont14DateLabel);
+    m_allDateLabels.append(ui->cont15DateLabel);
+    m_allDateLabels.append(ui->cont16DateLabel);
+    m_allDateLabels.append(ui->cont17DateLabel);
+    m_allDateLabels.append(ui->cont18DateLabel);
+    m_allDateLabels.append(ui->cont19DateLabel);
+    m_allDateLabels.append(ui->cont20DateLabel);
 }
 void MainContingencyWindow::setupDaysSpinBoxQList()
 {

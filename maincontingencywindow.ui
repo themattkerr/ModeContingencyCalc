@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1137</width>
-    <height>1042</height>
+    <height>1075</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -119,7 +119,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont1dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont1DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -129,28 +129,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont1FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont1FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont1HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont1BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -159,6 +159,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont1CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont1DateLabel">
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -172,7 +179,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont2dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont2DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -182,28 +189,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont2FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont2FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont2HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont2BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -212,6 +219,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont2CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont2DateLabel">
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -225,7 +239,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont3dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont3DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -235,28 +249,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont3FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont3FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont3HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont3BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -265,6 +279,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont3CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont3DateLabel">
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -278,7 +299,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont4dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont4DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -288,28 +309,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont4FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont4FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont4HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont4BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -318,6 +339,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont4CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont4DateLabel">
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -331,7 +359,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont5dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont5DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -341,28 +369,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont5FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont5FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont5HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont5BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -371,6 +399,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont5CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont5DateLabel">
+                <property name="text">
+                 <string>TextLabel</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -390,7 +425,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont6dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont6DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -400,28 +435,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont6FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont6FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont6HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont6BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -430,6 +465,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont6CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont6DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -443,7 +485,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont7dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont7DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -453,28 +495,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont7FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont7FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont7HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont7BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -483,6 +525,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont7CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont7DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -496,7 +545,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont8dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont8DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -506,28 +555,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont8FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont8FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont8HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont8BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -536,6 +585,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont8CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont8DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -549,7 +605,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont9dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont9DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -559,28 +615,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont9FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont9FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont9HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont9BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -589,6 +645,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont9CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont9DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -602,7 +665,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont10dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont10DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -612,28 +675,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont10FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont10FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont10HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont10BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -642,6 +705,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont10CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont10DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -661,7 +731,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont11dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont11DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -671,28 +741,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont11FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont11FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont11HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont11BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -701,6 +771,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont11CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont11DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -714,7 +791,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont12dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont12DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -724,28 +801,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont12FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont12FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont12HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont12BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -754,6 +831,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont12CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont12DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -767,7 +851,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont13dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont13DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -777,28 +861,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont13FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont13FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont13HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont13BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -807,6 +891,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont13CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont13DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -820,7 +911,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont14dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont14DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -830,28 +921,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont14FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont14FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont14HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont14BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -860,6 +951,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont14CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont14DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -873,7 +971,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont15dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont15DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -883,28 +981,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont15FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont15FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont15HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont15BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -913,6 +1011,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont15CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont15DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -932,7 +1037,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont16dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont16DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -942,28 +1047,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont16FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont16FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont16HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont16BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -972,6 +1077,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont16CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont16DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -985,7 +1097,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont17dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont17DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -995,28 +1107,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont17FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont17FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont17BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont17HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
@@ -1025,6 +1137,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont17CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont17DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -1038,7 +1157,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont18dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont18DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -1048,28 +1167,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont18FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont18FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont18HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont18BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -1078,6 +1197,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont18CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont18DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -1091,7 +1217,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont19dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont19DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -1101,28 +1227,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont19FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont19FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont19HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont19BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -1131,6 +1257,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont19CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont19DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>
@@ -1144,7 +1277,7 @@
               <item row="2" column="0" colspan="2">
                <widget class="QDateEdit" name="cont20dateEdit"/>
               </item>
-              <item row="3" column="0">
+              <item row="4" column="0">
                <widget class="QSpinBox" name="cont20DaysSpinBox">
                 <property name="minimum">
                  <number>-1000</number>
@@ -1154,28 +1287,28 @@
                 </property>
                </widget>
               </item>
-              <item row="3" column="1">
+              <item row="4" column="1">
                <widget class="QRadioButton" name="cont20FromAOradioButton">
                 <property name="text">
                  <string>Days from AO</string>
                 </property>
                </widget>
               </item>
-              <item row="4" column="1">
+              <item row="5" column="1">
                <widget class="QRadioButton" name="cont20FromClosingRadioButton">
                 <property name="text">
                  <string>Days From Closing</string>
                 </property>
                </widget>
               </item>
-              <item row="5" column="1">
+              <item row="6" column="1">
                <widget class="QRadioButton" name="cont20HardDateRadioButton">
                 <property name="text">
                  <string>Hard Date</string>
                 </property>
                </widget>
               </item>
-              <item row="6" column="0" colspan="2">
+              <item row="7" column="0" colspan="2">
                <widget class="QCheckBox" name="cont20BusinessDayCheckBox">
                 <property name="text">
                  <string>Use Business Days</string>
@@ -1184,6 +1317,13 @@
               </item>
               <item row="1" column="0" colspan="2">
                <widget class="QLineEdit" name="cont20CustomLineEdit"/>
+              </item>
+              <item row="3" column="0" colspan="2">
+               <widget class="QLabel" name="cont20DateLabel">
+                <property name="text">
+                 <string>---</string>
+                </property>
+               </widget>
               </item>
              </layout>
             </widget>

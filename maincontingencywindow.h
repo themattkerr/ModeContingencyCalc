@@ -10,6 +10,7 @@
 #include <QComboBox>
 #include <QLineEdit>
 #include <QDateEdit>
+#include <QLabel>
 #include <QSpinBox>
 #include <QRadioButton>
 #include <QCheckBox>
@@ -177,6 +178,7 @@ private:
     void loadDefaults();
     void showRows();
     void refreshFields();
+    void loadDateLabels();
 
 
 
@@ -186,6 +188,8 @@ private:
     QList <QLineEdit*> m_allCustomLineEdits;
     void setupDateEditQList();
     QList <QDateEdit*> m_allDateEdit;
+    void setupDateLabelQList();
+    QList <QLabel*> m_allDateLabels;
     void setupDaysSpinBoxQList();
     QList <QSpinBox*> m_allSpinBoxes;
     void setupAORadioButtonQList();
