@@ -148,7 +148,7 @@ void ContingencyData::setDefaults()
      m_nDaysClosing = 60;
      m_dtClosingDate = m_dtAODate.addDays(m_nDaysClosing);
 
-     m_strListingBrokerTrustName = "";
+     m_strListingBrokerTrustName = "Listing Broker Trust";
      m_strEarnestMoneyAmout = "";
      m_strMLSNumber = "";
      m_strPropertyAddress = "";
@@ -299,15 +299,27 @@ void ContingencyData::calculateDateFromDays(int nContingencyNum, QString &strRea
 
 void ContingencyData::refreshData()
 {
+    QString strNonWorkDays;
     Contingency *x =0;
     for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
         x = &m_Contingency[iii];
         switch (x->m_nCalcFrom) {
-        case CALC_FROM_AO:          {x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);        break;}
-        case CALC_FROM_CLOSING:     {x->m_dtDateOfContingency = m_dtClosingDate.addDays(x->m_nNumOfDays);   break;}
-        case HARD_DATE:             {x->m_nNumOfDays = m_dtAODate.daysTo(x->m_dtDateOfContingency);         break;}
-
+        case CALC_FROM_AO:          {if(!(x->m_bUseBusinessDays))
+                                        {x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays); break;}
+                                     if(x->m_bUseBusinessDays)
+                                        {x->m_dtDateOfContingency = dateBusinessDaysAway(m_dtAODate,x->m_nNumOfDays,strNonWorkDays); break;}
+                                    }
+        case CALC_FROM_CLOSING:     {if(!(x->m_bUseBusinessDays))
+                                        {x->m_dtDateOfContingency = m_dtClosingDate.addDays(x->m_nNumOfDays); break;}
+                                     if(x->m_bUseBusinessDays)
+                                        {x->m_dtDateOfContingency = dateBusinessDaysAway(m_dtClosingDate, x->m_nNumOfDays, strNonWorkDays); break;}
+                                    }
+        case HARD_DATE:             {if(!(x->m_bUseBusinessDays))
+                                        {x->m_nNumOfDays = m_dtAODate.daysTo(x->m_dtDateOfContingency);         break;}
+                                     if(x->m_bUseBusinessDays)
+                                        {x->m_nNumOfDays = numOfBusinessDaysBetween(m_dtAODate, x->m_dtDateOfContingency, strNonWorkDays ); break;}
+                                    }
             break;
         default:
             break;

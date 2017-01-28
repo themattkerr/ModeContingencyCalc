@@ -203,5 +203,33 @@ QDate dateBusinessDaysAway(QDate dtInputDate, int nNumOfBusinessDays, QString &s
     return dtInputDate.addDays(nNumberOfActualDays);
 }
 
+int   numOfBusinessDaysBetween(QDate dtStartDate, QDate dtEndDate, QString &strListOfDaysOff)
+{
+    int nNumOfDays = 0;
+    int nNumOfBusinessDays = 0;
 
+    if(nNumOfDays == 0)
+        return 0;
+    nNumOfDays = dtStartDate.daysTo(dtEndDate);
+    if (nNumOfDays > 0)
+    {
+        for(int iii = 1; iii <= nNumOfDays; iii++)
+        {
+            if(isBusinessDay(dtStartDate.addDays(iii),strListOfDaysOff))
+                nNumOfBusinessDays++;
+        }
+        return nNumOfBusinessDays;
+    }
+    if (nNumOfDays < 0)
+    {
+        for(int iii = nNumOfDays; iii <= 0; iii++)  // This case needs a lot of testing
+        {
+            if(isBusinessDay(dtStartDate.addDays(iii),strListOfDaysOff))
+                nNumOfBusinessDays++;
+        }
+        return nNumOfBusinessDays;
+    }
+    strListOfDaysOff = "Error";
+    return 0;
+}
 

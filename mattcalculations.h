@@ -30,6 +30,6 @@ bool  isBusinessDay(QDate dtDayToTest, QString &strReason);
 bool  isNationalHoliday(QDate dtDayToTest, QString &strHolidayName);
 void  dayOfWeekStats(QDate dtDay, int &nDayOfWeek, int &nHowManyOfDayOfWeekInMonth, int &occuranceOfDayOfWeekInMonth);
 QDate dateBusinessDaysAway(QDate dtInputDate, int nNumOfBusinessDays, QString &strListOfDaysOff);
-
+int   numOfBusinessDaysBetween(QDate dtStartDate, QDate dtEndDate, QString &strListOfDaysOff);
 #endif // MATTCALCULATIONS
 
