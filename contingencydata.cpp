@@ -154,7 +154,7 @@ void ContingencyData::setDefaults()
      m_strPropertyAddress = "";
 
      Contingency *x =  &m_Contingency[0];
-     x->m_strContingencyTitle = "Earnest Money";
+     x->m_strContingencyTitle = EARNEST_MONEY_TITLE;
      x->m_nNumOfDays = 5;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
@@ -163,7 +163,7 @@ void ContingencyData::setDefaults()
      x->m_strBusinessDayReasons.clear();
 
      x =  &m_Contingency[1];
-     x->m_strContingencyTitle = "Financing";
+     x->m_strContingencyTitle = FINANCING_TITLE;
      x->m_nNumOfDays = 45;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
@@ -172,7 +172,7 @@ void ContingencyData::setDefaults()
      x->m_strBusinessDayReasons.clear();
 
      x =  &m_Contingency[2];
-     x->m_strContingencyTitle = "Appraisal";
+     x->m_strContingencyTitle = APPRAISAL_TITLE;
      x->m_nNumOfDays = 40;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
@@ -181,7 +181,7 @@ void ContingencyData::setDefaults()
      x->m_strBusinessDayReasons.clear();
 
      x =  &m_Contingency[3];
-     x->m_strContingencyTitle = "Inspection";
+     x->m_strContingencyTitle = INSPECTION_TITLE;
      x->m_nNumOfDays = 14;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
@@ -190,7 +190,7 @@ void ContingencyData::setDefaults()
      x->m_strBusinessDayReasons.clear();
 
      x =  &m_Contingency[4];
-     x->m_strContingencyTitle = "Radon Test";
+     x->m_strContingencyTitle = RADON_TITLE;
      x->m_nNumOfDays = 14;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
@@ -216,8 +216,31 @@ void ContingencyData::setDefaults()
 }
 
 //----Private Fucntions-------------------------------------------------------------------------------------
-QString ContingencyData::setContingencyReportText(QString strContingencyTitle)
+void ContingencyData::setContingencyReportText(int nContingencyNum)
 {
+    Contingency *x = &m_Contingency[nContingencyNum];
+    x->m_strReportInfo.clear();
+
+    if(x->m_strContingencyTitle == BLANK)                     {x->m_strReportInfo.clear(); }
+    if(x->m_strContingencyTitle == EARNEST_MONEY_TITLE)       {x->m_strReportInfo.append(EARNEST_MONEY1).append(m_strListingBrokerTrustName).append(EARNEST_MONEY2).append(m_strEarnestMoneyAmout).append(EARNEST_MONEY3);  }
+    if(x->m_strContingencyTitle == CONDITION_REPORT_TITLE)    {x->m_strReportInfo.append(CONDITION_REPORT ); }
+    if(x->m_strContingencyTitle == FINANCING_TITLE)           {x->m_strReportInfo.append(FINANCING );}
+    if(x->m_strContingencyTitle == APPRAISAL_TITLE)           {x->m_strReportInfo.append(APPRAISAL ); }
+    if(x->m_strContingencyTitle == INSPECTION_TITLE)          {x->m_strReportInfo.append(INSPECTION ); }
+    if(x->m_strContingencyTitle == RADON_TITLE)               {x->m_strReportInfo.append(RADON ); }
+    if(x->m_strContingencyTitle == WELL_SEPTIC_TITLE)         {x->m_strReportInfo.append(WELL_SEPTIC ); }
+    if(x->m_strContingencyTitle == FINAL_WALKTHROUGH_TITLE)   {x->m_strReportInfo.append(FINAL_WALKTHROUGH ); }
+    if(x->m_strContingencyTitle == HOME_INSURENCE_TITLE)      {x->m_strReportInfo.append(HOME_OWNER_INSSURENCE ); }
+    if(x->m_strContingencyTitle == CONDO_DOCS_TITLE)          {x->m_strReportInfo.append(CONDO_DOCS ); }
+    if(x->m_strContingencyTitle == COMFORT_LETTER_TITLE)      {x->m_strReportInfo.append(COMFORT_LETTER ); }
+    if(x->m_strContingencyTitle == ENVIRONMENTAL_TEST_TITLE)  {x->m_strReportInfo.append(ENVIRONMENTAL_TEST ); }
+    if(x->m_strContingencyTitle == ATTORNEY_REVIEW_TITLE)     {x->m_strReportInfo.append(ATTORNEY_REVIEW ); }
+    if(x->m_strContingencyTitle == SEWER_TITLE)               {x->m_strReportInfo.append(SEWER ); }
+    if(x->m_strContingencyTitle == ZONING_TITLE)              {x->m_strReportInfo.append(ZONING ); }
+    if(x->m_strContingencyTitle == SURVEY_TITLE)              {x->m_strReportInfo.append(SURVEY ); }
+    if(x->m_strContingencyTitle == RATE_LOCK_TITLE)           {x->m_strReportInfo.append(RATE_LOCK ); }
+    if(x->m_strContingencyTitle == CUSTOM_TITLE)              {}
+    x = 0;
 
 }
 
@@ -276,8 +299,22 @@ void ContingencyData::calculateDateFromDays(int nContingencyNum, QString &strRea
 
 void ContingencyData::refreshData()
 {
-    //run calculations
-    //set contingency text
+    Contingency *x =0;
+    for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+        x = &m_Contingency[iii];
+        switch (x->m_nCalcFrom) {
+        case CALC_FROM_AO:          {x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);        break;}
+        case CALC_FROM_CLOSING:     {x->m_dtDateOfContingency = m_dtClosingDate.addDays(x->m_nNumOfDays);   break;}
+        case HARD_DATE:             {x->m_nNumOfDays = m_dtAODate.daysTo(x->m_dtDateOfContingency);         break;}
+
+            break;
+        default:
+            break;
+        }
+        setContingencyReportText(iii);
+    }
+
 
 }
 

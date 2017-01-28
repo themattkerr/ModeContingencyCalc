@@ -8,8 +8,6 @@ MainContingencyWindow::MainContingencyWindow(QWidget *parent) :
     ui->setupUi(this);
 
     setupGUI();
-
-
     adjustSize();
 }
 
@@ -24,6 +22,7 @@ void MainContingencyWindow::setupGUI()
     m_nRowsToShow = 1;
     showRows();
     setupComboBoxQList();
+    setupCustomLineEditQList();
     setupDateEditQList();
     setupDaysSpinBoxQList();
     setupAORadioButtonQList();
@@ -32,8 +31,15 @@ void MainContingencyWindow::setupGUI()
     setupBusinessDaysCheckboxQList();
 
     loadTitles();
-
+    hideCustomLineEdits();
     loadDefaults();
+}
+void MainContingencyWindow::hideCustomLineEdits()
+{
+    for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+        m_allCustomLineEdits[iii]->hide();
+    }
 }
 
 void MainContingencyWindow::loadDefaults()
@@ -45,24 +51,27 @@ void MainContingencyWindow::loadDefaults()
 void MainContingencyWindow::loadTitles()
 {
     QStringList strlTitles;
-    strlTitles << "-"
-               << "Earnest Money"
-               << "Condition Report"
-               << "Financing"
-               << "Appraisal"
-               << "Inspection"
-               << "Radon Test"
-               << "Well & Septic"
-               << "Final Walk-through"
-               << "Home-Owner Insurance"
-               << "Condo Docs"
-               << "Comfort Letter"
-               << "Environmental Test"
-               << "Attorney Review"
-               << "Sewer"
-               << "Zoning"
-               << "Survey"
-               << "Loan Rate Lock Expiration";
+    strlTitles
+                << BLANK
+                << EARNEST_MONEY_TITLE
+                << CONDITION_REPORT_TITLE
+                << FINANCING_TITLE
+                << APPRAISAL_TITLE
+                << INSPECTION_TITLE
+                << RADON_TITLE
+                << WELL_SEPTIC_TITLE
+                << FINAL_WALKTHROUGH_TITLE
+                << HOME_INSURENCE_TITLE
+                << CONDO_DOCS_TITLE
+                << COMFORT_LETTER_TITLE
+                << ENVIRONMENTAL_TEST_TITLE
+                << ATTORNEY_REVIEW_TITLE
+                << SEWER_TITLE
+                << ZONING_TITLE
+                << SURVEY_TITLE
+                << RATE_LOCK_TITLE
+                << CUSTOM_TITLE;
+
 
     for (int iii =0; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
@@ -76,10 +85,16 @@ void MainContingencyWindow::refreshFields()
     ui->dateEditClosingDate->setDate(m_contData.getClosingDate());
     ui->lineEditPropertyAddress->setText(m_contData.getPropertyAddress());
     ui->lineEditMLSNum->setText(m_contData.getMLSNumber());
+    ui->lineEditEarnestMoney->setText(m_contData.getEarnestMoneyAmout());
     ui->lineEditListingBrokerTrustName->setText(m_contData.getListingBrokerTrustName());
 
     for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
+        if(m_contData.getContingencyTitle(iii) == CUSTOM_TITLE)
+            m_allCustomLineEdits[iii]->show();
+        else
+            m_allCustomLineEdits[iii]->hide();
+
         m_allComboxes[iii]->setCurrentText(m_contData.getContingencyTitle(iii));
         m_allDateEdit[iii]->setDate(m_contData.getDateOfContingency(iii) );
         m_allSpinBoxes[iii]->setValue(m_contData.getNumOfDays(iii));
@@ -100,9 +115,6 @@ void MainContingencyWindow::refreshFields()
 
         m_allBusinessDaysCheckBoxes[iii]->setChecked(m_contData.getUseBusinessDays(iii));
     }
-
-
-
 }
 
 void MainContingencyWindow::showRows()
@@ -156,6 +168,29 @@ void MainContingencyWindow::setupComboBoxQList()
     m_allComboxes.append(ui->cont18TitleComboBox);
     m_allComboxes.append(ui->cont19TitleComboBox);
     m_allComboxes.append(ui->cont20TitleComboBox);
+}
+void MainContingencyWindow::setupCustomLineEditQList()
+{
+    m_allCustomLineEdits.append(ui->cont1CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont2CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont3CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont4CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont5CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont6CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont7CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont8CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont9CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont10CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont11CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont12CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont13CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont14CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont15CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont16CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont17CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont18CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont19CustomLineEdit);
+    m_allCustomLineEdits.append(ui->cont20CustomLineEdit);
 }
 void MainContingencyWindow::setupDateEditQList()
 {
@@ -312,4 +347,10 @@ void MainContingencyWindow::on_pushButton_Show_5_Fewer_clicked()
     if(m_nRowsToShow < 1)
         m_nRowsToShow = 1;
     showRows();
+}
+
+void MainContingencyWindow::on_dateEditAODate_userDateChanged(const QDate &date)
+{
+    m_contData.enterAODate(date);
+    refreshFields();
 }

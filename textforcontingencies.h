@@ -25,6 +25,24 @@
 #define RATE_LOCK "Financing issues can arise if the closing date is pushed out past this date."
 
 #define BLANK "-"
+#define EARNEST_MONEY_TITLE "Earnest Money"
+#define CONDITION_REPORT_TITLE "Condition Report"
+#define FINANCING_TITLE "Financing"
+#define APPRAISAL_TITLE "Appraisal"
+#define INSPECTION_TITLE "Inspection"
+#define RADON_TITLE "Radon Test"
+#define WELL_SEPTIC_TITLE "Well & Septic"
+#define FINAL_WALKTHROUGH_TITLE "Final Walk-through"
+#define HOME_INSURENCE_TITLE "Home-Owner Insurance"
+#define CONDO_DOCS_TITLE "Condo Docs"
+#define COMFORT_LETTER_TITLE "Comfort Letter"
+#define ENVIRONMENTAL_TEST_TITLE "Environmental Test"
+#define ATTORNEY_REVIEW_TITLE "Attorney Review"
+#define SEWER_TITLE "Sewer"
+#define ZONING_TITLE "Zoning"
+#define SURVEY_TITLE "Survey"
+#define RATE_LOCK_TITLE "Loan Rate Lock Expiration"
+#define CUSTOM_TITLE "-Custom-"
 
 
 

@@ -11,6 +11,7 @@
 #include <QDate>
 #include <QString>
 #include <QTime>
+#include "textforcontingencies.h"
 
 enum CalculateFrom {
 
@@ -98,7 +99,7 @@ private:
     Contingency m_Contingency[MAX_NUM_CONTINGENCIES];
 
 
-    QString setContingencyReportText(QString strContingencyTitle);
+    void setContingencyReportText(int nContingencyNum);
 
 
     void calculateDaysFromDate(int nContingencyNum );
