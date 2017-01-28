@@ -80,6 +80,8 @@ void MainContingencyWindow::loadTitles()
 }
 void MainContingencyWindow::refreshFields()
 {
+    // call a function here to pull and save custom text from the gui
+
     ui->dateEditAODate->setDate(m_contData.getAODate());
     ui->spinBoxDaysToClosing->setValue(m_contData.getDaysClosing());
     ui->dateEditClosingDate->setDate(m_contData.getClosingDate());
@@ -352,5 +354,291 @@ void MainContingencyWindow::on_pushButton_Show_5_Fewer_clicked()
 void MainContingencyWindow::on_dateEditAODate_userDateChanged(const QDate &date)
 {
     m_contData.enterAODate(date);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_pushButtonSetToToday_clicked()
+{
+    m_contData.enterAODate(QDate::currentDate());
+    refreshFields();
+}
+
+void MainContingencyWindow::on_spinBoxDaysToClosing_valueChanged(int arg1)
+{
+    m_contData.enterDaysClosing(arg1);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_dateEditClosingDate_userDateChanged(const QDate &date)
+{
+    m_contData.enterClosingDate(date);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_lineEditPropertyAddress_editingFinished()
+{
+    m_contData.enterPropertyAddress(ui->lineEditPropertyAddress->text());
+    refreshFields();
+}
+
+void MainContingencyWindow::on_lineEditMLSNum_editingFinished()
+{
+    m_contData.enterMLSNumber(ui->lineEditMLSNum->text());
+    refreshFields();
+}
+
+void MainContingencyWindow::on_lineEditEarnestMoney_editingFinished()
+{
+    m_contData.enterEarnestMoneyAmount(ui->lineEditEarnestMoney->text());
+    refreshFields();
+}
+
+void MainContingencyWindow::on_lineEditListingBrokerTrustName_editingFinished()
+{
+    m_contData.enterListingBrokerTrustName(ui->lineEditListingBrokerTrustName->text());
+    refreshFields();
+}
+
+
+void MainContingencyWindow::on_cont1TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency1Index = 0;
+    m_contData.enterContingencyTitle(arg1, nContingency1Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont2TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency2Index = 1;
+    m_contData.enterContingencyTitle(arg1, nContingency2Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont3TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency3Index = 2;
+    m_contData.enterContingencyTitle(arg1, nContingency3Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont4TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency4Index = 3;
+    m_contData.enterContingencyTitle(arg1, nContingency4Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont5TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency5Index = 4;
+    m_contData.enterContingencyTitle(arg1, nContingency5Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont6TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency6Index = 5;
+    m_contData.enterContingencyTitle(arg1, nContingency6Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont7TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency7Index = 6;
+    m_contData.enterContingencyTitle(arg1, nContingency7Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont8TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency8Index = 7;
+    m_contData.enterContingencyTitle(arg1, nContingency8Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont9TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency9Index = 8;
+    m_contData.enterContingencyTitle(arg1, nContingency9Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont10TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency10Index = 9;
+    m_contData.enterContingencyTitle(arg1, nContingency10Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont11TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency11Index = 10;
+    m_contData.enterContingencyTitle(arg1, nContingency11Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont12TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency12Index = 11;
+    m_contData.enterContingencyTitle(arg1, nContingency12Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont13TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency13Index = 12;
+    m_contData.enterContingencyTitle(arg1, nContingency13Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont14TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency14Index = 13;
+    m_contData.enterContingencyTitle(arg1, nContingency14Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont15TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency15Index = 14;
+    m_contData.enterContingencyTitle(arg1, nContingency15Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont16TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency16Index = 15;
+    m_contData.enterContingencyTitle(arg1, nContingency16Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont17TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency17Index = 16;
+    m_contData.enterContingencyTitle(arg1, nContingency17Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont18TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency18Index = 17;
+    m_contData.enterContingencyTitle(arg1, nContingency18Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont19TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency19Index = 18;
+    m_contData.enterContingencyTitle(arg1, nContingency19Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont20TitleComboBox_activated(const QString &arg1)
+{
+    int nContingency20Index = 19;
+    m_contData.enterContingencyTitle(arg1, nContingency20Index);
+    refreshFields();
+}
+
+
+void MainContingencyWindow::on_cont1dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency1Index = 0;
+    m_contData.enterDateOfContingency(date, nContingency1Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont2dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency2Index = 1;
+    m_contData.enterDateOfContingency(date, nContingency2Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont3dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency3Index = 2;
+    m_contData.enterDateOfContingency(date, nContingency3Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont4dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency4Index = 3;
+    m_contData.enterDateOfContingency(date, nContingency4Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont5dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency5Index = 4;
+    m_contData.enterDateOfContingency(date, nContingency5Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont6dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency6Index = 5;
+    m_contData.enterDateOfContingency(date, nContingency6Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont7dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency7Index = 6;
+    m_contData.enterDateOfContingency(date, nContingency7Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont8dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency8Index = 7;
+    m_contData.enterDateOfContingency(date, nContingency8Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont9dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency9Index = 8;
+    m_contData.enterDateOfContingency(date, nContingency9Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont10dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency10Index = 9;
+    m_contData.enterDateOfContingency(date, nContingency10Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont11dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency11Index = 10;
+    m_contData.enterDateOfContingency(date, nContingency11Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont12dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency12Index = 11;
+    m_contData.enterDateOfContingency(date, nContingency12Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont13dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency13Index = 12;
+    m_contData.enterDateOfContingency(date, nContingency13Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont14dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency14Index = 13;
+    m_contData.enterDateOfContingency(date, nContingency14Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont15dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency15Index = 14;
+    m_contData.enterDateOfContingency(date, nContingency15Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont16dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency16Index = 15;
+    m_contData.enterDateOfContingency(date, nContingency16Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont17dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency17Index = 16;
+    m_contData.enterDateOfContingency(date, nContingency17Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont18dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency18Index = 17;
+    m_contData.enterDateOfContingency(date, nContingency18Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont19dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency19Index = 18;
+    m_contData.enterDateOfContingency(date, nContingency19Index);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont20dateEdit_userDateChanged(const QDate &date)
+{
+    int nContingency20Index = 19;
+    m_contData.enterDateOfContingency(date, nContingency20Index);
     refreshFields();
 }

@@ -33,6 +33,100 @@ private slots:
 
     void on_dateEditAODate_userDateChanged(const QDate &date);
 
+    void on_pushButtonSetToToday_clicked();
+
+    void on_spinBoxDaysToClosing_valueChanged(int arg1);
+
+    void on_dateEditClosingDate_userDateChanged(const QDate &date);
+
+    void on_lineEditPropertyAddress_editingFinished();
+
+    void on_lineEditMLSNum_editingFinished();
+
+    void on_lineEditEarnestMoney_editingFinished();
+
+    void on_lineEditListingBrokerTrustName_editingFinished();
+
+    void on_cont1TitleComboBox_activated(const QString &arg1);
+
+    void on_cont2TitleComboBox_activated(const QString &arg1);
+
+    void on_cont3TitleComboBox_activated(const QString &arg1);
+
+    void on_cont4TitleComboBox_activated(const QString &arg1);
+
+    void on_cont5TitleComboBox_activated(const QString &arg1);
+
+    void on_cont6TitleComboBox_activated(const QString &arg1);
+
+    void on_cont7TitleComboBox_activated(const QString &arg1);
+
+    void on_cont8TitleComboBox_activated(const QString &arg1);
+
+    void on_cont9TitleComboBox_activated(const QString &arg1);
+
+    void on_cont10TitleComboBox_activated(const QString &arg1);
+
+    void on_cont11TitleComboBox_activated(const QString &arg1);
+
+    void on_cont12TitleComboBox_activated(const QString &arg1);
+
+    void on_cont13TitleComboBox_activated(const QString &arg1);
+
+    void on_cont14TitleComboBox_activated(const QString &arg1);
+
+    void on_cont15TitleComboBox_activated(const QString &arg1);
+
+    void on_cont16TitleComboBox_activated(const QString &arg1);
+
+    void on_cont17TitleComboBox_activated(const QString &arg1);
+
+    void on_cont18TitleComboBox_activated(const QString &arg1);
+
+    void on_cont19TitleComboBox_activated(const QString &arg1);
+
+    void on_cont20TitleComboBox_activated(const QString &arg1);
+
+    void on_cont1dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont2dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont3dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont4dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont5dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont6dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont7dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont8dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont9dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont10dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont11dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont12dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont13dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont14dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont15dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont16dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont17dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont18dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont19dateEdit_userDateChanged(const QDate &date);
+
+    void on_cont20dateEdit_userDateChanged(const QDate &date);
+
 private:
 
     Ui::MainContingencyWindow *ui;
