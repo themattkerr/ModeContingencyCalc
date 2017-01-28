@@ -57,10 +57,10 @@
         <item row="1" column="2">
          <widget class="QSpinBox" name="spinBoxDaysToClosing">
           <property name="minimum">
-           <number>-365</number>
+           <number>-1000</number>
           </property>
           <property name="maximum">
-           <number>365</number>
+           <number>1000</number>
           </property>
          </widget>
         </item>
@@ -120,7 +120,14 @@
                <widget class="QDateEdit" name="cont1dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont1DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont1DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont1FromAOradioButton">
@@ -166,7 +173,14 @@
                <widget class="QDateEdit" name="cont2dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont2DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont2DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont2FromAOradioButton">
@@ -212,7 +226,14 @@
                <widget class="QDateEdit" name="cont3dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont3DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont3DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont3FromAOradioButton">
@@ -258,7 +279,14 @@
                <widget class="QDateEdit" name="cont4dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont4DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont4DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont4FromAOradioButton">
@@ -304,7 +332,14 @@
                <widget class="QDateEdit" name="cont5dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont5DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont5DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont5FromAOradioButton">
@@ -356,7 +391,14 @@
                <widget class="QDateEdit" name="cont6dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont6DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont6DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont6FromAOradioButton">
@@ -402,7 +444,14 @@
                <widget class="QDateEdit" name="cont7dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont7DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont7DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont7FromAOradioButton">
@@ -448,7 +497,14 @@
                <widget class="QDateEdit" name="cont8dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont8DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont8DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont8FromAOradioButton">
@@ -494,7 +550,14 @@
                <widget class="QDateEdit" name="cont9dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont9DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont9DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont9FromAOradioButton">
@@ -540,7 +603,14 @@
                <widget class="QDateEdit" name="cont10dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont10DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont10DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont10FromAOradioButton">
@@ -592,7 +662,14 @@
                <widget class="QDateEdit" name="cont11dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont11DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont11DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont11FromAOradioButton">
@@ -638,7 +715,14 @@
                <widget class="QDateEdit" name="cont12dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont12DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont12DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont12FromAOradioButton">
@@ -684,7 +768,14 @@
                <widget class="QDateEdit" name="cont13dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont13DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont13DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont13FromAOradioButton">
@@ -730,7 +821,14 @@
                <widget class="QDateEdit" name="cont14dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont14DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont14DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont14FromAOradioButton">
@@ -776,7 +874,14 @@
                <widget class="QDateEdit" name="cont15dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont15DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont15DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont15FromAOradioButton">
@@ -828,7 +933,14 @@
                <widget class="QDateEdit" name="cont16dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont16DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont16DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont16FromAOradioButton">
@@ -874,7 +986,14 @@
                <widget class="QDateEdit" name="cont17dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont17DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont17DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont17FromAOradioButton">
@@ -920,7 +1039,14 @@
                <widget class="QDateEdit" name="cont18dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont18DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont18DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont18FromAOradioButton">
@@ -966,7 +1092,14 @@
                <widget class="QDateEdit" name="cont19dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont19DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont19DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont19FromAOradioButton">
@@ -1012,7 +1145,14 @@
                <widget class="QDateEdit" name="cont20dateEdit"/>
               </item>
               <item row="3" column="0">
-               <widget class="QSpinBox" name="cont20DaysSpinBox"/>
+               <widget class="QSpinBox" name="cont20DaysSpinBox">
+                <property name="minimum">
+                 <number>-1000</number>
+                </property>
+                <property name="maximum">
+                 <number>1000</number>
+                </property>
+               </widget>
               </item>
               <item row="3" column="1">
                <widget class="QRadioButton" name="cont20FromAOradioButton">

@@ -127,6 +127,46 @@ private slots:
 
     void on_cont20dateEdit_userDateChanged(const QDate &date);
 
+    void on_cont6DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont1DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont2DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont3DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont4DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont5DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont7DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont8DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont9DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont10DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont11DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont12DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont13DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont14DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont15DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont16DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont17DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont18DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont19DaysSpinBox_valueChanged(int arg1);
+
+    void on_cont20DaysSpinBox_valueChanged(int arg1);
+
 private:
 
     Ui::MainContingencyWindow *ui;

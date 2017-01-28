@@ -642,3 +642,146 @@ void MainContingencyWindow::on_cont20dateEdit_userDateChanged(const QDate &date)
     m_contData.enterDateOfContingency(date, nContingency20Index);
     refreshFields();
 }
+
+
+
+void MainContingencyWindow::on_cont1DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 0;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont2DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 1;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont3DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 2;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont4DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 3;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont5DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 4;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont6DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 5;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont7DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 6;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont8DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 7;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont9DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 8;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont10DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 9;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont11DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 10;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont12DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 11;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont13DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 12;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont14DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 13;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont15DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 14;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont16DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 15;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont17DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 16;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont18DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 17;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont19DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 18;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont20DaysSpinBox_valueChanged(int arg1)
+{
+    int nContingencyIndex = 19;
+    m_contData.enterDays(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+
