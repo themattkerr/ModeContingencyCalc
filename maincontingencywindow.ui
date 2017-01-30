@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1137</width>
-    <height>1075</height>
+    <width>1191</width>
+    <height>1278</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -163,7 +163,7 @@
               <item row="3" column="0" colspan="2">
                <widget class="QLabel" name="cont1DateLabel">
                 <property name="text">
-                 <string>TextLabel</string>
+                 <string>---</string>
                 </property>
                </widget>
               </item>
@@ -223,7 +223,7 @@
               <item row="3" column="0" colspan="2">
                <widget class="QLabel" name="cont2DateLabel">
                 <property name="text">
-                 <string>TextLabel</string>
+                 <string>---</string>
                 </property>
                </widget>
               </item>
@@ -283,7 +283,7 @@
               <item row="3" column="0" colspan="2">
                <widget class="QLabel" name="cont3DateLabel">
                 <property name="text">
-                 <string>TextLabel</string>
+                 <string>---</string>
                 </property>
                </widget>
               </item>
@@ -343,7 +343,7 @@
               <item row="3" column="0" colspan="2">
                <widget class="QLabel" name="cont4DateLabel">
                 <property name="text">
-                 <string>TextLabel</string>
+                 <string>---</string>
                 </property>
                </widget>
               </item>
@@ -403,7 +403,7 @@
               <item row="3" column="0" colspan="2">
                <widget class="QLabel" name="cont5DateLabel">
                 <property name="text">
-                 <string>TextLabel</string>
+                 <string>---</string>
                 </property>
                </widget>
               </item>
@@ -1404,8 +1404,8 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1137</width>
-     <height>20</height>
+     <width>1191</width>
+     <height>26</height>
     </rect>
    </property>
   </widget>
