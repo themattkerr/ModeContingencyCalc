@@ -81,6 +81,7 @@ void ContingencyData::setCalcType(int nCalcType, int nContingencyNum)
 void ContingencyData::setUseBusinessDays(bool BusinessDays, int nContingencyNum)
 {
     m_Contingency[nContingencyNum].m_bUseBusinessDays = BusinessDays;
+    refreshData();
 }
 
 //-----Public Get Functions------------------------------------------------------------------------------------

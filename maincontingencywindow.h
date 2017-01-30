@@ -230,6 +230,46 @@ private slots:
 
     void on_cont20CalcFromComboBox_activated(const QString &arg1);
 
+    void on_cont1BusinessDayCheckBox_clicked();
+
+    void on_cont2BusinessDayCheckBox_clicked();
+
+    void on_cont3BusinessDayCheckBox_clicked();
+
+    void on_cont4BusinessDayCheckBox_clicked();
+
+    void on_cont5BusinessDayCheckBox_clicked();
+
+    void on_cont6BusinessDayCheckBox_clicked();
+
+    void on_cont7BusinessDayCheckBox_clicked();
+
+    void on_cont8BusinessDayCheckBox_clicked();
+
+    void on_cont9BusinessDayCheckBox_clicked();
+
+    void on_cont10BusinessDayCheckBox_clicked();
+
+    void on_cont11BusinessDayCheckBox_clicked();
+
+    void on_cont12BusinessDayCheckBox_clicked();
+
+    void on_cont13BusinessDayCheckBox_clicked();
+
+    void on_cont14BusinessDayCheckBox_clicked();
+
+    void on_cont15BusinessDayCheckBox_clicked();
+
+    void on_cont16BusinessDayCheckBox_clicked();
+
+    void on_cont17BusinessDayCheckBox_clicked();
+
+    void on_cont18BusinessDayCheckBox_clicked();
+
+    void on_cont19BusinessDayCheckBox_clicked();
+
+    void on_cont20BusinessDayCheckBox_clicked();
+
 private:
 
     Ui::MainContingencyWindow *ui;
