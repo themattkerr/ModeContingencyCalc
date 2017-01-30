@@ -168,27 +168,67 @@ private slots:
 
     void on_cont20DaysSpinBox_valueChanged(int arg1);
 
-    void on_cont1CalcFromComboBox_currentTextChanged(const QString &arg1);
+//    void on_cont1CalcFromComboBox_currentTextChanged(const QString &arg1);
 
-    void on_cont2CalcFromComboBox_currentTextChanged(const QString &arg1);
+//    void on_cont2CalcFromComboBox_currentTextChanged(const QString &arg1);
 
-    void on_cont3CalcFromComboBox_currentTextChanged(const QString &arg1);
+//    void on_cont3CalcFromComboBox_currentTextChanged(const QString &arg1);
 
-    void on_cont4CalcFromComboBox_currentTextChanged(const QString &arg1);
+//    void on_cont4CalcFromComboBox_currentTextChanged(const QString &arg1);
 
-    void on_cont5CalcFromComboBox_currentTextChanged(const QString &arg1);
+//    void on_cont5CalcFromComboBox_currentTextChanged(const QString &arg1);
 
-    void on_cont6CalcFromComboBox_currentTextChanged(const QString &arg1);
+//    void on_cont6CalcFromComboBox_currentTextChanged(const QString &arg1);
 
-    void on_cont7CalcFromComboBox_currentTextChanged(const QString &arg1);
+//    void on_cont7CalcFromComboBox_currentTextChanged(const QString &arg1);
 
-    void on_cont8CalcFromComboBox_currentIndexChanged(const QString &arg1);
+//    //void on_cont8CalcFromComboBox_currentIndexChanged(const QString &arg1);
 
-    void on_cont9CalcFromComboBox_currentTextChanged(const QString &arg1);
+//    void on_cont9CalcFromComboBox_currentTextChanged(const QString &arg1);
 
-    void on_cont8CalcFromComboBox_currentTextChanged(const QString &arg1);
+//    void on_cont8CalcFromComboBox_currentTextChanged(const QString &arg1);
 
-    void on_cont10CalcFromComboBox_currentTextChanged(const QString &arg1);
+//    void on_cont10CalcFromComboBox_currentTextChanged(const QString &arg1);
+
+    void on_cont1CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont2CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont3CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont4CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont5CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont6CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont7CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont8CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont9CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont10CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont11CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont12CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont13CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont14CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont15CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont16CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont17CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont18CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont19CalcFromComboBox_activated(const QString &arg1);
+
+    void on_cont20CalcFromComboBox_activated(const QString &arg1);
 
 private:
 
@@ -202,6 +242,7 @@ private:
     void showRows();
     void refreshFields();
     void loadDateLabels();
+    void setCalcFrom(QString arg1, int nContingencyIndex);
 
 
 

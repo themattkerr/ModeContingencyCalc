@@ -76,6 +76,7 @@ void ContingencyData::setCalcType(int nCalcType, int nContingencyNum)
     else {
         m_Contingency[nContingencyNum].m_nCalcFrom = -1;
     }
+    refreshData();
 }
 void ContingencyData::setUseBusinessDays(bool BusinessDays, int nContingencyNum)
 {

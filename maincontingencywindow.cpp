@@ -845,57 +845,184 @@ void MainContingencyWindow::on_cont20DaysSpinBox_valueChanged(int arg1)
 
 
 
-void MainContingencyWindow::on_cont1CalcFromComboBox_currentTextChanged(const QString &arg1)
-{
+//void MainContingencyWindow::on_cont1CalcFromComboBox_currentTextChanged(const QString &arg1)
+//{
 
+//}
+
+//void MainContingencyWindow::on_cont2CalcFromComboBox_currentTextChanged(const QString &arg1)
+//{
+
+//}
+
+//void MainContingencyWindow::on_cont3CalcFromComboBox_currentTextChanged(const QString &arg1)
+//{
+
+//}
+
+//void MainContingencyWindow::on_cont4CalcFromComboBox_currentTextChanged(const QString &arg1)
+//{
+
+//}
+
+//void MainContingencyWindow::on_cont5CalcFromComboBox_currentTextChanged(const QString &arg1)
+//{
+
+//}
+
+//void MainContingencyWindow::on_cont6CalcFromComboBox_currentTextChanged(const QString &arg1)
+//{
+
+//}
+
+//void MainContingencyWindow::on_cont7CalcFromComboBox_currentTextChanged(const QString &arg1)
+//{
+
+//}
+
+////void MainContingencyWindow::on_cont8CalcFromComboBox_currentIndexChanged(const QString &arg1)
+////{
+
+////}
+//void MainContingencyWindow::on_cont8CalcFromComboBox_currentTextChanged(const QString &arg1)
+//{
+
+//}
+//void MainContingencyWindow::on_cont9CalcFromComboBox_currentTextChanged(const QString &arg1)
+//{
+
+//}
+
+//void MainContingencyWindow::on_cont10CalcFromComboBox_currentTextChanged(const QString &arg1)
+//{
+
+//}
+
+void MainContingencyWindow::on_cont1CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 0;
+    setCalcFrom(arg1, nContingencyIndex);
 }
 
-void MainContingencyWindow::on_cont2CalcFromComboBox_currentTextChanged(const QString &arg1)
+void MainContingencyWindow::on_cont2CalcFromComboBox_activated(const QString &arg1)
 {
-
+    int nContingencyIndex = 1;
+    setCalcFrom(arg1, nContingencyIndex);
 }
 
-void MainContingencyWindow::on_cont3CalcFromComboBox_currentTextChanged(const QString &arg1)
+void MainContingencyWindow::on_cont3CalcFromComboBox_activated(const QString &arg1)
 {
-
+    int nContingencyIndex = 2;
+    setCalcFrom(arg1, nContingencyIndex);
 }
 
-void MainContingencyWindow::on_cont4CalcFromComboBox_currentTextChanged(const QString &arg1)
+void MainContingencyWindow::on_cont4CalcFromComboBox_activated(const QString &arg1)
 {
-
+    int nContingencyIndex = 3;
+    setCalcFrom(arg1, nContingencyIndex);
 }
 
-void MainContingencyWindow::on_cont5CalcFromComboBox_currentTextChanged(const QString &arg1)
+void MainContingencyWindow::on_cont5CalcFromComboBox_activated(const QString &arg1)
 {
-
+    int nContingencyIndex = 4;
+    setCalcFrom(arg1, nContingencyIndex);
 }
 
-void MainContingencyWindow::on_cont6CalcFromComboBox_currentTextChanged(const QString &arg1)
+void MainContingencyWindow::on_cont6CalcFromComboBox_activated(const QString &arg1)
 {
-
+    int nContingencyIndex = 5;
+    setCalcFrom(arg1, nContingencyIndex);
 }
 
-void MainContingencyWindow::on_cont7CalcFromComboBox_currentTextChanged(const QString &arg1)
+void MainContingencyWindow::on_cont7CalcFromComboBox_activated(const QString &arg1)
 {
-
+    int nContingencyIndex = 6;
+    setCalcFrom(arg1, nContingencyIndex);
 }
 
-void MainContingencyWindow::on_cont8CalcFromComboBox_currentIndexChanged(const QString &arg1)
+void MainContingencyWindow::on_cont8CalcFromComboBox_activated(const QString &arg1)
 {
-
-}
-void MainContingencyWindow::on_cont8CalcFromComboBox_currentTextChanged(const QString &arg1)
-{
-
-}
-void MainContingencyWindow::on_cont9CalcFromComboBox_currentTextChanged(const QString &arg1)
-{
-
+    int nContingencyIndex = 7;
+    setCalcFrom(arg1, nContingencyIndex);
 }
 
-
-
-void MainContingencyWindow::on_cont10CalcFromComboBox_currentTextChanged(const QString &arg1)
+void MainContingencyWindow::on_cont9CalcFromComboBox_activated(const QString &arg1)
 {
+    int nContingencyIndex = 8;
+    setCalcFrom(arg1, nContingencyIndex);
+}
 
+void MainContingencyWindow::on_cont10CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 9;
+    setCalcFrom(arg1, nContingencyIndex);
+}
+
+void MainContingencyWindow::on_cont11CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 10;
+    setCalcFrom(arg1, nContingencyIndex);
+}
+
+void MainContingencyWindow::on_cont12CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 11;
+    setCalcFrom(arg1, nContingencyIndex);
+}
+
+void MainContingencyWindow::on_cont13CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 12;
+    setCalcFrom(arg1, nContingencyIndex);
+}
+
+void MainContingencyWindow::on_cont14CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 13;
+    setCalcFrom(arg1, nContingencyIndex);
+}
+
+void MainContingencyWindow::on_cont15CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 14;
+    setCalcFrom(arg1, nContingencyIndex);
+}
+
+void MainContingencyWindow::on_cont16CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 15;
+    setCalcFrom(arg1, nContingencyIndex);
+}
+
+void MainContingencyWindow::on_cont17CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 16;
+    setCalcFrom(arg1, nContingencyIndex);
+}
+
+void MainContingencyWindow::on_cont18CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 17;
+    setCalcFrom(arg1, nContingencyIndex);
+}
+
+void MainContingencyWindow::on_cont19CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 18;
+    setCalcFrom(arg1, nContingencyIndex);
+}
+
+void MainContingencyWindow::on_cont20CalcFromComboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 19;
+    setCalcFrom(arg1, nContingencyIndex);
+}
+void MainContingencyWindow::setCalcFrom(QString arg1, int nContingencyIndex)
+{
+    if(arg1 == CALC_FROM_AO_TEXT)       {m_contData.setCalcType(CALC_FROM_AO, nContingencyIndex);       }
+    if(arg1 == CALC_FROM_CLOSING_TEXT)  {m_contData.setCalcType(CALC_FROM_CLOSING, nContingencyIndex);  }
+    if(arg1 == HARD_DATE_TEXT)          {m_contData.setCalcType(HARD_DATE, nContingencyIndex);          }
+    if(arg1 != CALC_FROM_AO_TEXT && arg1 != CALC_FROM_CLOSING_TEXT && arg1 != HARD_DATE_TEXT)
+        m_contData.setCalcType(-1,nContingencyIndex);
+    refreshFields();
 }
