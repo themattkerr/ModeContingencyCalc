@@ -13,12 +13,15 @@
 #include <QTime>
 #include "textforcontingencies.h"
 
+#define HARD_DATE_TEXT "Hard Date"
+#define CALC_FROM_AO_TEXT "Days From AO"
+#define CALC_FROM_CLOSING_TEXT "Days To Closing"
+
 enum CalculateFrom {
 
-    HARD_DATE           = 0,
-    CALC_FROM_AO        = 1,
-    CALC_FROM_CLOSING   = 2,
-
+    CALC_FROM_AO        = 0,
+    CALC_FROM_CLOSING   = 1,
+    HARD_DATE           = 2,
 };
 
 class Contingency{

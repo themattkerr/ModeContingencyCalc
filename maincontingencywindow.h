@@ -168,6 +168,28 @@ private slots:
 
     void on_cont20DaysSpinBox_valueChanged(int arg1);
 
+    void on_cont1CalcFromComboBox_currentTextChanged(const QString &arg1);
+
+    void on_cont2CalcFromComboBox_currentTextChanged(const QString &arg1);
+
+    void on_cont3CalcFromComboBox_currentTextChanged(const QString &arg1);
+
+    void on_cont4CalcFromComboBox_currentTextChanged(const QString &arg1);
+
+    void on_cont5CalcFromComboBox_currentTextChanged(const QString &arg1);
+
+    void on_cont6CalcFromComboBox_currentTextChanged(const QString &arg1);
+
+    void on_cont7CalcFromComboBox_currentTextChanged(const QString &arg1);
+
+    void on_cont8CalcFromComboBox_currentIndexChanged(const QString &arg1);
+
+    void on_cont9CalcFromComboBox_currentTextChanged(const QString &arg1);
+
+    void on_cont8CalcFromComboBox_currentTextChanged(const QString &arg1);
+
+    void on_cont10CalcFromComboBox_currentTextChanged(const QString &arg1);
+
 private:
 
     Ui::MainContingencyWindow *ui;
@@ -175,6 +197,7 @@ private:
     void setupGUI();
     void hideCustomLineEdits();
     void loadTitles();
+    void loadCalcFrom();
     void loadDefaults();
     void showRows();
     void refreshFields();
@@ -193,11 +216,15 @@ private:
     void setupDaysSpinBoxQList();
     QList <QSpinBox*> m_allSpinBoxes;
     void setupAORadioButtonQList();
-    QList <QRadioButton*> m_allAORadioButtons;
-    void setupClosingRadioButtonQList();
-    QList <QRadioButton*> m_allClosingRadioButtons;
-    void setupHardDateRadioButtonQList();
-    QList <QRadioButton*> m_allHardDateRadioButtons;
+
+    QList <QComboBox*> m_allCalcFrom;
+    void setupCalcFromQlists();
+
+    //    QList <QRadioButton*> m_allAORadioButtons;
+    //    void setupClosingRadioButtonQList();
+    //    QList <QRadioButton*> m_allClosingRadioButtons;
+    //    void setupHardDateRadioButtonQList();
+    //    QList <QRadioButton*> m_allHardDateRadioButtons;
     void setupBusinessDaysCheckboxQList();
     QList <QCheckBox*> m_allBusinessDaysCheckBoxes;
 
