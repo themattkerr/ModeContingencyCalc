@@ -261,6 +261,7 @@ void ContingencyData::calculateDaysFromDate(int nContingencyNum)
 {
     QString strBusinessDayList;
     Contingency *x = &m_Contingency[nContingencyNum];
+
     if(x->m_nCalcFrom == HARD_DATE || x->m_nCalcFrom == CALC_FROM_AO  )
     {
         if(!(x->m_bUseBusinessDays))
@@ -283,7 +284,7 @@ void ContingencyData::calculateDaysFromDate(int nContingencyNum)
         }
         if(x->m_bUseBusinessDays)
         {
-            x->m_nNumOfDays = numOfBusinessDaysBetween(x->m_dtDateOfContingency, m_dtClosingDate, strBusinessDayList);
+            x->m_nNumOfDays = numOfBusinessDaysBetween(m_dtClosingDate, x->m_dtDateOfContingency,  strBusinessDayList);
             return;
         }
     }

@@ -171,7 +171,14 @@
                <widget class="QLineEdit" name="cont1CustomLineEdit"/>
               </item>
               <item row="3" column="0" colspan="2">
-               <widget class="QDateEdit" name="cont1dateEdit"/>
+               <widget class="QDateEdit" name="cont1dateEdit">
+                <property name="sizePolicy">
+                 <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                  <horstretch>0</horstretch>
+                  <verstretch>0</verstretch>
+                 </sizepolicy>
+                </property>
+               </widget>
               </item>
               <item row="5" column="0">
                <widget class="QSpinBox" name="cont1DaysSpinBox">
@@ -1236,7 +1243,7 @@
      <x>0</x>
      <y>0</y>
      <width>1191</width>
-     <height>26</height>
+     <height>20</height>
     </rect>
    </property>
   </widget>
