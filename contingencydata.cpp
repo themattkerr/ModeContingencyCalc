@@ -2,6 +2,7 @@
 #include <QDate>
 #include <QString>
 #include <QTime>
+#include <QMessageBox>
 #include "contingencydata.h"
 #include "mattcalculations.h"
 
@@ -64,6 +65,7 @@ void ContingencyData::enterDateOfContingency(QDate dtDateOfContingency,int nCont
     calculateDaysFromDate(nContingencyNum );
 }
 //void ContingencyData::enterTimeOfDay(QTime TimeOfDay, int nContingencyNum);
+
 void ContingencyData::enterDays(int nDays, int nContingencyNum)
 {
     m_Contingency[nContingencyNum].m_nNumOfDays = nDays;
@@ -257,46 +259,67 @@ void ContingencyData::sortContingenciesDecending()
 
 void ContingencyData::calculateDaysFromDate(int nContingencyNum)
 {
-    if(m_Contingency[nContingencyNum].m_nCalcFrom == HARD_DATE || m_Contingency[nContingencyNum].m_nCalcFrom == CALC_FROM_AO  )
-        {m_Contingency[nContingencyNum].m_nNumOfDays = m_dtAODate.daysTo(m_Contingency[nContingencyNum].m_dtDateOfContingency);
-        return;}
-    if(m_Contingency[nContingencyNum].m_nCalcFrom == CALC_FROM_CLOSING)
-        {m_Contingency[nContingencyNum].m_nNumOfDays = m_dtClosingDate.daysTo(m_Contingency[nContingencyNum].m_dtDateOfContingency);
-        return;}
-    else { m_Contingency[nContingencyNum].m_nNumOfDays = 0;}
+    QString strBusinessDayList;
+    Contingency *x = &m_Contingency[nContingencyNum];
+    if(x->m_nCalcFrom == HARD_DATE || x->m_nCalcFrom == CALC_FROM_AO  )
+    {
+        if(!(x->m_bUseBusinessDays))
+        {
+            x->m_nNumOfDays = m_dtAODate.daysTo(x->m_dtDateOfContingency);
+            return;
+        }
+        if(x->m_bUseBusinessDays)
+        {
+            x->m_nNumOfDays = numOfBusinessDaysBetween(m_dtAODate,x->m_dtDateOfContingency,strBusinessDayList);
+            return;
+        }
+    }
+    if(x->m_nCalcFrom == CALC_FROM_CLOSING)
+    {
+        if(!(x->m_bUseBusinessDays))
+        {
+            x->m_nNumOfDays = m_dtClosingDate.daysTo(x->m_dtDateOfContingency);
+            return;
+        }
+        if(x->m_bUseBusinessDays)
+        {
+            x->m_nNumOfDays = numOfBusinessDaysBetween(x->m_dtDateOfContingency, m_dtClosingDate, strBusinessDayList);
+            return;
+        }
+    }
+    else { x->m_nNumOfDays = 0;}
 }
 void ContingencyData::calculateDateFromDays(int nContingencyNum, QString &strReasons )
 {
-    if(m_Contingency[nContingencyNum].m_nCalcFrom == HARD_DATE)
-        {m_Contingency[nContingencyNum].m_nNumOfDays = m_dtAODate.daysTo(m_Contingency[nContingencyNum].m_dtDateOfContingency);
-        return;}
-    if(m_Contingency[nContingencyNum].m_nCalcFrom == CALC_FROM_AO)
+    Contingency *x = &m_Contingency[nContingencyNum];
+
+    if(x->m_nCalcFrom == HARD_DATE) // since Date is a set point the only thing that can change is the count of days
+    {
+        if(x->m_bUseBusinessDays)
+           x->m_nNumOfDays = numOfBusinessDaysBetween(m_dtAODate, x->m_dtDateOfContingency, strReasons );
+        else
+            x->m_nNumOfDays = m_dtAODate.daysTo(x->m_dtDateOfContingency);
+        return;
+    }
+    if(x->m_nCalcFrom == CALC_FROM_AO)
         {
-            if(m_Contingency[nContingencyNum].m_bUseBusinessDays)
-            {
-                m_Contingency[nContingencyNum].m_dtDateOfContingency =  dateBusinessDaysAway (m_dtAODate,m_Contingency[nContingencyNum].m_nNumOfDays,strReasons  );
-                return;
-            }
+            if(x->m_bUseBusinessDays)
+                x->m_dtDateOfContingency =  dateBusinessDaysAway (m_dtAODate,x->m_nNumOfDays,strReasons  );
             else
-            {
-                m_Contingency[nContingencyNum].m_dtDateOfContingency = m_dtAODate.addDays(m_Contingency[nContingencyNum].m_nNumOfDays);
-                return;
-            }
+                x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
         }
-    if(m_Contingency[nContingencyNum].m_nCalcFrom == CALC_FROM_CLOSING)
+    if(x->m_nCalcFrom == CALC_FROM_CLOSING)
        {
-            if(m_Contingency[nContingencyNum].m_bUseBusinessDays)
-            {
-                 m_Contingency[nContingencyNum].m_dtDateOfContingency = dateBusinessDaysAway(m_dtClosingDate, m_Contingency[nContingencyNum].m_nNumOfDays, strReasons);
-                 return;
-            }
+            if(x->m_bUseBusinessDays)
+                 x->m_dtDateOfContingency = dateBusinessDaysAway(m_dtClosingDate, x->m_nNumOfDays, strReasons);
             else
-            {
-                m_Contingency[nContingencyNum].m_dtDateOfContingency = m_dtClosingDate.addDays(m_Contingency[nContingencyNum].m_nNumOfDays);
-                return;
-            }
+                x->m_dtDateOfContingency = m_dtClosingDate.addDays(x->m_nNumOfDays);
         }
-    else { m_Contingency[nContingencyNum].m_nNumOfDays = 0;}
+//     if(x->m_nCalcFrom != HARD_DATE && x->m_nCalcFrom != CALC_FROM_AO && x->m_nCalcFrom != CALC_FROM_CLOSING )
+//     {
+//         x->m_nNumOfDays = 0;
+//     }
+     return;
 }
 
 void ContingencyData::refreshData()

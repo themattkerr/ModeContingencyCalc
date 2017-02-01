@@ -188,7 +188,10 @@ QDate dateBusinessDaysAway(QDate dtInputDate, int nNumOfBusinessDays, QString &s
         {
             nNumberOfActualDays++;
             if(!(isBusinessDay(dtInputDate.addDays(nNumberOfActualDays), strTemp)))
-                {iii--; strListOfDaysOff.append(dtInputDate.addDays(nNumberOfActualDays).toString()).append("\t").append(strTemp).append("\n");}
+            {
+                iii--;
+                strListOfDaysOff.append(dtInputDate.addDays(nNumberOfActualDays).toString()).append("\t").append(strTemp).append("\n");
+            }
         }
      }
     if(nNumOfBusinessDays < 0)
@@ -197,7 +200,10 @@ QDate dateBusinessDaysAway(QDate dtInputDate, int nNumOfBusinessDays, QString &s
         {
             nNumberOfActualDays--;
             if(!(isBusinessDay(dtInputDate.addDays(nNumberOfActualDays), strTemp)))
-                {iii--; strListOfDaysOff.append(dtInputDate.addDays(nNumberOfActualDays).toString()).append("\t").append(strTemp).append("\n");}
+            {
+                iii--;
+                strListOfDaysOff.append(dtInputDate.addDays(nNumberOfActualDays).toString()).append("\t").append(strTemp).append("\n");
+            }
         }
      }
     return dtInputDate.addDays(nNumberOfActualDays);
@@ -207,29 +213,37 @@ int   numOfBusinessDaysBetween(QDate dtStartDate, QDate dtEndDate, QString &strL
 {
     int nNumOfDays = 0;
     int nNumOfBusinessDays = 0;
+    QString strTemp;
 
+    nNumOfDays = dtStartDate.daysTo(dtEndDate);
     if(nNumOfDays == 0)
         return 0;
-    nNumOfDays = dtStartDate.daysTo(dtEndDate);
+
     if (nNumOfDays > 0)
     {
         for(int iii = 1; iii <= nNumOfDays; iii++)
         {
-            if(isBusinessDay(dtStartDate.addDays(iii),strListOfDaysOff))
+            if(isBusinessDay(dtStartDate.addDays(iii),strTemp))
                 nNumOfBusinessDays++;
+            else {
+                strListOfDaysOff.append(dtStartDate.addDays(iii).toString()).append("\t").append(strTemp).append("\n");
+            }
         }
         return nNumOfBusinessDays;
     }
     if (nNumOfDays < 0)
     {
-        for(int iii = nNumOfDays; iii <= 0; iii++)  // This case needs a lot of testing
+        for(int iii = nNumOfDays; iii < 0; iii++)  // This case needs a lot of testing
         {
-            if(isBusinessDay(dtStartDate.addDays(iii),strListOfDaysOff))
-                nNumOfBusinessDays++;
+            if(isBusinessDay(dtStartDate.addDays(iii),strTemp))
+                nNumOfBusinessDays--;
+            else {
+                strListOfDaysOff.append(dtStartDate.addDays(iii).toString()).append("\t").append(strTemp).append("\n");
+            }
         }
         return nNumOfBusinessDays;
     }
     strListOfDaysOff = "Error";
-    return 0;
+    return -1;
 }
 
