@@ -298,7 +298,8 @@ void ContingencyData::setContingencyReportText(int nContingencyNum)
     if(x->m_strContingencyTitle == BLANK)                     {x->m_strReportInfoBuyer.clear();
                                                                x->m_strReportInfoSeller.clear();
     }
-    if(x->m_strContingencyTitle == EARNEST_MONEY_TITLE)       {x->m_strReportInfoBuyer.append(EARNEST_MONEY1_BUYER);
+    if(x->m_strContingencyTitle == EARNEST_MONEY_TITLE)         {//---Set Buyer Info---
+                                                                x->m_strReportInfoBuyer.append(EARNEST_MONEY1_BUYER);
                                                                 if(m_strListingBrokerTrustName == "")
                                                                      x->m_strReportInfoBuyer.append(EARNEST_MONEY_SUB1_BUYER);
                                                                  else
@@ -315,7 +316,18 @@ void ContingencyData::setContingencyReportText(int nContingencyNum)
                                                                     x->m_strReportInfoBuyer.append("'").append(m_strPropertyAddress).append("'");
                                                                 x->m_strReportInfoBuyer.append(EARNEST_MONEY4_BUYER);
 
-                                                               x->m_strReportInfoSeller.append(EARNEST_MONEY1_SELLER).append(m_strListingBrokerTrustName).append(EARNEST_MONEY2_SELLER).append(m_strEarnestMoneyAmout).append(EARNEST_MONEY3_SELLER); }
+                                                               //---Set seller info ---
+                                                               x->m_strReportInfoSeller.append(EARNEST_MONEY1_SELLER);
+                                                               if (m_strEarnestMoneyAmout != "")
+                                                                   x->m_strReportInfoSeller.append(EARNEST_MONEY2_SELLER).append(m_strEarnestMoneyAmout).append(" ");
+                                                               x->m_strReportInfoSeller.append(EARNEST_MONEY3_SELLER);
+                                                               if(m_strListingBrokerTrustName != "")
+                                                                   x->m_strReportInfoSeller.append("'").append(m_strListingBrokerTrustName).append("'");
+                                                               else {
+                                                                   x->m_strReportInfoSeller.append(EARNEST_MONEY4_SELLER);
+                                                                     }
+                                                               x->m_strReportInfoSeller.append(EARNEST_MONEY5_SELLER);
+                                                               }
 
     if(x->m_strContingencyTitle == CONDITION_REPORT_TITLE)    {x->m_strReportInfoBuyer.append(CONDITION_REPORT_BUYER );
                                                                x->m_strReportInfoSeller.append(CONDITION_REPORT_SELLER ); }
