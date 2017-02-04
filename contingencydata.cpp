@@ -305,7 +305,7 @@ void ContingencyData::setContingencyReportText(int nContingencyNum)
                                                                  else
                                                                      x->m_strReportInfoBuyer.append("'").append(m_strListingBrokerTrustName).append("'");
                                                                 x->m_strReportInfoBuyer.append(EARNEST_MONEY2_BUYER);
-                                                                if (m_strEarnestMoneyAmout == "")
+                                                                if (m_strEarnestMoneyAmout == "" || m_strEarnestMoneyAmout == doubleToCurrency(0,US_DOLLARS ) )
                                                                     x->m_strReportInfoBuyer.append(EARNEST_MONEY_SUB2_BUYER);
                                                                 else
                                                                     x->m_strReportInfoBuyer.append(m_strEarnestMoneyAmout);
