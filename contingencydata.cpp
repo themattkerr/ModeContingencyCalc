@@ -35,29 +35,41 @@ void ContingencyData::enterDaysClosing(int nDaysClosing)
 void ContingencyData::enterListingBrokerTrustName(QString strListingBrokerTrustName)
 {
     m_strListingBrokerTrustName = strListingBrokerTrustName;
+    refreshData();
 }
 void ContingencyData::enterEarnestMoneyAmount(QString strEarnestMoneyAmout)
 {
     double dTemp;
     dTemp = usDollarsStringToDouble(strEarnestMoneyAmout);
     m_strEarnestMoneyAmout = doubleToCurrency(dTemp, US_DOLLARS);
+    refreshData();
 }
 void ContingencyData::enterMLSNumber(QString strMLSNumber)
 {
     m_strMLSNumber = strMLSNumber;
+    refreshData();
 }
 void ContingencyData::enterPropertyAddress(QString strPropertyAddress)
 {
     m_strPropertyAddress = strPropertyAddress;
+    refreshData();
 }
 
 void ContingencyData::enterContingencyTitle(QString strContingencyTitle, int nContingencyNum)
 {
     m_Contingency[nContingencyNum].m_strContingencyTitle.clear();
-    m_Contingency[nContingencyNum].m_strReportInfo.clear();
+    m_Contingency[nContingencyNum].m_strReportInfoBuyer.clear();
+    m_Contingency[nContingencyNum].m_strReportInfoSeller.clear();
     m_Contingency[nContingencyNum].m_strContingencyTitle = strContingencyTitle;
-    //m_Contingency[nContingencyNum].m_strReportInfo = setContingencyReportText(strContingencyTitle);
+    if (strContingencyTitle == BLANK)
+        resetContingency(nContingencyNum);
+    //m_Contingency[nContingencyNum].m_strReportInfoBuyer = setContingencyReportText(strContingencyTitle);
     refreshData();
+}
+void ContingencyData::enterCustomText(QString strCustomText, int nContingencyNum)
+{
+    m_Contingency[nContingencyNum].m_strCustomText.clear();
+    m_Contingency[nContingencyNum].m_strCustomText.append(strCustomText);
 }
 void ContingencyData::enterDateOfContingency(QDate dtDateOfContingency,int nContingencyNum )
 {
@@ -121,6 +133,10 @@ QString ContingencyData::getContingencyTitle(int nContingencyNum)
 {
     return m_Contingency[nContingencyNum].m_strContingencyTitle;
 }
+QString ContingencyData::getCustomText(int nContingencyNum)
+{
+    return m_Contingency[nContingencyNum].m_strCustomText;
+}
 QDate   ContingencyData::getDateOfContingency(int nContingencyNum)
 {
     return m_Contingency[nContingencyNum].m_dtDateOfContingency;
@@ -131,11 +147,14 @@ int     ContingencyData::getNumOfDays(int nContingencyNum)
 {
     return m_Contingency[nContingencyNum].m_nNumOfDays;
 }
-QString ContingencyData::getReportInfo(int nContingencyNum)
+QString ContingencyData::getReportInfoBuyer(int nContingencyNum)
 {
-    return m_Contingency[nContingencyNum].m_strReportInfo;
+    return m_Contingency[nContingencyNum].m_strReportInfoBuyer;
 }
-
+QString ContingencyData::getReportInfoSeller(int nContingencyNum)
+{
+    return m_Contingency[nContingencyNum].m_strReportInfoSeller;
+}
 int     ContingencyData::getCalcFrom(int nContingencyNum)
 {
     return m_Contingency[nContingencyNum].m_nCalcFrom;
@@ -152,7 +171,7 @@ void ContingencyData::setDefaults()
      m_nDaysClosing = 60;
      m_dtClosingDate = m_dtAODate.addDays(m_nDaysClosing);
 
-     m_strListingBrokerTrustName = "Listing Broker Trust";
+     m_strListingBrokerTrustName = "";
      m_strEarnestMoneyAmout = "";
      m_strMLSNumber = "";
      m_strPropertyAddress = "";
@@ -162,7 +181,8 @@ void ContingencyData::setDefaults()
      x->m_nNumOfDays = 5;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
-     x->m_strReportInfo.clear();
+     x->m_strReportInfoBuyer.clear();
+     x->m_strReportInfoSeller.clear();
      x->m_bUseBusinessDays = false;
      x->m_strBusinessDayReasons.clear();
 
@@ -171,7 +191,8 @@ void ContingencyData::setDefaults()
      x->m_nNumOfDays = 45;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
-     x->m_strReportInfo.clear();
+     x->m_strReportInfoBuyer.clear();
+     x->m_strReportInfoSeller.clear();
      x->m_bUseBusinessDays = false;
      x->m_strBusinessDayReasons.clear();
 
@@ -180,7 +201,8 @@ void ContingencyData::setDefaults()
      x->m_nNumOfDays = 40;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
-     x->m_strReportInfo.clear();
+     x->m_strReportInfoBuyer.clear();
+     x->m_strReportInfoSeller.clear();
      x->m_bUseBusinessDays = false;
      x->m_strBusinessDayReasons.clear();
 
@@ -189,7 +211,8 @@ void ContingencyData::setDefaults()
      x->m_nNumOfDays = 14;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
-     x->m_strReportInfo.clear();
+     x->m_strReportInfoBuyer.clear();
+     x->m_strReportInfoSeller.clear();
      x->m_bUseBusinessDays = false;
      x->m_strBusinessDayReasons.clear();
 
@@ -198,64 +221,156 @@ void ContingencyData::setDefaults()
      x->m_nNumOfDays = 14;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
-     x->m_strReportInfo.clear();
+     x->m_strReportInfoBuyer.clear();
+     x->m_strReportInfoSeller.clear();
      x->m_bUseBusinessDays = false;
      x->m_strBusinessDayReasons.clear();
 
     for(int iii = 5; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
-        x =  &m_Contingency[iii];
-        x->m_strContingencyTitle = "-";
-        x->m_nNumOfDays = 0;
-        x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
-        x->m_nCalcFrom = CALC_FROM_AO;
-        x->m_strReportInfo.clear();
-        x->m_bUseBusinessDays = false;
-        x->m_strBusinessDayReasons.clear();
+        resetContingency(iii);
+//        x =  &m_Contingency[iii];
+//        x->m_strContingencyTitle = "-";
+//        x->m_nNumOfDays = 0;
+//        x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
+//        x->m_nCalcFrom = CALC_FROM_AO;
+//        x->m_strReportInfoBuyer.clear();
+//        x->m_bUseBusinessDays = false;
+//        x->m_strBusinessDayReasons.clear();
     }
 
 
     x=0;
 
 }
-
-//----Private Fucntions-------------------------------------------------------------------------------------
-void ContingencyData::setContingencyReportText(int nContingencyNum)
+void ContingencyData::resetContingency(int nContingencyNum)
 {
-    Contingency *x = &m_Contingency[nContingencyNum];
-    x->m_strReportInfo.clear();
-
-    if(x->m_strContingencyTitle == BLANK)                     {x->m_strReportInfo.clear(); }
-    if(x->m_strContingencyTitle == EARNEST_MONEY_TITLE)       {x->m_strReportInfo.append(EARNEST_MONEY1).append(m_strListingBrokerTrustName).append(EARNEST_MONEY2).append(m_strEarnestMoneyAmout).append(EARNEST_MONEY3);  }
-    if(x->m_strContingencyTitle == CONDITION_REPORT_TITLE)    {x->m_strReportInfo.append(CONDITION_REPORT ); }
-    if(x->m_strContingencyTitle == FINANCING_TITLE)           {x->m_strReportInfo.append(FINANCING );}
-    if(x->m_strContingencyTitle == APPRAISAL_TITLE)           {x->m_strReportInfo.append(APPRAISAL ); }
-    if(x->m_strContingencyTitle == INSPECTION_TITLE)          {x->m_strReportInfo.append(INSPECTION ); }
-    if(x->m_strContingencyTitle == RADON_TITLE)               {x->m_strReportInfo.append(RADON ); }
-    if(x->m_strContingencyTitle == WELL_SEPTIC_TITLE)         {x->m_strReportInfo.append(WELL_SEPTIC ); }
-    if(x->m_strContingencyTitle == FINAL_WALKTHROUGH_TITLE)   {x->m_strReportInfo.append(FINAL_WALKTHROUGH ); }
-    if(x->m_strContingencyTitle == HOME_INSURENCE_TITLE)      {x->m_strReportInfo.append(HOME_OWNER_INSSURENCE ); }
-    if(x->m_strContingencyTitle == CONDO_DOCS_TITLE)          {x->m_strReportInfo.append(CONDO_DOCS ); }
-    if(x->m_strContingencyTitle == COMFORT_LETTER_TITLE)      {x->m_strReportInfo.append(COMFORT_LETTER ); }
-    if(x->m_strContingencyTitle == ENVIRONMENTAL_TEST_TITLE)  {x->m_strReportInfo.append(ENVIRONMENTAL_TEST ); }
-    if(x->m_strContingencyTitle == ATTORNEY_REVIEW_TITLE)     {x->m_strReportInfo.append(ATTORNEY_REVIEW ); }
-    if(x->m_strContingencyTitle == SEWER_TITLE)               {x->m_strReportInfo.append(SEWER ); }
-    if(x->m_strContingencyTitle == ZONING_TITLE)              {x->m_strReportInfo.append(ZONING ); }
-    if(x->m_strContingencyTitle == SURVEY_TITLE)              {x->m_strReportInfo.append(SURVEY ); }
-    if(x->m_strContingencyTitle == RATE_LOCK_TITLE)           {x->m_strReportInfo.append(RATE_LOCK ); }
-    if(x->m_strContingencyTitle == CUSTOM_TITLE)              {}
-    x = 0;
-
+    Contingency *x =  &m_Contingency[nContingencyNum];
+    x->m_strContingencyTitle = "-";
+    x->m_nNumOfDays = 0;
+    x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
+    x->m_nCalcFrom = CALC_FROM_AO;
+    x->m_strReportInfoBuyer.clear();
+    x->m_strReportInfoSeller.clear();
+    x->m_bUseBusinessDays = false;
+    x->m_strBusinessDayReasons.clear();
+    x->m_strCustomText.clear();
 }
-
 void ContingencyData::sortContingenciesAcending()
 {
+    Contingency Temp;
+
+    for(int iii = 0; iii < MAX_NUM_CONTINGENCIES;iii++)
+    {
+        for(int jjj = 0; jjj < MAX_NUM_CONTINGENCIES;jjj++)
+        {
+            if(m_Contingency[iii].m_dtDateOfContingency != m_Contingency[jjj].m_dtDateOfContingency)
+            if((m_Contingency[iii].m_dtDateOfContingency < m_Contingency[jjj].m_dtDateOfContingency)
+               && ( m_Contingency[iii].m_strContingencyTitle != BLANK))
+            {
+                Temp = m_Contingency[iii];
+                m_Contingency[iii] = m_Contingency[jjj];
+                m_Contingency[jjj] = Temp;
+//                if(m_Contingency[iii].m_dtDateOfContingency == m_Contingency[jjj].m_dtDateOfContingency
+//                        && (m_Contingency[iii].m_strContingencyTitle < m_Contingency[jjj].m_strContingencyTitle ) )
+//                {
+//                    Temp = m_Contingency[iii];
+//                    m_Contingency[iii] = m_Contingency[jjj];
+//                    m_Contingency[jjj] = Temp;
+//                }
+            }
+        }
+    }
 
 }
 void ContingencyData::sortContingenciesDecending()
 {
 
 }
+
+//----Private Functions-------------------------------------------------------------------------------------
+void ContingencyData::setContingencyReportText(int nContingencyNum)
+{
+    Contingency *x = &m_Contingency[nContingencyNum];
+    x->m_strReportInfoBuyer.clear();
+    x->m_strReportInfoSeller.clear();
+
+    if(x->m_strContingencyTitle == BLANK)                     {x->m_strReportInfoBuyer.clear();
+                                                               x->m_strReportInfoSeller.clear();
+    }
+    if(x->m_strContingencyTitle == EARNEST_MONEY_TITLE)       {x->m_strReportInfoBuyer.append(EARNEST_MONEY1_BUYER);
+                                                                if(m_strListingBrokerTrustName == "")
+                                                                     x->m_strReportInfoBuyer.append(EARNEST_MONEY_SUB1_BUYER);
+                                                                 else
+                                                                     x->m_strReportInfoBuyer.append("'").append(m_strListingBrokerTrustName).append("'");
+                                                                x->m_strReportInfoBuyer.append(EARNEST_MONEY2_BUYER);
+                                                                if (m_strEarnestMoneyAmout == "")
+                                                                    x->m_strReportInfoBuyer.append(EARNEST_MONEY_SUB2_BUYER);
+                                                                else
+                                                                    x->m_strReportInfoBuyer.append(m_strEarnestMoneyAmout);
+                                                                x->m_strReportInfoBuyer.append(EARNEST_MONEY3_BUYER);
+                                                                if(m_strPropertyAddress == "")
+                                                                    x->m_strReportInfoBuyer.append(EARNEST_MONEY_SUB3_BUYER);
+                                                                else
+                                                                    x->m_strReportInfoBuyer.append("'").append(m_strPropertyAddress).append("'");
+                                                                x->m_strReportInfoBuyer.append(EARNEST_MONEY4_BUYER);
+
+                                                               x->m_strReportInfoSeller.append(EARNEST_MONEY1_SELLER).append(m_strListingBrokerTrustName).append(EARNEST_MONEY2_SELLER).append(m_strEarnestMoneyAmout).append(EARNEST_MONEY3_SELLER); }
+
+    if(x->m_strContingencyTitle == CONDITION_REPORT_TITLE)    {x->m_strReportInfoBuyer.append(CONDITION_REPORT_BUYER );
+                                                               x->m_strReportInfoSeller.append(CONDITION_REPORT_SELLER ); }
+
+    if(x->m_strContingencyTitle == FINANCING_TITLE)           {x->m_strReportInfoBuyer.append(FINANCING_BUYER );
+                                                               x->m_strReportInfoSeller.append(FINANCING_SELLER ); }
+
+    if(x->m_strContingencyTitle == APPRAISAL_TITLE)           {x->m_strReportInfoBuyer.append(APPRAISAL_BUYER );
+                                                               x->m_strReportInfoSeller.append(APPRAISAL_SELLER ); }
+
+    if(x->m_strContingencyTitle == INSPECTION_TITLE)          {x->m_strReportInfoBuyer.append(INSPECTION_BUYER );
+                                                               x->m_strReportInfoSeller.append(INSPECTION_SELLER ); }
+
+    if(x->m_strContingencyTitle == RADON_TITLE)               {x->m_strReportInfoBuyer.append(RADON_BUYER );
+                                                               x->m_strReportInfoSeller.append(RADON_SELLER );}
+
+    if(x->m_strContingencyTitle == WELL_SEPTIC_TITLE)         {x->m_strReportInfoBuyer.append(WELL_SEPTIC_BUYER );
+                                                               x->m_strReportInfoSeller.append(WELL_SEPTIC_SELLER );  }
+
+    if(x->m_strContingencyTitle == FINAL_WALKTHROUGH_TITLE)   {x->m_strReportInfoBuyer.append(FINAL_WALKTHROUGH_BUYER );
+                                                               x->m_strReportInfoSeller.append(FINAL_WALKTHROUGH_SELLER ); }
+
+    if(x->m_strContingencyTitle == HOME_INSURENCE_TITLE)      {x->m_strReportInfoBuyer.append(HOME_OWNER_INSSURENCE_BUYER );
+                                                               x->m_strReportInfoSeller.append(HOME_OWNER_INSSURENCE_SELLER ); }
+
+    if(x->m_strContingencyTitle == CONDO_DOCS_TITLE)          {x->m_strReportInfoBuyer.append(CONDO_DOCS_BUYER );
+                                                               x->m_strReportInfoSeller.append(CONDO_DOCS_SELLER ); }
+
+    if(x->m_strContingencyTitle == COMFORT_LETTER_TITLE)      {x->m_strReportInfoBuyer.append(COMFORT_LETTER_BUYER );
+                                                               x->m_strReportInfoSeller.append(COMFORT_LETTER_SELLER ); }
+
+    if(x->m_strContingencyTitle == ENVIRONMENTAL_TEST_TITLE)  {x->m_strReportInfoBuyer.append(ENVIRONMENTAL_TEST_BUYER );
+                                                               x->m_strReportInfoSeller.append(ENVIRONMENTAL_TEST_SELLER ); }
+
+    if(x->m_strContingencyTitle == ATTORNEY_REVIEW_TITLE)     {x->m_strReportInfoBuyer.append(ATTORNEY_REVIEW_BUYER );
+                                                               x->m_strReportInfoSeller.append(ATTORNEY_REVIEW_SELLER ); }
+
+    if(x->m_strContingencyTitle == SEWER_TITLE)               {x->m_strReportInfoBuyer.append(SEWER_BUYER );
+                                                               x->m_strReportInfoSeller.append(SEWER_SELLER ); }
+
+    if(x->m_strContingencyTitle == ZONING_TITLE)              {x->m_strReportInfoBuyer.append(ZONING_BUYER );
+                                                               x->m_strReportInfoSeller.append(ZONING_SELLER ); }
+
+    if(x->m_strContingencyTitle == SURVEY_TITLE)              {x->m_strReportInfoBuyer.append(SURVEY_BUYER );
+                                                               x->m_strReportInfoSeller.append(SURVEY_SELLER ); }
+
+    if(x->m_strContingencyTitle == RATE_LOCK_TITLE)           {x->m_strReportInfoBuyer.append(RATE_LOCK_BUYER );
+                                                               x->m_strReportInfoSeller.append(RATE_LOCK_SELLER ); }
+
+    if(x->m_strContingencyTitle == CUSTOM_TITLE)              {}
+    x = 0;
+
+}
+
+
 
 void ContingencyData::calculateDaysFromDate(int nContingencyNum)
 {
@@ -316,10 +431,10 @@ void ContingencyData::calculateDateFromDays(int nContingencyNum, QString &strRea
             else
                 x->m_dtDateOfContingency = m_dtClosingDate.addDays(x->m_nNumOfDays);
         }
-//     if(x->m_nCalcFrom != HARD_DATE && x->m_nCalcFrom != CALC_FROM_AO && x->m_nCalcFrom != CALC_FROM_CLOSING )
-//     {
-//         x->m_nNumOfDays = 0;
-//     }
+     if(x->m_nCalcFrom != HARD_DATE && x->m_nCalcFrom != CALC_FROM_AO && x->m_nCalcFrom != CALC_FROM_CLOSING )
+     {
+         x->m_nNumOfDays = 0;
+     }
      return;
 }
 
@@ -356,7 +471,7 @@ void ContingencyData::refreshData()
 
 }
 
-QString ContingencyData::generateReport()
-{
+//QString ContingencyData::generateReport()
+//{
 
-}
+//}

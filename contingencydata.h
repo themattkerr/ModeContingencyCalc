@@ -36,7 +36,9 @@ public:
     QString m_strBusinessDayReasons;
     QDate   m_dtDateOfContingency;
     int     m_nNumOfDays;
-    QString m_strReportInfo;
+    QString m_strReportInfoBuyer;
+    QString m_strReportInfoSeller;
+    QString m_strCustomText;
 };
 
 class ContingencyData
@@ -55,7 +57,8 @@ public:
     void enterMLSNumber(QString strMLSNumber);
     void enterPropertyAddress(QString strPropertyAddress);
 
-    void enterContingencyTitle(QString strContingencyTitle, int nContingencyNum);   
+    void enterContingencyTitle(QString strContingencyTitle, int nContingencyNum);
+    void enterCustomText(QString strCustomText, int nContingencyNum);
     void enterDateOfContingency(QDate dtDateOfContingency,int nContingencyNum );
     void enterTimeOfDay(QTime TimeOfDay, int nContingencyNum);
     void enterDays(int nDays, int nContingencyNum);
@@ -74,10 +77,12 @@ public:
     QString getPropertyAddress();
 
     QString getContingencyTitle(int nContingencyNum);
+    QString getCustomText(int nContingencyNum);
     QDate   getDateOfContingency(int nContingencyNum);
     QTime   getTimeOfDay(int nContingencyNum);
     int     getNumOfDays(int nContingencyNum);
-    QString getReportInfo(int nContingencyNum);
+    QString getReportInfoBuyer(int nContingencyNum);
+    QString getReportInfoSeller(int nContingencyNum);
 
     int     getCalcFrom(int nContingencyNum);
     bool    getUseBusinessDays(int nContingencyNum);
@@ -86,6 +91,9 @@ public:
     //void enterContingencyText(QString strContingencyText);
 
     void setDefaults();
+    void resetContingency(int nContingencyNum);
+    void sortContingenciesAcending();
+    void sortContingenciesDecending();
     
 private:
 
@@ -108,12 +116,11 @@ private:
     void calculateDaysFromDate(int nContingencyNum );
     void calculateDateFromDays(int nContingencyNum , QString &strReasons);
 
-    void sortContingenciesAcending();
-    void sortContingenciesDecending();
+
 
     void refreshData();
 
-    QString generateReport();
+//    QString generateReport();
 
 };
 

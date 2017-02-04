@@ -108,10 +108,14 @@ void MainContingencyWindow::refreshFields()
     for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
         if(m_contData.getContingencyTitle(iii) == CUSTOM_TITLE)
+        {
             m_allCustomLineEdits[iii]->show();
+            //m_contData.enterCustomText(m_allCustomLineEdits[iii]->text(), iii);
+        }
         else
             m_allCustomLineEdits[iii]->hide();
 
+        m_allCustomLineEdits[iii]->setText(m_contData.getCustomText(iii) );
         m_allComboxes[iii]->setCurrentText(m_contData.getContingencyTitle(iii));
         m_allDateEdit[iii]->setDate(m_contData.getDateOfContingency(iii) );
         m_allSpinBoxes[iii]->setValue(m_contData.getNumOfDays(iii));
@@ -132,11 +136,15 @@ void MainContingencyWindow::refreshFields()
         }
 
         m_allBusinessDaysCheckBoxes[iii]->setChecked(m_contData.getUseBusinessDays(iii));
+
         loadDateLabels();
     }
 }
 void MainContingencyWindow::loadDateLabels()
 {
+    ui->label_AO_Date->setText(m_contData.getAODate().toString(LONG_DATE_FORMAT));
+    ui->label_Closing_Date->setText(m_contData.getClosingDate().toString(LONG_DATE_FORMAT));
+
     for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
         m_allDateLabels[iii]->setText(m_contData.getDateOfContingency(iii).toString( LONG_DATE_FORMAT)  );
@@ -167,9 +175,10 @@ void MainContingencyWindow::showRows()
             ui->Row2->hide();
             ui->Row3->hide();
             ui->Row4->hide();
+            adjustSize();
         break;
     }
-    adjustSize();
+   adjustSize();
 }
 
 void MainContingencyWindow::setupComboBoxQList()
@@ -312,75 +321,6 @@ void MainContingencyWindow::setupCalcFromQlists()
 }
 
 
-//void MainContingencyWindow::setupAORadioButtonQList()
-//{
-//    m_allAORadioButtons.append(ui->cont1FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont2FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont3FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont4FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont5FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont6FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont7FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont8FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont9FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont10FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont11FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont12FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont13FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont14FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont15FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont16FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont17FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont18FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont19FromAOradioButton);
-//    m_allAORadioButtons.append(ui->cont20FromAOradioButton);
-//}
-//void MainContingencyWindow::setupClosingRadioButtonQList()
-//{
-//    m_allClosingRadioButtons.append(ui->cont1FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont2FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont3FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont4FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont5FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont6FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont7FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont8FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont9FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont10FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont11FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont12FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont13FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont14FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont15FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont16FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont17FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont18FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont19FromClosingRadioButton);
-//    m_allClosingRadioButtons.append(ui->cont20FromClosingRadioButton);
-//}
-//void MainContingencyWindow::setupHardDateRadioButtonQList()
-//{
-//    m_allHardDateRadioButtons.append(ui->cont1HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont2HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont3HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont4HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont5HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont6HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont7HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont8HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont9HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont10HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont11HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont12HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont13HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont14HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont15HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont16HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont17HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont18HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont19HardDateRadioButton);
-//    m_allHardDateRadioButtons.append(ui->cont20HardDateRadioButton);
-//}
 void MainContingencyWindow::setupBusinessDaysCheckboxQList()
 {
     m_allBusinessDaysCheckBoxes.append(ui->cont1BusinessDayCheckBox);
@@ -845,58 +785,7 @@ void MainContingencyWindow::on_cont20DaysSpinBox_valueChanged(int arg1)
 
 
 
-//void MainContingencyWindow::on_cont1CalcFromComboBox_currentTextChanged(const QString &arg1)
-//{
 
-//}
-
-//void MainContingencyWindow::on_cont2CalcFromComboBox_currentTextChanged(const QString &arg1)
-//{
-
-//}
-
-//void MainContingencyWindow::on_cont3CalcFromComboBox_currentTextChanged(const QString &arg1)
-//{
-
-//}
-
-//void MainContingencyWindow::on_cont4CalcFromComboBox_currentTextChanged(const QString &arg1)
-//{
-
-//}
-
-//void MainContingencyWindow::on_cont5CalcFromComboBox_currentTextChanged(const QString &arg1)
-//{
-
-//}
-
-//void MainContingencyWindow::on_cont6CalcFromComboBox_currentTextChanged(const QString &arg1)
-//{
-
-//}
-
-//void MainContingencyWindow::on_cont7CalcFromComboBox_currentTextChanged(const QString &arg1)
-//{
-
-//}
-
-////void MainContingencyWindow::on_cont8CalcFromComboBox_currentIndexChanged(const QString &arg1)
-////{
-
-////}
-//void MainContingencyWindow::on_cont8CalcFromComboBox_currentTextChanged(const QString &arg1)
-//{
-
-//}
-//void MainContingencyWindow::on_cont9CalcFromComboBox_currentTextChanged(const QString &arg1)
-//{
-
-//}
-
-//void MainContingencyWindow::on_cont10CalcFromComboBox_currentTextChanged(const QString &arg1)
-//{
-
-//}
 
 void MainContingencyWindow::on_cont1CalcFromComboBox_activated(const QString &arg1)
 {
@@ -1017,95 +906,306 @@ void MainContingencyWindow::on_cont1BusinessDayCheckBox_clicked()
 
 void MainContingencyWindow::on_cont2BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 1;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont3BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 2;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont4BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 3;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont5BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 4;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont6BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 5;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont7BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 6;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont8BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 7;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont9BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 8;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont10BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 9;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont11BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 10;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont12BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 11;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont13BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 12;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont14BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 13;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont15BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 14;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont16BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 15;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont17BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 16;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont18BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 17;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont19BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 18;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
 
 void MainContingencyWindow::on_cont20BusinessDayCheckBox_clicked()
 {
-
+    int nContingencyIndex = 19;
+    m_contData.setUseBusinessDays(m_allBusinessDaysCheckBoxes[nContingencyIndex]->isChecked(), nContingencyIndex);
+    refreshFields();
 }
+
+void MainContingencyWindow::on_cont1CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 0;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont2CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 1;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont3CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 2;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont4CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 3;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont5CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 4;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont6CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 5;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont7CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 6;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont8CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 7;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont9CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 8;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont10CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 9;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont11CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 10;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont12CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 11;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont13CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 12;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont14CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 13;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont15CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 14;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont16CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 15;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont17CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 16;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont18CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 17;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont19CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 18;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont20CustomLineEdit_textChanged(const QString &arg1)
+{
+    int nContingencyIndex = 19;
+    m_contData.enterCustomText(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+
+void MainContingencyWindow::on_pushButton_Sort_Contingencies_clicked()
+{
+    m_contData.sortContingenciesAcending();
+    refreshFields();
+}
+
+void MainContingencyWindow::on_pushButton_Generate_Report_clicked()
+{
+    refreshFields();
+    ReportOutput *Report = new ReportOutput(this, &m_contData);
+    Report->show();
+}
+
+//void MainContingencyWindow::on_lineEditEarnestMoney_textChanged(const QString &arg1)
+//{
+
+//}
+
+//void MainContingencyWindow::on_lineEditPropertyAddress_textChanged(const QString &arg1)
+//{
+
+//}
+
+//void MainContingencyWindow::on_lineEditMLSNum_textChanged(const QString &arg1)
+//{
+
+//}
+
+//void MainContingencyWindow::on_lineEditListingBrokerTrustName_textChanged(const QString &arg1)
+//{
+
+//}
