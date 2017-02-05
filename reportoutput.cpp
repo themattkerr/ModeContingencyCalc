@@ -2,20 +2,16 @@
 #include "ui_reportoutput.h"
 
 
-ReportOutput::ReportOutput(QWidget *parent, ContingencyData *contData) :
+ReportOutput::ReportOutput(QWidget *parent, ContingencyData *contData, int *nReportType) :
     QDialog(parent),
     ui(new Ui::ReportOutput)
 {
     ui->setupUi(this);
+
     m_OutData = *contData;
-    m_nReportType = BUYERS;
-    switch (m_nReportType) {
-    case BUYERS:           { ui->radioButton_Buyers->setChecked(true); break;}
-    case SELLERS:          { ui->radioButton_Sellers->setChecked(true); break;}
-    case MILESTONES_ONLY:  { ui->radioButton_Milestones->setChecked(true); break;}
-    }
+    m_nReportType = nReportType;
 
-
+    setupGUI();
     copyContingenciesToArray();
     sortAscending();
     generateText();
@@ -30,6 +26,22 @@ ReportOutput::~ReportOutput()
 void ReportOutput::on_pushButton_Close_clicked()
 {
     this->close();
+}
+void ReportOutput::setupGUI()
+{
+    if(m_nReportType == 0)
+        *m_nReportType = BUYERS;
+    if(m_OutData.getPropertyAddress() != "")
+        this->setWindowTitle(m_OutData.getPropertyAddress() + " - Milestone Report");
+    else
+        this->setWindowTitle("Milestone Report");
+
+    switch (*m_nReportType) {
+    case BUYERS:           { ui->radioButton_Buyers->setChecked(true); break;}
+    case SELLERS:          { ui->radioButton_Sellers->setChecked(true); break;}
+    case MILESTONES_ONLY:  { ui->radioButton_Milestones->setChecked(true); break;}
+    }
+
 }
 
 void ReportOutput::copyContingenciesToArray()
@@ -148,9 +160,9 @@ void ReportOutput::generateText()
                 break;
 
                 }
-            if(m_nReportType == BUYERS)
+            if(*m_nReportType == BUYERS)
                 m_strOutputText.append(x->m_strReportInfoBuyer).append("\n");
-            if(m_nReportType == SELLERS)
+            if(*m_nReportType == SELLERS)
                 m_strOutputText.append(x->m_strReportInfoSeller).append("\n");
             m_strOutputText.append("\n");
         }
@@ -159,21 +171,21 @@ void ReportOutput::generateText()
 
 void ReportOutput::on_radioButton_Buyers_clicked()
 {
-    m_nReportType = BUYERS;
+    *m_nReportType = BUYERS;
     generateText();
     ui->textBrowser->setText(m_strOutputText);
 }
 
 void ReportOutput::on_radioButton_Sellers_clicked()
 {
-    m_nReportType = SELLERS;
+    *m_nReportType = SELLERS;
     generateText();
     ui->textBrowser->setText(m_strOutputText);
 }
 
 void ReportOutput::on_radioButton_Milestones_clicked()
 {
-    m_nReportType = MILESTONES_ONLY;
+    *m_nReportType = MILESTONES_ONLY;
     generateText();
     ui->textBrowser->setText(m_strOutputText);
 }

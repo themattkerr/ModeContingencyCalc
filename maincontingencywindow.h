@@ -4,9 +4,14 @@
 #include <QMainWindow>
 #include <QList>
 #include <QStringList>
+#include <QMessageBox>
+
+#include <qfiledialog.h>
 #include "contingencydata.h"
 #include "textforcontingencies.h"
 #include "reportoutput.h"
+#include "saveandloadfunctions.h"
+
 
 #include <QComboBox>
 #include <QLineEdit>
@@ -29,8 +34,7 @@ public:
     ~MainContingencyWindow();
 
 private slots:
-    void on_pushButton_Show_5_More_clicked();
-    void on_pushButton_Show_5_Fewer_clicked();
+
 
     void on_dateEditAODate_userDateChanged(const QDate &date);
     void on_pushButtonSetToToday_clicked();
@@ -146,62 +150,43 @@ private slots:
     void on_cont19BusinessDayCheckBox_clicked();
     void on_cont20BusinessDayCheckBox_clicked();
 
-    void on_pushButton_Sort_Contingencies_clicked();
-
-    void on_pushButton_Generate_Report_clicked();
-
     void on_cont1CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont2CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont3CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont4CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont8CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont5CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont6CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont7CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont9CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont10CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont11CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont12CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont13CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont14CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont15CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont16CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont17CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont18CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont19CustomLineEdit_textChanged(const QString &arg1);
-
     void on_cont20CustomLineEdit_textChanged(const QString &arg1);
 
-//    void on_lineEditEarnestMoney_textChanged(const QString &arg1);
+    void on_pushButton_Show_5_More_clicked();
+    void on_pushButton_Show_5_Fewer_clicked();
 
-//    void on_lineEditPropertyAddress_textChanged(const QString &arg1);
+    void on_pushButton_Sort_Contingencies_clicked();
+    void on_pushButton_Generate_Report_clicked();
 
-//    void on_lineEditMLSNum_textChanged(const QString &arg1);
-
-//    void on_lineEditListingBrokerTrustName_textChanged(const QString &arg1);
+    void on_actionOpen_triggered();
+    void on_actionSave_As_triggered();
+    void on_actionSave_triggered();
 
 private:
 
     Ui::MainContingencyWindow *ui;
     ContingencyData m_contData;
+
+
     void setupGUI();
     void hideCustomLineEdits();
     void loadTitles();
@@ -211,8 +196,6 @@ private:
     void refreshFields();
     void loadDateLabels();
     void setCalcFrom(QString arg1, int nContingencyIndex);
-
-
 
     void setupComboBoxQList();
     QList <QComboBox*> m_allComboxes;
@@ -225,20 +208,17 @@ private:
     void setupDaysSpinBoxQList();
     QList <QSpinBox*> m_allSpinBoxes;
     void setupAORadioButtonQList();
-
     QList <QComboBox*> m_allCalcFrom;
-    void setupCalcFromQlists();
-
-    //    QList <QRadioButton*> m_allAORadioButtons;
-    //    void setupClosingRadioButtonQList();
-    //    QList <QRadioButton*> m_allClosingRadioButtons;
-    //    void setupHardDateRadioButtonQList();
-    //    QList <QRadioButton*> m_allHardDateRadioButtons;
-    void setupBusinessDaysCheckboxQList();
+    void setupCalcFromQlists(); 
     QList <QCheckBox*> m_allBusinessDaysCheckBoxes;
+    void setupBusinessDaysCheckboxQList();
 
     int     m_nRowsToShow;
-    //Contingency m_contData;
+    int     m_nReporType = BUYERS;
+
+    QString m_FileName;
+    bool    m_bUnsavedData;
+
 };
 
 #endif // MAINCONTINGENCYWINDOW_H

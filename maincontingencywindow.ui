@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>897</width>
-    <height>1203</height>
+    <height>1217</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -868,7 +868,7 @@
           <item>
            <widget class="QComboBox" name="cont6CalcFromComboBox">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -965,7 +965,7 @@
           <item>
            <widget class="QComboBox" name="cont7CalcFromComboBox">
             <property name="sizePolicy">
-             <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+             <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
@@ -1874,6 +1874,15 @@
      <height>26</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionOpen"/>
+    <addaction name="actionSave"/>
+    <addaction name="actionSave_As"/>
+   </widget>
+   <addaction name="menuFile"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -1884,8 +1893,157 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOpen">
+   <property name="text">
+    <string>Open</string>
+   </property>
+  </action>
+  <action name="actionSave">
+   <property name="text">
+    <string>Save</string>
+   </property>
+  </action>
+  <action name="actionSave_As">
+   <property name="text">
+    <string>Save As</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <tabstops>
+  <tabstop>dateEditAODate</tabstop>
+  <tabstop>pushButtonSetToToday</tabstop>
+  <tabstop>spinBoxDaysToClosing</tabstop>
+  <tabstop>dateEditClosingDate</tabstop>
+  <tabstop>lineEditPropertyAddress</tabstop>
+  <tabstop>lineEditMLSNum</tabstop>
+  <tabstop>lineEditEarnestMoney</tabstop>
+  <tabstop>lineEditListingBrokerTrustName</tabstop>
+  <tabstop>cont1TitleComboBox</tabstop>
+  <tabstop>cont1CustomLineEdit</tabstop>
+  <tabstop>cont1dateEdit</tabstop>
+  <tabstop>cont1DaysSpinBox</tabstop>
+  <tabstop>cont1CalcFromComboBox</tabstop>
+  <tabstop>cont1BusinessDayCheckBox</tabstop>
+  <tabstop>cont2TitleComboBox</tabstop>
+  <tabstop>cont2CustomLineEdit</tabstop>
+  <tabstop>cont2dateEdit</tabstop>
+  <tabstop>cont2DaysSpinBox</tabstop>
+  <tabstop>cont2CalcFromComboBox</tabstop>
+  <tabstop>cont2BusinessDayCheckBox</tabstop>
+  <tabstop>cont3TitleComboBox</tabstop>
+  <tabstop>cont3CustomLineEdit</tabstop>
+  <tabstop>cont3dateEdit</tabstop>
+  <tabstop>cont3DaysSpinBox</tabstop>
+  <tabstop>cont3CalcFromComboBox</tabstop>
+  <tabstop>cont3BusinessDayCheckBox</tabstop>
+  <tabstop>cont4TitleComboBox</tabstop>
+  <tabstop>cont4CustomLineEdit</tabstop>
+  <tabstop>cont4dateEdit</tabstop>
+  <tabstop>cont4DaysSpinBox</tabstop>
+  <tabstop>cont4CalcFromComboBox</tabstop>
+  <tabstop>cont4BusinessDayCheckBox</tabstop>
+  <tabstop>cont5TitleComboBox</tabstop>
+  <tabstop>cont5CustomLineEdit</tabstop>
+  <tabstop>cont5dateEdit</tabstop>
+  <tabstop>cont5DaysSpinBox</tabstop>
+  <tabstop>cont5CalcFromComboBox</tabstop>
+  <tabstop>cont5BusinessDayCheckBox</tabstop>
+  <tabstop>cont6TitleComboBox</tabstop>
+  <tabstop>cont6CustomLineEdit</tabstop>
+  <tabstop>cont6dateEdit</tabstop>
+  <tabstop>cont6DaysSpinBox</tabstop>
+  <tabstop>cont6CalcFromComboBox</tabstop>
+  <tabstop>cont6BusinessDayCheckBox</tabstop>
+  <tabstop>cont7TitleComboBox</tabstop>
+  <tabstop>cont7CustomLineEdit</tabstop>
+  <tabstop>cont7dateEdit</tabstop>
+  <tabstop>cont7DaysSpinBox</tabstop>
+  <tabstop>cont7CalcFromComboBox</tabstop>
+  <tabstop>cont7BusinessDayCheckBox</tabstop>
+  <tabstop>cont8TitleComboBox</tabstop>
+  <tabstop>cont8CustomLineEdit</tabstop>
+  <tabstop>cont8dateEdit</tabstop>
+  <tabstop>cont8DaysSpinBox</tabstop>
+  <tabstop>cont8CalcFromComboBox</tabstop>
+  <tabstop>cont8BusinessDayCheckBox</tabstop>
+  <tabstop>cont9TitleComboBox</tabstop>
+  <tabstop>cont9CustomLineEdit</tabstop>
+  <tabstop>cont9dateEdit</tabstop>
+  <tabstop>cont9DaysSpinBox</tabstop>
+  <tabstop>cont9CalcFromComboBox</tabstop>
+  <tabstop>cont9BusinessDayCheckBox</tabstop>
+  <tabstop>cont10TitleComboBox</tabstop>
+  <tabstop>cont10CustomLineEdit</tabstop>
+  <tabstop>cont10dateEdit</tabstop>
+  <tabstop>cont10DaysSpinBox</tabstop>
+  <tabstop>cont10CalcFromComboBox</tabstop>
+  <tabstop>cont10BusinessDayCheckBox</tabstop>
+  <tabstop>cont11TitleComboBox</tabstop>
+  <tabstop>cont11CustomLineEdit</tabstop>
+  <tabstop>cont11dateEdit</tabstop>
+  <tabstop>cont11DaysSpinBox</tabstop>
+  <tabstop>cont11CalcFromComboBox</tabstop>
+  <tabstop>cont11BusinessDayCheckBox</tabstop>
+  <tabstop>cont12TitleComboBox</tabstop>
+  <tabstop>cont12CustomLineEdit</tabstop>
+  <tabstop>cont12dateEdit</tabstop>
+  <tabstop>cont12DaysSpinBox</tabstop>
+  <tabstop>cont12CalcFromComboBox</tabstop>
+  <tabstop>cont12BusinessDayCheckBox</tabstop>
+  <tabstop>cont13TitleComboBox</tabstop>
+  <tabstop>cont13CustomLineEdit</tabstop>
+  <tabstop>cont13dateEdit</tabstop>
+  <tabstop>cont13DaysSpinBox</tabstop>
+  <tabstop>cont13CalcFromComboBox</tabstop>
+  <tabstop>cont13BusinessDayCheckBox</tabstop>
+  <tabstop>cont14TitleComboBox</tabstop>
+  <tabstop>cont14CustomLineEdit</tabstop>
+  <tabstop>cont14dateEdit</tabstop>
+  <tabstop>cont14DaysSpinBox</tabstop>
+  <tabstop>cont14CalcFromComboBox</tabstop>
+  <tabstop>cont14BusinessDayCheckBox</tabstop>
+  <tabstop>cont15TitleComboBox</tabstop>
+  <tabstop>cont15CustomLineEdit</tabstop>
+  <tabstop>cont15dateEdit</tabstop>
+  <tabstop>cont15DaysSpinBox</tabstop>
+  <tabstop>cont15CalcFromComboBox</tabstop>
+  <tabstop>cont15BusinessDayCheckBox</tabstop>
+  <tabstop>cont16TitleComboBox</tabstop>
+  <tabstop>cont16CustomLineEdit</tabstop>
+  <tabstop>cont16dateEdit</tabstop>
+  <tabstop>cont16DaysSpinBox</tabstop>
+  <tabstop>cont16CalcFromComboBox</tabstop>
+  <tabstop>cont16BusinessDayCheckBox</tabstop>
+  <tabstop>cont17TitleComboBox</tabstop>
+  <tabstop>cont17CustomLineEdit</tabstop>
+  <tabstop>cont17dateEdit</tabstop>
+  <tabstop>cont17DaysSpinBox</tabstop>
+  <tabstop>cont17CalcFromComboBox</tabstop>
+  <tabstop>cont17BusinessDayCheckBox</tabstop>
+  <tabstop>cont18TitleComboBox</tabstop>
+  <tabstop>cont18CustomLineEdit</tabstop>
+  <tabstop>cont18dateEdit</tabstop>
+  <tabstop>cont18DaysSpinBox</tabstop>
+  <tabstop>cont18CalcFromComboBox</tabstop>
+  <tabstop>cont18BusinessDayCheckBox</tabstop>
+  <tabstop>cont19TitleComboBox</tabstop>
+  <tabstop>cont19CustomLineEdit</tabstop>
+  <tabstop>cont19dateEdit</tabstop>
+  <tabstop>cont19DaysSpinBox</tabstop>
+  <tabstop>cont19CalcFromComboBox</tabstop>
+  <tabstop>cont19BusinessDayCheckBox</tabstop>
+  <tabstop>cont20TitleComboBox</tabstop>
+  <tabstop>cont20CustomLineEdit</tabstop>
+  <tabstop>cont20dateEdit</tabstop>
+  <tabstop>cont20DaysSpinBox</tabstop>
+  <tabstop>cont20CalcFromComboBox</tabstop>
+  <tabstop>cont20BusinessDayCheckBox</tabstop>
+  <tabstop>pushButton_Show_5_Fewer</tabstop>
+  <tabstop>pushButton_Show_5_More</tabstop>
+  <tabstop>pushButton_Sort_Contingencies</tabstop>
+  <tabstop>pushButton_Generate_Report</tabstop>
+ </tabstops>
  <resources/>
  <connections/>
 </ui>

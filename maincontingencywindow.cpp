@@ -6,13 +6,20 @@ MainContingencyWindow::MainContingencyWindow(QWidget *parent) :
     ui(new Ui::MainContingencyWindow)
 {
     ui->setupUi(this);
-
+    m_FileName = "";
     setupGUI();
     adjustSize();
 }
 
 MainContingencyWindow::~MainContingencyWindow()
 {
+    if(m_bUnsavedData)
+    {
+        QMessageBox UnsavedWarning;
+        UnsavedWarning.setText("Warning!!! There is unsaved data present!");
+        UnsavedWarning.exec();
+        on_actionSave_As_triggered();
+    }
     delete ui;
 }
 
@@ -95,7 +102,7 @@ void MainContingencyWindow::loadCalcFrom()
 }
 void MainContingencyWindow::refreshFields()
 {
-    // call a function here to pull and save custom text from the gui
+    m_bUnsavedData = true;
 
     ui->dateEditAODate->setDate(m_contData.getAODate());
     ui->spinBoxDaysToClosing->setValue(m_contData.getDaysClosing());
@@ -1186,7 +1193,7 @@ void MainContingencyWindow::on_pushButton_Sort_Contingencies_clicked()
 void MainContingencyWindow::on_pushButton_Generate_Report_clicked()
 {
     refreshFields();
-    ReportOutput *Report = new ReportOutput(this, &m_contData);
+    ReportOutput *Report = new ReportOutput(this, &m_contData, &m_nReporType );
     Report->show();
 }
 
@@ -1209,3 +1216,63 @@ void MainContingencyWindow::on_pushButton_Generate_Report_clicked()
 //{
 
 //}
+
+void MainContingencyWindow::on_actionOpen_triggered()
+{
+    m_FileName = QFileDialog::getOpenFileName (this, tr("Open MileStoneFile"), "",tr("*.MDRN"));
+
+    bool ok;
+    QMessageBox openStatus;
+    ok = openMilestoneFile(m_FileName, m_contData, &m_nReporType );
+    if(ok)
+    {
+        openStatus.setText("Open Successful!");
+    }
+    else
+    {
+        openStatus.setText("Open Failed!!!");
+    }
+    refreshFields();
+    openStatus.exec();
+}
+
+void MainContingencyWindow::on_actionSave_As_triggered()
+{
+    m_FileName = QFileDialog::getSaveFileName (this, tr("Save As MileStone File"), "",tr( "*.MDRN"));
+
+            bool ok;
+            QMessageBox SaveStatus;
+
+            ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType );
+            if(ok)
+            {
+                SaveStatus.setText("Save Successful!");
+                m_bUnsavedData = false;
+            }
+            else
+            {
+                SaveStatus.setText("File NOT saved.");
+                SaveStatus.raise();
+            }
+            SaveStatus.show();
+}
+
+void MainContingencyWindow::on_actionSave_triggered()
+{
+    if(m_FileName == "")
+      on_actionSave_As_triggered();
+    bool ok;
+    QMessageBox SaveStatus;
+    ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType );
+    if(ok)
+    {
+        SaveStatus.setText("Save Successful!");
+        m_bUnsavedData = false;
+    }
+    else
+    {
+        SaveStatus.raise();
+        SaveStatus.setText("File NOT saved.");
+    }
+    SaveStatus.exec();
+}

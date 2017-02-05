@@ -35,8 +35,8 @@ HEADERS  += maincontingencywindow.h \
     contingencydata.h \
     mattcalculations.h \
     reportoutput.h \
-    saveandloadfunctions.h \
-    textforcontingencies.h
+    textforcontingencies.h \
+    saveandloadfunctions.h
 
 FORMS    += maincontingencywindow.ui \
     reportoutput.ui

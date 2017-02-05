@@ -66,7 +66,9 @@ public:
     void setCalcType(int nCalcType, int nContingencyNum);
     void setUseBusinessDays(bool BusinessDays, int nContingencyNum);
 
-//-----------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------   
+
+
     QDate   getAODate();
     QDate   getClosingDate();
     int     getDaysClosing();
@@ -88,7 +90,7 @@ public:
     bool    getUseBusinessDays(int nContingencyNum);
     
 //-----------------------------------------------------------------------------------------
-    //void enterContingencyText(QString strContingencyText);
+
 
     void setDefaults();
     void resetContingency(int nContingencyNum);
@@ -116,11 +118,9 @@ private:
     void calculateDaysFromDate(int nContingencyNum );
     void calculateDateFromDays(int nContingencyNum , QString &strReasons);
 
-
-
     void refreshData();
 
-//    QString generateReport();
+
 
 };
 

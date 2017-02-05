@@ -23,26 +23,25 @@ class ReportOutput : public QDialog
     Q_OBJECT
 
 public:
-    explicit ReportOutput(QWidget *parent = 0, ContingencyData *contData = 0);
+    explicit ReportOutput(QWidget *parent = 0, ContingencyData *contData = 0, int *nReportType = 0);
     ~ReportOutput();
 
 private slots:
     void on_pushButton_Close_clicked();
-
     void on_radioButton_Buyers_clicked();
-
     void on_radioButton_Sellers_clicked();
-
     void on_radioButton_Milestones_clicked();
 
 private:
     Ui::ReportOutput *ui;
 
     ContingencyData m_OutData;
+
     Contingency m_contOutputArray[MAX_NUM_CONTINGENCIES+2];
     QString m_strOutputText;
-    int m_nReportType;
+    int *m_nReportType = 0;
 
+    void setupGUI();
     void copyContingenciesToArray();
     void sortAscending();
     void generateText();
