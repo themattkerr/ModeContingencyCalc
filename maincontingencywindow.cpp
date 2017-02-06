@@ -103,6 +103,10 @@ void MainContingencyWindow::loadCalcFrom()
 void MainContingencyWindow::refreshFields()
 {
     m_bUnsavedData = true;
+    if( m_contData.getPropertyAddress() != "")
+        this->setWindowTitle(m_contData.getPropertyAddress() + " - Mode RN Milestone Calculator");
+    else
+        this->setWindowTitle("Mode RN Milestone Calculator");
 
     ui->dateEditAODate->setDate(m_contData.getAODate());
     ui->spinBoxDaysToClosing->setValue(m_contData.getDaysClosing());
@@ -117,7 +121,6 @@ void MainContingencyWindow::refreshFields()
         if(m_contData.getContingencyTitle(iii) == CUSTOM_TITLE)
         {
             m_allCustomLineEdits[iii]->show();
-            //m_contData.enterCustomText(m_allCustomLineEdits[iii]->text(), iii);
         }
         else
             m_allCustomLineEdits[iii]->hide();
@@ -126,10 +129,6 @@ void MainContingencyWindow::refreshFields()
         m_allComboxes[iii]->setCurrentText(m_contData.getContingencyTitle(iii));
         m_allDateEdit[iii]->setDate(m_contData.getDateOfContingency(iii) );
         m_allSpinBoxes[iii]->setValue(m_contData.getNumOfDays(iii));
-
-        //m_allAORadioButtons[iii]->setChecked(false);
-        //m_allClosingRadioButtons[iii]->setChecked(false);
-        //m_allHardDateRadioButtons[iii]->setChecked(false);
 
        switch (m_contData.getCalcFrom(iii)) {
         case CALC_FROM_AO:          {m_allCalcFrom[iii]->setCurrentText(CALC_FROM_AO_TEXT);         break;}
@@ -1197,25 +1196,6 @@ void MainContingencyWindow::on_pushButton_Generate_Report_clicked()
     Report->show();
 }
 
-//void MainContingencyWindow::on_lineEditEarnestMoney_textChanged(const QString &arg1)
-//{
-
-//}
-
-//void MainContingencyWindow::on_lineEditPropertyAddress_textChanged(const QString &arg1)
-//{
-
-//}
-
-//void MainContingencyWindow::on_lineEditMLSNum_textChanged(const QString &arg1)
-//{
-
-//}
-
-//void MainContingencyWindow::on_lineEditListingBrokerTrustName_textChanged(const QString &arg1)
-//{
-
-//}
 
 void MainContingencyWindow::on_actionOpen_triggered()
 {
