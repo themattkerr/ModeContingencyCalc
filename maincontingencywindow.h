@@ -189,10 +189,16 @@ private:
 
     void setupGUI();
     void hideCustomLineEdits();
+
+    void setupTitles();
+    void editTitles(int nContingencyNum);
     void loadTitles();
+    void refreshComboBoxes();
+
     void loadCalcFrom();
     void loadDefaults();
     void showRows();
+
     void refreshFields();
     void loadDateLabels();
     void setCalcFrom(QString arg1, int nContingencyIndex);
@@ -213,12 +219,13 @@ private:
     QList <QCheckBox*> m_allBusinessDaysCheckBoxes;
     void setupBusinessDaysCheckboxQList();
 
-    int     m_nRowsToShow;
+    int     m_nRowsToShow = 1;
     int     m_nReporType = BUYERS;
 
     QString m_FileName;
     bool    m_bUnsavedData;
 
+    QStringList m_strlTitles;
 };
 
 #endif // MAINCONTINGENCYWINDOW_H

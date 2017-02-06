@@ -8,6 +8,7 @@ MainContingencyWindow::MainContingencyWindow(QWidget *parent) :
     ui->setupUi(this);
     m_FileName = "";
     setupGUI();
+    //refreshComboBoxes();
     adjustSize();
 }
 
@@ -34,12 +35,11 @@ void MainContingencyWindow::setupGUI()
     setupDateLabelQList();
     setupDaysSpinBoxQList();
     setupCalcFromQlists();
-    //setupAORadioButtonQList();
-    //setupClosingRadioButtonQList();
-    //setupHardDateRadioButtonQList();
     setupBusinessDaysCheckboxQList();
 
+    setupTitles();
     loadTitles();
+
     loadCalcFrom();
     hideCustomLineEdits();
     loadDefaults();
@@ -58,10 +58,10 @@ void MainContingencyWindow::loadDefaults()
     refreshFields();
 
 }
-void MainContingencyWindow::loadTitles()
+void MainContingencyWindow::setupTitles()
 {
-    QStringList strlTitles;
-    strlTitles
+
+    m_strlTitles
                 << BLANK
                 << EARNEST_MONEY_TITLE
                 << CONDITION_REPORT_TITLE
@@ -81,13 +81,67 @@ void MainContingencyWindow::loadTitles()
                 << SURVEY_TITLE
                 << RATE_LOCK_TITLE
                 << CUSTOM_TITLE;
+    m_strlTitles.removeAll("");
+
+//    for (int iii =0; iii < MAX_NUM_CONTINGENCIES; iii++)
+//    {
+//        m_allComboxes[iii]->addItems(strlTitles);
+//    }
+}
+
+void MainContingencyWindow::editTitles(int nContingencyNum)
+{
+   if (m_allComboxes[nContingencyNum]->currentText() != m_contData.getContingencyTitle(nContingencyNum))
+   {
+       if (m_contData.getContingencyTitle(nContingencyNum) != BLANK ||
+                m_contData.getContingencyTitle(nContingencyNum) != CUSTOM_TITLE)
+            m_strlTitles << m_contData.getContingencyTitle(nContingencyNum);
+       else
+           m_strlTitles << (m_allComboxes[nContingencyNum]->currentText());
+   }
+   if(!((m_allComboxes[nContingencyNum]->currentText() == BLANK) ||
+            m_allComboxes[nContingencyNum]->currentText() == CUSTOM_TITLE))
+   {
+       m_contData.enterContingencyTitle( m_allComboxes[nContingencyNum]->currentText(), nContingencyNum);
+       m_strlTitles.removeAll (m_allComboxes[nContingencyNum]->currentText());
+   }
+   else
+       m_contData.enterContingencyTitle(m_allComboxes[nContingencyNum]->currentText(), nContingencyNum);
+   m_strlTitles.sort();
+
+}
 
 
-    for (int iii =0; iii < MAX_NUM_CONTINGENCIES; iii++)
+void MainContingencyWindow::loadTitles()
+{
+    for(int iii = 0 ; iii < MAX_NUM_CONTINGENCIES; iii ++)
     {
-        m_allComboxes[iii]->addItems(strlTitles);
+        m_strlTitles.removeAll("");
+        m_allComboxes[iii]->clear();
+        m_allComboxes[iii]->addItems(m_strlTitles);
+        if(m_contData.getContingencyTitle(iii) != BLANK && m_contData.getContingencyTitle(iii) != CUSTOM_TITLE)
+            m_allComboxes[iii]->addItem(m_contData.getContingencyTitle(iii));
     }
 }
+
+void MainContingencyWindow::refreshComboBoxes()
+{
+    for(int iii = 0 ; iii < MAX_NUM_CONTINGENCIES ; iii ++ )
+        editTitles(iii);
+    loadTitles();
+    for(int iii = 0 ; iii < MAX_NUM_CONTINGENCIES ; iii ++ )
+    {
+        m_allComboxes[iii]->setCurrentText(m_contData.getContingencyTitle(iii));
+    }
+
+}
+
+
+
+
+
+
+
 void MainContingencyWindow::loadCalcFrom()
 {
     QStringList strlCalcFromList;
@@ -102,6 +156,8 @@ void MainContingencyWindow::loadCalcFrom()
 }
 void MainContingencyWindow::refreshFields()
 {
+    showRows();
+
     m_bUnsavedData = true;
     if( m_contData.getPropertyAddress() != "")
         this->setWindowTitle(m_contData.getPropertyAddress() + " - Mode RN Milestone Calculator");
@@ -145,6 +201,7 @@ void MainContingencyWindow::refreshFields()
 
         loadDateLabels();
     }
+    refreshComboBoxes();
 }
 void MainContingencyWindow::loadDateLabels()
 {
@@ -186,6 +243,17 @@ void MainContingencyWindow::showRows()
     }
    adjustSize();
 }
+
+
+
+
+
+
+
+
+
+
+
 
 void MainContingencyWindow::setupComboBoxQList()
 {
@@ -1203,7 +1271,7 @@ void MainContingencyWindow::on_actionOpen_triggered()
 
     bool ok;
     QMessageBox openStatus;
-    ok = openMilestoneFile(m_FileName, m_contData, &m_nReporType );
+    ok = openMilestoneFile(m_FileName, m_contData, &m_nReporType, &m_nRowsToShow );
     if(ok)
     {
         openStatus.setText("Open Successful!");
@@ -1223,7 +1291,7 @@ void MainContingencyWindow::on_actionSave_As_triggered()
             bool ok;
             QMessageBox SaveStatus;
 
-            ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType );
+            ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType, &m_nRowsToShow );
             if(ok)
             {
                 SaveStatus.setText("Save Successful!");
@@ -1240,10 +1308,13 @@ void MainContingencyWindow::on_actionSave_As_triggered()
 void MainContingencyWindow::on_actionSave_triggered()
 {
     if(m_FileName == "")
+    {
       on_actionSave_As_triggered();
+      return;
+    }
     bool ok;
     QMessageBox SaveStatus;
-    ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType );
+    ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType , &m_nRowsToShow );
     if(ok)
     {
         SaveStatus.setText("Save Successful!");

@@ -318,10 +318,10 @@ void ContingencyData::setContingencyReportText(int nContingencyNum)
 
                                                                //---Set seller info ---
                                                                x->m_strReportInfoSeller.append(EARNEST_MONEY1_SELLER);
-                                                               if (m_strEarnestMoneyAmout != "")
+                                                               if (m_strEarnestMoneyAmout != "" || m_strEarnestMoneyAmout != "$ 0")
                                                                    x->m_strReportInfoSeller.append(EARNEST_MONEY2_SELLER).append(m_strEarnestMoneyAmout).append(" ");
                                                                x->m_strReportInfoSeller.append(EARNEST_MONEY3_SELLER);
-                                                               if(m_strListingBrokerTrustName != "")
+                                                               if(m_strListingBrokerTrustName != "" )
                                                                    x->m_strReportInfoSeller.append("'").append(m_strListingBrokerTrustName).append("'");
                                                                else {
                                                                    x->m_strReportInfoSeller.append(EARNEST_MONEY4_SELLER);

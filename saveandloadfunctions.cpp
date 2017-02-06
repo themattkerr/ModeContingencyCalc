@@ -1,6 +1,6 @@
 #include "saveandloadfunctions.h"
 
-bool openMilestoneFile(QString strFileName ,ContingencyData &openData, int *pnReportType )
+bool openMilestoneFile(QString strFileName ,ContingencyData &openData, int *pnReportType , int *pnRowsToShow)
 
 {
     QFile file (strFileName);
@@ -25,6 +25,7 @@ bool openMilestoneFile(QString strFileName ,ContingencyData &openData, int *pnRe
     if(strSoftwareVer == CURRENT_VERSION)
     {
         stream >> *pnReportType;
+        stream >> *pnRowsToShow;
         stream >> dtAODate;
         stream >> dtClosingDate;
         stream >> nDaysClosing;
@@ -70,7 +71,7 @@ bool openMilestoneFile(QString strFileName ,ContingencyData &openData, int *pnRe
     return false;
 }
 
-bool saveMilestoneFile(QString strFileName ,ContingencyData &saveData, int *pnReportType )
+bool saveMilestoneFile(QString strFileName ,ContingencyData &saveData, int *pnReportType , int *pnRowsToShow)
 {
     QFile file (strFileName);
     if (file.open(QIODevice::ReadWrite | QIODevice::Truncate))
@@ -79,6 +80,7 @@ bool saveMilestoneFile(QString strFileName ,ContingencyData &saveData, int *pnRe
         QString strSoftwareVersion = CURRENT_VERSION;
         stream << strSoftwareVersion;
         stream << *pnReportType;
+        stream << *pnRowsToShow;
 
         stream << saveData.getAODate();
         stream << saveData.getClosingDate();
