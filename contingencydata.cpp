@@ -264,7 +264,14 @@ void ContingencyData::sortContingenciesAcending()
     {
         for(int jjj = 0; jjj < MAX_NUM_CONTINGENCIES;jjj++)
         {
-            if(m_Contingency[iii].m_dtDateOfContingency != m_Contingency[jjj].m_dtDateOfContingency)
+            //if(m_Contingency[iii].m_dtDateOfContingency != m_Contingency[jjj].m_dtDateOfContingency)
+            if(m_Contingency[iii].m_strContingencyTitle != BLANK && m_Contingency[jjj].m_strContingencyTitle == BLANK)
+            {
+                Temp = m_Contingency[iii];
+                m_Contingency[iii] = m_Contingency[jjj];
+                m_Contingency[jjj] = Temp;
+            }
+
             if((m_Contingency[iii].m_dtDateOfContingency < m_Contingency[jjj].m_dtDateOfContingency)
                && ( m_Contingency[iii].m_strContingencyTitle != BLANK))
             {
@@ -279,6 +286,8 @@ void ContingencyData::sortContingenciesAcending()
 //                    m_Contingency[jjj] = Temp;
 //                }
             }
+
+
         }
     }
 

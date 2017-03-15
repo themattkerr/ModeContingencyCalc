@@ -17,6 +17,7 @@ MainContingencyWindow::~MainContingencyWindow()
     if(m_bUnsavedData)
     {
         QMessageBox UnsavedWarning;
+        UnsavedWarning.setWindowTitle("");
         UnsavedWarning.setText("Warning!!! There is unsaved data present!");
         UnsavedWarning.exec();
         on_actionSave_As_triggered();
@@ -40,9 +41,13 @@ void MainContingencyWindow::setupGUI()
     setupTitles();
     loadTitles();
 
+
     loadCalcFrom();
     hideCustomLineEdits();
     loadDefaults();
+
+    refreshComboBoxes();
+
 }
 void MainContingencyWindow::hideCustomLineEdits()
 {
@@ -60,7 +65,7 @@ void MainContingencyWindow::loadDefaults()
 }
 void MainContingencyWindow::setupTitles()
 {
-
+    m_strlTitles.clear();
     m_strlTitles
                 << BLANK
                 << EARNEST_MONEY_TITLE
@@ -93,14 +98,16 @@ void MainContingencyWindow::editTitles(int nContingencyNum)
 {
    if (m_allComboxes[nContingencyNum]->currentText() != m_contData.getContingencyTitle(nContingencyNum))
    {
-       if (m_contData.getContingencyTitle(nContingencyNum) != BLANK ||
+       //if stored data is blank there is nothing to remove and you need put what was in the field into title list
+       if (m_contData.getContingencyTitle(nContingencyNum) != BLANK &&
                 m_contData.getContingencyTitle(nContingencyNum) != CUSTOM_TITLE)
             m_strlTitles << m_contData.getContingencyTitle(nContingencyNum);
        else
            m_strlTitles << (m_allComboxes[nContingencyNum]->currentText());
    }
-   if(!((m_allComboxes[nContingencyNum]->currentText() == BLANK) ||
-            m_allComboxes[nContingencyNum]->currentText() == CUSTOM_TITLE))
+   // Determine if the current text is a contingency and then Store it to data and make sure it cannot be used again
+   if(((m_allComboxes[nContingencyNum]->currentText() != BLANK) &&
+            m_allComboxes[nContingencyNum]->currentText() != CUSTOM_TITLE))
    {
        m_contData.enterContingencyTitle( m_allComboxes[nContingencyNum]->currentText(), nContingencyNum);
        m_strlTitles.removeAll (m_allComboxes[nContingencyNum]->currentText());
@@ -120,12 +127,14 @@ void MainContingencyWindow::loadTitles()
         m_allComboxes[iii]->clear();
         m_allComboxes[iii]->addItems(m_strlTitles);
         if(m_contData.getContingencyTitle(iii) != BLANK && m_contData.getContingencyTitle(iii) != CUSTOM_TITLE)
-            m_allComboxes[iii]->addItem(m_contData.getContingencyTitle(iii));
+            m_allComboxes[iii]->insertItem(0, m_contData.getContingencyTitle(iii));
+
     }
 }
 
 void MainContingencyWindow::refreshComboBoxes()
 {
+    setupTitles();
     for(int iii = 0 ; iii < MAX_NUM_CONTINGENCIES ; iii ++ )
         editTitles(iii);
     loadTitles();
@@ -156,6 +165,7 @@ void MainContingencyWindow::loadCalcFrom()
 }
 void MainContingencyWindow::refreshFields()
 {
+
     showRows();
 
     m_bUnsavedData = true;
@@ -172,6 +182,9 @@ void MainContingencyWindow::refreshFields()
     ui->lineEditEarnestMoney->setText(m_contData.getEarnestMoneyAmout());
     ui->lineEditListingBrokerTrustName->setText(m_contData.getListingBrokerTrustName());
 
+
+    setupTitles();// if the title is not in the list it cannot be set to it
+    loadTitles();
     for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
         if(m_contData.getContingencyTitle(iii) == CUSTOM_TITLE)
@@ -180,6 +193,21 @@ void MainContingencyWindow::refreshFields()
         }
         else
             m_allCustomLineEdits[iii]->hide();
+        if(m_contData.getContingencyTitle(iii) == BLANK)
+        {
+            m_allDateLabels[iii]->hide();
+            m_allDateEdit[iii]->hide();
+            m_allSpinBoxes[iii]->hide();
+            m_allCalcFrom[iii]->hide();
+            m_allBusinessDaysCheckBoxes[iii]->hide();
+        }
+        else {
+            m_allDateLabels[iii]->show();
+            m_allDateEdit[iii]->show();
+            m_allSpinBoxes[iii]->show();
+            m_allCalcFrom[iii]->show();
+            m_allBusinessDaysCheckBoxes[iii]->show();
+        }
 
         m_allCustomLineEdits[iii]->setText(m_contData.getCustomText(iii) );
         m_allComboxes[iii]->setCurrentText(m_contData.getContingencyTitle(iii));
@@ -488,146 +516,170 @@ void MainContingencyWindow::on_lineEditListingBrokerTrustName_editingFinished()
 
 void MainContingencyWindow::on_cont1TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency1Index = 0;
-    m_contData.enterContingencyTitle(arg1, nContingency1Index);
+    refreshComboBoxes();
+//    int nContingency1Index = 0;
+//    m_contData.enterContingencyTitle(arg1, nContingency1Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont2TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency2Index = 1;
-    m_contData.enterContingencyTitle(arg1, nContingency2Index);
+    refreshComboBoxes();
+//    int nContingency2Index = 1;
+//    m_contData.enterContingencyTitle(arg1, nContingency2Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont3TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency3Index = 2;
-    m_contData.enterContingencyTitle(arg1, nContingency3Index);
+    refreshComboBoxes();
+//    int nContingency3Index = 2;
+//    m_contData.enterContingencyTitle(arg1, nContingency3Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont4TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency4Index = 3;
-    m_contData.enterContingencyTitle(arg1, nContingency4Index);
+    refreshComboBoxes();
+//    int nContingency4Index = 3;
+//    m_contData.enterContingencyTitle(arg1, nContingency4Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont5TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency5Index = 4;
-    m_contData.enterContingencyTitle(arg1, nContingency5Index);
+    refreshComboBoxes();
+//    int nContingency5Index = 4;
+//    m_contData.enterContingencyTitle(arg1, nContingency5Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont6TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency6Index = 5;
-    m_contData.enterContingencyTitle(arg1, nContingency6Index);
+    refreshComboBoxes();
+//    int nContingency6Index = 5;
+//    m_contData.enterContingencyTitle(arg1, nContingency6Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont7TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency7Index = 6;
-    m_contData.enterContingencyTitle(arg1, nContingency7Index);
+    refreshComboBoxes();
+//    int nContingency7Index = 6;
+//    m_contData.enterContingencyTitle(arg1, nContingency7Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont8TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency8Index = 7;
-    m_contData.enterContingencyTitle(arg1, nContingency8Index);
+    refreshComboBoxes();
+//    int nContingency8Index = 7;
+//    m_contData.enterContingencyTitle(arg1, nContingency8Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont9TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency9Index = 8;
-    m_contData.enterContingencyTitle(arg1, nContingency9Index);
+    refreshComboBoxes();
+//    int nContingency9Index = 8;
+//    m_contData.enterContingencyTitle(arg1, nContingency9Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont10TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency10Index = 9;
-    m_contData.enterContingencyTitle(arg1, nContingency10Index);
+    refreshComboBoxes();
+//    int nContingency10Index = 9;
+//    m_contData.enterContingencyTitle(arg1, nContingency10Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont11TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency11Index = 10;
-    m_contData.enterContingencyTitle(arg1, nContingency11Index);
+    refreshComboBoxes();
+//    int nContingency11Index = 10;
+//    m_contData.enterContingencyTitle(arg1, nContingency11Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont12TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency12Index = 11;
-    m_contData.enterContingencyTitle(arg1, nContingency12Index);
+    refreshComboBoxes();
+//    int nContingency12Index = 11;
+//    m_contData.enterContingencyTitle(arg1, nContingency12Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont13TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency13Index = 12;
-    m_contData.enterContingencyTitle(arg1, nContingency13Index);
+    refreshComboBoxes();
+//    int nContingency13Index = 12;
+//    m_contData.enterContingencyTitle(arg1, nContingency13Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont14TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency14Index = 13;
-    m_contData.enterContingencyTitle(arg1, nContingency14Index);
+    refreshComboBoxes();
+//    int nContingency14Index = 13;
+//    m_contData.enterContingencyTitle(arg1, nContingency14Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont15TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency15Index = 14;
-    m_contData.enterContingencyTitle(arg1, nContingency15Index);
+    refreshComboBoxes();
+//    int nContingency15Index = 14;
+//    m_contData.enterContingencyTitle(arg1, nContingency15Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont16TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency16Index = 15;
-    m_contData.enterContingencyTitle(arg1, nContingency16Index);
+    refreshComboBoxes();
+//    int nContingency16Index = 15;
+//    m_contData.enterContingencyTitle(arg1, nContingency16Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont17TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency17Index = 16;
-    m_contData.enterContingencyTitle(arg1, nContingency17Index);
+    refreshComboBoxes();
+//    int nContingency17Index = 16;
+//    m_contData.enterContingencyTitle(arg1, nContingency17Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont18TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency18Index = 17;
-    m_contData.enterContingencyTitle(arg1, nContingency18Index);
+    refreshComboBoxes();
+//    int nContingency18Index = 17;
+//    m_contData.enterContingencyTitle(arg1, nContingency18Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont19TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency19Index = 18;
-    m_contData.enterContingencyTitle(arg1, nContingency19Index);
+    refreshComboBoxes();
+//    int nContingency19Index = 18;
+//    m_contData.enterContingencyTitle(arg1, nContingency19Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont20TitleComboBox_activated(const QString &arg1)
 {
-    int nContingency20Index = 19;
-    m_contData.enterContingencyTitle(arg1, nContingency20Index);
+    refreshComboBoxes();
+//    int nContingency20Index = 19;
+//    m_contData.enterContingencyTitle(arg1, nContingency20Index);
     refreshFields();
 }
 
 
 void MainContingencyWindow::on_cont1dateEdit_userDateChanged(const QDate &date)
 {
+
     int nContingency1Index = 0;
     m_contData.enterDateOfContingency(date, nContingency1Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont2dateEdit_userDateChanged(const QDate &date)
 {
+
     int nContingency2Index = 1;
     m_contData.enterDateOfContingency(date, nContingency2Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont3dateEdit_userDateChanged(const QDate &date)
 {
+
     int nContingency3Index = 2;
     m_contData.enterDateOfContingency(date, nContingency3Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont4dateEdit_userDateChanged(const QDate &date)
 {
+
     int nContingency4Index = 3;
     m_contData.enterDateOfContingency(date, nContingency4Index);
     refreshFields();
@@ -1253,6 +1305,7 @@ void MainContingencyWindow::on_cont20CustomLineEdit_textChanged(const QString &a
 
 void MainContingencyWindow::on_pushButton_Sort_Contingencies_clicked()
 {
+    //refreshComboBoxes();
     m_contData.sortContingenciesAcending();
     refreshFields();
 }
@@ -1271,10 +1324,12 @@ void MainContingencyWindow::on_actionOpen_triggered()
 
     bool ok;
     QMessageBox openStatus;
+    openStatus.setWindowTitle("");
     ok = openMilestoneFile(m_FileName, m_contData, &m_nReporType, &m_nRowsToShow );
     if(ok)
     {
         openStatus.setText("Open Successful!");
+        m_bUnsavedData = false;
     }
     else
     {
@@ -1290,7 +1345,7 @@ void MainContingencyWindow::on_actionSave_As_triggered()
 
             bool ok;
             QMessageBox SaveStatus;
-
+            SaveStatus.setWindowTitle("");
             ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType, &m_nRowsToShow );
             if(ok)
             {
@@ -1302,7 +1357,7 @@ void MainContingencyWindow::on_actionSave_As_triggered()
                 SaveStatus.setText("File NOT saved.");
                 SaveStatus.raise();
             }
-            SaveStatus.show();
+            SaveStatus.exec();
 }
 
 void MainContingencyWindow::on_actionSave_triggered()
@@ -1312,8 +1367,11 @@ void MainContingencyWindow::on_actionSave_triggered()
       on_actionSave_As_triggered();
       return;
     }
+
+
     bool ok;
     QMessageBox SaveStatus;
+    SaveStatus.setWindowTitle("");
     ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType , &m_nRowsToShow );
     if(ok)
     {
