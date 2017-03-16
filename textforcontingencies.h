@@ -28,6 +28,12 @@
 #define SURVEY_BUYER "The survey must be completed and any lot line issues resolved by this date."
 #define RATE_LOCK_BUYER "Financing issues can arise if the closing date is pushed out past this date."
 
+#define ORDER_TITLE_BUYER "tile order buyer"
+#define HOA_DOCS_DELIVERY_BUYER "HOA docs delivery bueyr"
+#define HOA_DOCS_REVIEW_BUYER "HOA docs review buyer"
+#define COVENANTS_RESTRICTIONS_DELIVERY_BUYER "cov and res delivery"
+#define COVENANTS_RESTRICTIONS_REVIEW_BUYER "cov and restrictions review buyer"
+
 #define ACCEPTED_OFFER_SELLER ""
 #define CLOSING_SELLER "You will need a valid driver's license and either a cashier's check or a wire transfer of any funds you are bringing to closing. The title company will provide a closing disclosure to you a week or so prior to closing.  The disclosure will list the funds you will need to bring to closing in order to close the transaction."
 #define CONDITION_REPORT_SELLER "You must provide a copy of the Real Estate Condition Report to the buyer by this date. If they do not receive one the buyer will have two business days to rescind the offer."
@@ -52,6 +58,12 @@
 #define SURVEY_SELLER "The survey must be completed and any lot line issues resolved by this date."
 #define RATE_LOCK_SELLER "Financing issues can arise if the closing date is pushed out past this date."
 
+#define ORDER_TITLE_SELLER "Title text for seller"
+#define HOA_DOCS_DELIVERY_SELLER "HOA delievery text for seller"
+#define HOA_DOCS_REVIEW_SELLER "HOA review seller "
+#define COVENANTS_RESTRICTIONS_DELIVERY_SELLER "Covenants and restrictions delivery"
+#define COVENANTS_RESTRICTIONS_REVIEW_SELLER "review covenants restrictions review"
+
 
 #define BLANK "-"
 #define EARNEST_MONEY_TITLE "Earnest Money"
@@ -71,13 +83,15 @@
 #define ZONING_TITLE "Zoning"
 #define SURVEY_TITLE "Survey"
 #define RATE_LOCK_TITLE "Loan Rate Lock Expiration"
-#define CUSTOM_TITLE "-Custom-"
+#define ORDER_TITLE_TITLE "Order Title"
+#define HOA_DOCS_DELIVERY_TITLE "HOA Document Delivery"
+#define HOA_DOCS_REVIEW_TITLE "Review HOA Documents"
+#define COVENANTS_RESTRICTIONS_DELIVERY_TITLE "Covenants And Restrictions Delivery"
+#define COVENANTS_RESTRICTIONS_REVIEW_TITLE "Review Covenants and Restrictions"
 
+#define CUSTOM_TITLE "-Custom-"
 #define ACCEPTED_OFFER_TITLE "Offer Accepted"
 #define CLOSING_TITLE "Closing"
-
-
-
 
 
 

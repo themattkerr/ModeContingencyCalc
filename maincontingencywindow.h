@@ -218,6 +218,8 @@ private:
     void setupCalcFromQlists(); 
     QList <QCheckBox*> m_allBusinessDaysCheckBoxes;
     void setupBusinessDaysCheckboxQList();
+    QList <QComboBox*> m_allDepContComboxes;
+    void setupDepContComboboxesQList();
 
     int     m_nRowsToShow = 1;
     int     m_nReporType = BUYERS;

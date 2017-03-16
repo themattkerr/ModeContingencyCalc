@@ -85,7 +85,7 @@ void ContingencyData::enterDays(int nDays, int nContingencyNum)
 }
 void ContingencyData::setCalcType(int nCalcType, int nContingencyNum)
 {
-    if(nCalcType == HARD_DATE || nCalcType == CALC_FROM_AO || nCalcType == CALC_FROM_CLOSING)
+    if(nCalcType == HARD_DATE || nCalcType == CALC_FROM_AO || nCalcType == CALC_FROM_CLOSING || nCalcType == OTHER_CONT)
         m_Contingency[nContingencyNum].m_nCalcFrom = nCalcType;
     else {
         m_Contingency[nContingencyNum].m_nCalcFrom = -1;
@@ -384,7 +384,24 @@ void ContingencyData::setContingencyReportText(int nContingencyNum)
                                                                x->m_strReportInfoSeller.append(SURVEY_SELLER ); }
 
     if(x->m_strContingencyTitle == RATE_LOCK_TITLE)           {x->m_strReportInfoBuyer.append(RATE_LOCK_BUYER );
-                                                               x->m_strReportInfoSeller.append(RATE_LOCK_SELLER ); }
+                                                               x->m_strReportInfoSeller.append(RATE_LOCK_SELLER ); } 
+
+    if(x->m_strContingencyTitle == ORDER_TITLE_TITLE)         {x->m_strReportInfoBuyer.append(ORDER_TITLE_BUYER );
+                                                               x->m_strReportInfoSeller.append(ORDER_TITLE_SELLER ); }
+
+    if(x->m_strContingencyTitle == HOA_DOCS_DELIVERY_TITLE)   {x->m_strReportInfoBuyer.append(HOA_DOCS_DELIVERY_BUYER );
+                                                               x->m_strReportInfoSeller.append(HOA_DOCS_DELIVERY_SELLER ); }
+
+    if(x->m_strContingencyTitle == HOA_DOCS_REVIEW_TITLE)     {x->m_strReportInfoBuyer.append(HOA_DOCS_REVIEW_BUYER );
+                                                               x->m_strReportInfoSeller.append(HOA_DOCS_REVIEW_SELLER ); }
+
+    if(x->m_strContingencyTitle == COVENANTS_RESTRICTIONS_DELIVERY_TITLE)
+                                                              {x->m_strReportInfoBuyer.append(COVENANTS_RESTRICTIONS_DELIVERY_BUYER );
+                                                               x->m_strReportInfoSeller.append(COVENANTS_RESTRICTIONS_DELIVERY_SELLER ); }
+
+    if(x->m_strContingencyTitle == COVENANTS_RESTRICTIONS_REVIEW_TITLE)
+                                                              {x->m_strReportInfoBuyer.append(COVENANTS_RESTRICTIONS_REVIEW_BUYER );
+                                                               x->m_strReportInfoSeller.append(COVENANTS_RESTRICTIONS_REVIEW_SELLER ); }
 
     if(x->m_strContingencyTitle == CUSTOM_TITLE)              {}
     x = 0;
@@ -452,7 +469,11 @@ void ContingencyData::calculateDateFromDays(int nContingencyNum, QString &strRea
             else
                 x->m_dtDateOfContingency = m_dtClosingDate.addDays(x->m_nNumOfDays);
         }
-     if(x->m_nCalcFrom != HARD_DATE && x->m_nCalcFrom != CALC_FROM_AO && x->m_nCalcFrom != CALC_FROM_CLOSING )
+    if(x->m_nCalcFrom == OTHER_CONT )
+        {
+            return;
+        }
+     if(x->m_nCalcFrom != HARD_DATE && x->m_nCalcFrom != CALC_FROM_AO && x->m_nCalcFrom != CALC_FROM_CLOSING && x->m_nCalcFrom != OTHER_CONT)
      {
          x->m_nNumOfDays = 0;
      }
@@ -481,6 +502,9 @@ void ContingencyData::refreshData()
                                         {x->m_nNumOfDays = m_dtAODate.daysTo(x->m_dtDateOfContingency);         break;}
                                      if(x->m_bUseBusinessDays)
                                         {x->m_nNumOfDays = numOfBusinessDaysBetween(m_dtAODate, x->m_dtDateOfContingency, strNonWorkDays ); break;}
+                                    }
+        case OTHER_CONT:            {
+                                        x->m_nNumOfDays; break;
                                     }
             break;
         default:

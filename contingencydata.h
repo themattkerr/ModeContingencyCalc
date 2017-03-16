@@ -16,12 +16,14 @@
 #define HARD_DATE_TEXT "Hard Date"
 #define CALC_FROM_AO_TEXT "Days From AO"
 #define CALC_FROM_CLOSING_TEXT "Days To Closing"
+#define CALC_FROM_CONTINGENCY_TEXT "Tied to"
 
 enum CalculateFrom {
 
     CALC_FROM_AO        = 0,
     CALC_FROM_CLOSING   = 1,
     HARD_DATE           = 2,
+    OTHER_CONT          = 3,
 };
 
 class Contingency{

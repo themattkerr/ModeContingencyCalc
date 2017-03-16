@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>918</width>
-    <height>1241</height>
+    <height>1366</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -385,6 +385,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont1DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont1BusinessDayCheckBox">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -496,6 +499,9 @@
              </sizepolicy>
             </property>
            </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cont2DepCont_comboBox"/>
           </item>
           <item>
            <widget class="QCheckBox" name="cont2BusinessDayCheckBox">
@@ -611,6 +617,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont3DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont3BusinessDayCheckBox">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -724,6 +733,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont4DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont4BusinessDayCheckBox">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
@@ -835,6 +847,9 @@
              </sizepolicy>
             </property>
            </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cont5DepCont_comboBox"/>
           </item>
           <item>
            <widget class="QCheckBox" name="cont5BusinessDayCheckBox">
@@ -962,6 +977,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont6DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont6BusinessDayCheckBox">
             <property name="sizePolicy">
              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -1075,6 +1093,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont7DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont7BusinessDayCheckBox">
             <property name="sizePolicy">
              <sizepolicy hsizetype="MinimumExpanding" vsizetype="Fixed">
@@ -1154,6 +1175,9 @@
              </sizepolicy>
             </property>
            </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cont8DepCont_comboBox"/>
           </item>
           <item>
            <widget class="QCheckBox" name="cont8BusinessDayCheckBox">
@@ -1237,6 +1261,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont9DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont9BusinessDayCheckBox">
             <property name="text">
              <string>Use Business Days</string>
@@ -1316,6 +1343,9 @@
              </sizepolicy>
             </property>
            </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cont10DepCont_comboBox"/>
           </item>
           <item>
            <widget class="QCheckBox" name="cont10BusinessDayCheckBox">
@@ -1405,6 +1435,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont11DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont11BusinessDayCheckBox">
             <property name="text">
              <string>Use Business Days</string>
@@ -1413,19 +1446,6 @@
           </item>
           <item>
            <spacer name="verticalSpacer_21">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_11">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
@@ -1493,6 +1513,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont12DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont12BusinessDayCheckBox">
             <property name="text">
              <string>Use Business Days</string>
@@ -1501,19 +1524,6 @@
           </item>
           <item>
            <spacer name="verticalSpacer_22">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_12">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
@@ -1581,6 +1591,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont13DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont13BusinessDayCheckBox">
             <property name="text">
              <string>Use Business Days</string>
@@ -1589,19 +1602,6 @@
           </item>
           <item>
            <spacer name="verticalSpacer_23">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_13">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
@@ -1669,6 +1669,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont14DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont14BusinessDayCheckBox">
             <property name="text">
              <string>Use Business Days</string>
@@ -1677,19 +1680,6 @@
           </item>
           <item>
            <spacer name="verticalSpacer_24">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_14">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
@@ -1757,6 +1747,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont15DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont15BusinessDayCheckBox">
             <property name="text">
              <string>Use Business Days</string>
@@ -1765,19 +1758,6 @@
           </item>
           <item>
            <spacer name="verticalSpacer_25">
-            <property name="orientation">
-             <enum>Qt::Vertical</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>20</width>
-              <height>40</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <spacer name="verticalSpacer_15">
             <property name="orientation">
              <enum>Qt::Vertical</enum>
             </property>
@@ -1857,6 +1837,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont16DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont16BusinessDayCheckBox">
             <property name="text">
              <string>Use Business Days</string>
@@ -1930,6 +1913,9 @@
              </sizepolicy>
             </property>
            </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cont17DepCont_comboBox"/>
           </item>
           <item>
            <widget class="QCheckBox" name="cont17BusinessDayCheckBox">
@@ -2007,6 +1993,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont18DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont18BusinessDayCheckBox">
             <property name="text">
              <string>Use Business Days</string>
@@ -2082,6 +2071,9 @@
            </widget>
           </item>
           <item>
+           <widget class="QComboBox" name="cont19DepCont_comboBox"/>
+          </item>
+          <item>
            <widget class="QCheckBox" name="cont19BusinessDayCheckBox">
             <property name="text">
              <string>Use Business Days</string>
@@ -2155,6 +2147,9 @@
              </sizepolicy>
             </property>
            </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="cont20DepCont_comboBox"/>
           </item>
           <item>
            <widget class="QCheckBox" name="cont20BusinessDayCheckBox">
@@ -2259,7 +2254,7 @@
      <x>0</x>
      <y>0</y>
      <width>918</width>
-     <height>26</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
