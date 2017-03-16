@@ -46,6 +46,7 @@ void MainContingencyWindow::setupGUI()
     loadDefaults();
 
     refreshComboBoxes();
+    refreshDepContComboBoxes();
 }
 
 void MainContingencyWindow::hideCustomLineEdits()
@@ -271,7 +272,7 @@ void MainContingencyWindow::refreshFields()
                                                            //m_allSpinBoxes[iii]->hide();
                                                            //m_allCalcFrom[iii]->hide();
                                                            m_allDepContComboxes[iii]->show();
-                                                           m_allBusinessDaysCheckBoxes[iii]->hide();
+                                                           //m_allBusinessDaysCheckBoxes[iii]->hide();
 
                                                            break;}
 
@@ -1427,7 +1428,136 @@ void MainContingencyWindow::on_cont1DepCont_comboBox_activated(const QString &ar
     refreshFields();
 }
 
-//void MainContingencyWindow::on_cont1DepCont_comboBox_currentTextChanged(const QString &arg1)
-//{
 
-//}
+void MainContingencyWindow::on_cont2DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 1;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont3DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 2;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont4DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 3;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont5DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 4;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont6DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 5;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont7DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 6;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont8DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 7;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont9DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 8;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont10DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 9;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont11DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 10;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont12DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 11;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont13DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 12;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont14DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 13;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont15DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 14;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont16DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 15;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont17DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 16;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont18DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 17;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont19DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 18;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont20DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 19;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}

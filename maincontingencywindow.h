@@ -185,6 +185,44 @@ private slots:
 
     //void on_cont1DepCont_comboBox_currentTextChanged(const QString &arg1);
 
+    void on_cont2DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont3DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont4DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont5DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont6DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont7DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont8DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont9DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont10DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont11DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont12DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont13DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont14DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont15DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont16DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont17DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont18DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont19DepCont_comboBox_activated(const QString &arg1);
+
+    void on_cont20DepCont_comboBox_activated(const QString &arg1);
+
 private:
 
     Ui::MainContingencyWindow *ui;
