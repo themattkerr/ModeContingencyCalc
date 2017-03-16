@@ -83,6 +83,11 @@ void ContingencyData::enterDays(int nDays, int nContingencyNum)
     m_Contingency[nContingencyNum].m_nNumOfDays = nDays;
     calculateDateFromDays(nContingencyNum, m_Contingency[nContingencyNum].m_strBusinessDayReasons);
 }
+void ContingencyData::enterDependantContingencyTitle(QString DepContTitle, int nContingencyNum)
+{
+    m_Contingency[nContingencyNum].m_strDependantContingecyTitle = DepContTitle;
+}
+
 void ContingencyData::setCalcType(int nCalcType, int nContingencyNum)
 {
     if(nCalcType == HARD_DATE || nCalcType == CALC_FROM_AO || nCalcType == CALC_FROM_CLOSING || nCalcType == OTHER_CONT)
@@ -155,6 +160,11 @@ QString ContingencyData::getReportInfoSeller(int nContingencyNum)
 {
     return m_Contingency[nContingencyNum].m_strReportInfoSeller;
 }
+QString ContingencyData::getDependantContingencyTitle(int nContingencyNum)
+{
+    return m_Contingency[nContingencyNum].m_strDependantContingecyTitle;
+}
+
 int     ContingencyData::getCalcFrom(int nContingencyNum)
 {
     return m_Contingency[nContingencyNum].m_nCalcFrom;

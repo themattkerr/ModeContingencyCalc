@@ -13,14 +13,14 @@ MainContingencyWindow::MainContingencyWindow(QWidget *parent) :
 
 MainContingencyWindow::~MainContingencyWindow()
 {
-    if(m_bUnsavedData)
-    {
-        QMessageBox UnsavedWarning;
-        UnsavedWarning.setWindowTitle("");
-        UnsavedWarning.setText("Warning!!! There is unsaved data present!");
-        UnsavedWarning.exec();
-        on_actionSave_As_triggered();
-    }
+//    if(m_bUnsavedData)
+//    {
+//        QMessageBox UnsavedWarning;
+//        UnsavedWarning.setWindowTitle("");
+//        UnsavedWarning.setText("Warning!!! There is unsaved data present!");
+//        UnsavedWarning.exec();
+//        on_actionSave_As_triggered();
+//    }
     delete ui;
 }
 
@@ -140,6 +140,60 @@ void MainContingencyWindow::refreshComboBoxes()
         m_allComboxes[iii]->setCurrentText(m_contData.getContingencyTitle(iii));
     }
 }
+//=======================================================================================
+void MainContingencyWindow::setupDepContTitles()
+{
+    m_strlDependantContingencyTitle.clear();
+    for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+        if(m_contData.getContingencyTitle(iii) != BLANK)
+        {
+            if(m_contData.getContingencyTitle(iii) == CUSTOM_TITLE)
+                m_strlDependantContingencyTitle.append(m_contData.getCustomText(iii));
+            else
+                m_strlDependantContingencyTitle.append(m_contData.getContingencyTitle(iii));
+         }
+    }
+}
+
+void MainContingencyWindow::removeUsedDepTitles()
+{
+    for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+        if(m_contData.getDependantContingencyTitle(iii) != BLANK)
+        {
+              m_strlDependantContingencyTitle.removeAll(m_contData.getDependantContingencyTitle(iii));
+         }
+    }
+    m_strlDependantContingencyTitle.removeAll("");
+    m_strlDependantContingencyTitle.sort();
+    m_strlDependantContingencyTitle.prepend(BLANK);
+}
+
+void MainContingencyWindow::setDepContComboBoxes()
+{
+    for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+          m_allDepContComboxes[iii]->clear();
+          QStringList strlTemp = m_strlDependantContingencyTitle;
+          strlTemp.removeAll(m_contData.getContingencyTitle(iii));
+          strlTemp.removeAll("");
+          strlTemp.prepend(m_contData.getDependantContingencyTitle(iii));
+          m_allDepContComboxes[iii]->addItems(strlTemp);
+
+          //m_allDepContComboxes[iii]->removeItem(m_contData.getContingencyTitle(iii));
+
+          m_allDepContComboxes[iii]->setCurrentText(m_contData.getDependantContingencyTitle(iii));
+    }
+}
+void MainContingencyWindow::refreshDepContComboBoxes()
+{
+    setupDepContTitles();
+    removeUsedDepTitles();
+    setDepContComboBoxes();
+}
+
+//========================================================================================
 
 void MainContingencyWindow::loadCalcFrom()
 {
@@ -230,8 +284,11 @@ void MainContingencyWindow::refreshFields()
         m_allBusinessDaysCheckBoxes[iii]->setChecked(m_contData.getUseBusinessDays(iii));
 
         loadDateLabels();
+
+
     }
     refreshComboBoxes();
+    refreshDepContComboBoxes();
 }
 
 void MainContingencyWindow::loadDateLabels()
@@ -1362,3 +1419,15 @@ void MainContingencyWindow::on_actionSave_triggered()
     }
     SaveStatus.exec();
 }
+
+void MainContingencyWindow::on_cont1DepCont_comboBox_activated(const QString &arg1)
+{
+    int nContingencyIndex = 0;
+    m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
+    refreshFields();
+}
+
+//void MainContingencyWindow::on_cont1DepCont_comboBox_currentTextChanged(const QString &arg1)
+//{
+
+//}

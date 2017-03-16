@@ -181,6 +181,10 @@ private slots:
     void on_actionSave_As_triggered();
     void on_actionSave_triggered();
 
+    void on_cont1DepCont_comboBox_activated(const QString &arg1);
+
+    //void on_cont1DepCont_comboBox_currentTextChanged(const QString &arg1);
+
 private:
 
     Ui::MainContingencyWindow *ui;
@@ -194,6 +198,12 @@ private:
     void editTitles(int nContingencyNum);
     void loadTitles();
     void refreshComboBoxes();
+
+    void setupDepContTitles();
+    void removeUsedDepTitles();
+    void setDepContComboBoxes();
+    void refreshDepContComboBoxes();
+
 
     void loadCalcFrom();
     void loadDefaults();
@@ -228,6 +238,7 @@ private:
     bool    m_bUnsavedData;
 
     QStringList m_strlTitles;
+    QStringList m_strlDependantContingencyTitle;
 };
 
 #endif // MAINCONTINGENCYWINDOW_H

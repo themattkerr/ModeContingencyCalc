@@ -41,6 +41,7 @@ public:
     QString m_strReportInfoBuyer;
     QString m_strReportInfoSeller;
     QString m_strCustomText;
+    QString m_strDependantContingecyTitle;
 };
 
 class ContingencyData
@@ -65,8 +66,12 @@ public:
     void enterTimeOfDay(QTime TimeOfDay, int nContingencyNum);
     void enterDays(int nDays, int nContingencyNum);
 
+    void enterDependantContingencyTitle(QString DepContTitle, int nContingencyNum);
+
     void setCalcType(int nCalcType, int nContingencyNum);
     void setUseBusinessDays(bool BusinessDays, int nContingencyNum);
+
+
 
 //-----------------------------------------------------------------------------------------   
 
@@ -87,6 +92,8 @@ public:
     int     getNumOfDays(int nContingencyNum);
     QString getReportInfoBuyer(int nContingencyNum);
     QString getReportInfoSeller(int nContingencyNum);
+
+    QString getDependantContingencyTitle(int nContingencyNum);
 
     int     getCalcFrom(int nContingencyNum);
     bool    getUseBusinessDays(int nContingencyNum);
