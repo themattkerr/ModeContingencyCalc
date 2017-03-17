@@ -86,6 +86,12 @@ void ContingencyData::enterDays(int nDays, int nContingencyNum)
 void ContingencyData::enterDependantContingencyTitle(QString DepContTitle, int nContingencyNum)
 {
     m_Contingency[nContingencyNum].m_strDependantContingecyTitle = DepContTitle;
+    int nIndexOfDependantContingency;
+    for (int iii = 0 ; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+        if(m_Contingency[iii].m_strContingencyTitle == DepContTitle)
+            m_Contingency[nContingencyNum].m_dtDateOfContingency = m_Contingency[iii].m_dtDateOfContingency;
+    }
 }
 
 void ContingencyData::setCalcType(int nCalcType, int nContingencyNum)
@@ -195,6 +201,7 @@ void ContingencyData::setDefaults()
      x->m_strReportInfoSeller.clear();
      x->m_bUseBusinessDays = false;
      x->m_strBusinessDayReasons.clear();
+     x->m_strDependantContingecyTitle = BLANK;
 
      x =  &m_Contingency[1];
      x->m_strContingencyTitle = FINANCING_TITLE;
@@ -205,6 +212,7 @@ void ContingencyData::setDefaults()
      x->m_strReportInfoSeller.clear();
      x->m_bUseBusinessDays = false;
      x->m_strBusinessDayReasons.clear();
+     x->m_strDependantContingecyTitle = BLANK;
 
      x =  &m_Contingency[2];
      x->m_strContingencyTitle = APPRAISAL_TITLE;
@@ -215,6 +223,7 @@ void ContingencyData::setDefaults()
      x->m_strReportInfoSeller.clear();
      x->m_bUseBusinessDays = false;
      x->m_strBusinessDayReasons.clear();
+     x->m_strDependantContingecyTitle = BLANK;
 
      x =  &m_Contingency[3];
      x->m_strContingencyTitle = INSPECTION_TITLE;
@@ -225,6 +234,7 @@ void ContingencyData::setDefaults()
      x->m_strReportInfoSeller.clear();
      x->m_bUseBusinessDays = false;
      x->m_strBusinessDayReasons.clear();
+     x->m_strDependantContingecyTitle = BLANK;
 
      x =  &m_Contingency[4];
      x->m_strContingencyTitle = RADON_TITLE;
@@ -235,6 +245,7 @@ void ContingencyData::setDefaults()
      x->m_strReportInfoSeller.clear();
      x->m_bUseBusinessDays = false;
      x->m_strBusinessDayReasons.clear();
+     x->m_strDependantContingecyTitle = BLANK;
 
     for(int iii = 5; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
@@ -253,6 +264,22 @@ void ContingencyData::setDefaults()
     x=0;
 
 }
+void ContingencyData::clearAll()
+{
+    m_dtAODate = QDate::currentDate();
+
+    m_nDaysClosing = 0;
+    m_dtClosingDate = m_dtAODate.addDays(m_nDaysClosing);
+
+    m_strListingBrokerTrustName = "";
+    m_strEarnestMoneyAmout = "";
+    m_strMLSNumber = "";
+    m_strPropertyAddress = "";
+    for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+        resetContingency(iii);
+    }
+}
 void ContingencyData::resetContingency(int nContingencyNum)
 {
     Contingency *x =  &m_Contingency[nContingencyNum];
@@ -265,6 +292,7 @@ void ContingencyData::resetContingency(int nContingencyNum)
     x->m_bUseBusinessDays = false;
     x->m_strBusinessDayReasons.clear();
     x->m_strCustomText.clear();
+    x->m_strDependantContingecyTitle = BLANK;
 }
 void ContingencyData::sortContingenciesAcending()
 {
@@ -274,7 +302,6 @@ void ContingencyData::sortContingenciesAcending()
     {
         for(int jjj = 0; jjj < MAX_NUM_CONTINGENCIES;jjj++)
         {
-            //if(m_Contingency[iii].m_dtDateOfContingency != m_Contingency[jjj].m_dtDateOfContingency)
             if(m_Contingency[iii].m_strContingencyTitle != BLANK && m_Contingency[jjj].m_strContingencyTitle == BLANK)
             {
                 Temp = m_Contingency[iii];
@@ -288,18 +315,24 @@ void ContingencyData::sortContingenciesAcending()
                 Temp = m_Contingency[iii];
                 m_Contingency[iii] = m_Contingency[jjj];
                 m_Contingency[jjj] = Temp;
-//                if(m_Contingency[iii].m_dtDateOfContingency == m_Contingency[jjj].m_dtDateOfContingency
-//                        && (m_Contingency[iii].m_strContingencyTitle < m_Contingency[jjj].m_strContingencyTitle ) )
-//                {
-//                    Temp = m_Contingency[iii];
-//                    m_Contingency[iii] = m_Contingency[jjj];
-//                    m_Contingency[jjj] = Temp;
-//                }
+
             }
 
 
         }
     }
+//    for(int iii = 0; iii < MAX_NUM_CONTINGENCIES;iii++)
+//    {
+//        for(int jjj = 0; jjj < MAX_NUM_CONTINGENCIES;jjj++)
+//        {
+//            if(m_Contingency[iii].m_strContingencyTitle == m_Contingency[jjj].m_strDependantContingecyTitle)
+//            {
+//                Temp = m_Contingency[iii];
+//                m_Contingency[iii] = m_Contingency[jjj];
+//                m_Contingency[jjj] = Temp;
+//            }
+//        }
+//    }
 
 }
 void ContingencyData::sortContingenciesDecending()
@@ -481,7 +514,13 @@ void ContingencyData::calculateDateFromDays(int nContingencyNum, QString &strRea
         }
     if(x->m_nCalcFrom == OTHER_CONT )
         {
-            return;
+          for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+              if(m_Contingency[iii].m_strContingencyTitle == m_Contingency[nContingencyNum].m_strDependantContingecyTitle)
+              {
+                  m_Contingency[nContingencyNum].m_dtDateOfContingency = m_Contingency[iii].m_dtDateOfContingency;
+                  break;
+              }
+        return;
         }
      if(x->m_nCalcFrom != HARD_DATE && x->m_nCalcFrom != CALC_FROM_AO && x->m_nCalcFrom != CALC_FROM_CLOSING && x->m_nCalcFrom != OTHER_CONT)
      {

@@ -51,14 +51,15 @@ void ReportOutput::copyContingenciesToArray()
     for (int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
        x = &m_contOutputArray[iii];
-       x->m_strContingencyTitle = m_OutData.getContingencyTitle(iii);
-       x->m_strCustomText       = m_OutData.getCustomText(iii);
-       x->m_dtDateOfContingency = m_OutData.getDateOfContingency(iii);
-       x->m_nCalcFrom           = m_OutData.getCalcFrom(iii);
-       x->m_nNumOfDays          = m_OutData.getNumOfDays(iii);
-       x->m_bUseBusinessDays    = m_OutData.getUseBusinessDays(iii);
-       x->m_strReportInfoBuyer  = m_OutData.getReportInfoBuyer(iii);
-       x->m_strReportInfoSeller = m_OutData.getReportInfoSeller(iii);
+       x->m_strContingencyTitle         = m_OutData.getContingencyTitle(iii);
+       x->m_strCustomText               = m_OutData.getCustomText(iii);
+       x->m_dtDateOfContingency         = m_OutData.getDateOfContingency(iii);
+       x->m_nCalcFrom                   = m_OutData.getCalcFrom(iii);
+       x->m_nNumOfDays                  = m_OutData.getNumOfDays(iii);
+       x->m_bUseBusinessDays            = m_OutData.getUseBusinessDays(iii);
+       x->m_strReportInfoBuyer          = m_OutData.getReportInfoBuyer(iii);
+       x->m_strReportInfoSeller         = m_OutData.getReportInfoSeller(iii);
+       x->m_strDependantContingecyTitle = m_OutData.getDependantContingencyTitle(iii);
        x->m_strBusinessDayReasons.clear();
 
        x = 0;
@@ -76,6 +77,7 @@ void ReportOutput::copyContingenciesToArray()
     x->m_bUseBusinessDays = 0;
     x->m_strCustomText = "";
     x->m_strBusinessDayReasons.clear();
+    x->m_strDependantContingecyTitle.clear();
 
     nAdditionalIndex++;
     x = &m_contOutputArray[nAdditionalIndex];
@@ -89,10 +91,11 @@ void ReportOutput::copyContingenciesToArray()
     x->m_bUseBusinessDays = false;
     x->m_strCustomText.clear();
     x->m_strBusinessDayReasons.clear();
+    x->m_strDependantContingecyTitle.clear();
 }
 void ReportOutput::sortAscending()
 {
-    {
+
         Contingency Temp;
 
         for(int iii = 0; iii < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;iii++)
@@ -108,10 +111,22 @@ void ReportOutput::sortAscending()
                     m_contOutputArray[jjj] = Temp;
 
                 }
+
             }
         }
-
-    }
+        for(int iii = 0; iii < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;iii++)
+        {
+            for(int jjj = 0; jjj < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;jjj++)
+            {
+                if((m_contOutputArray[iii].m_strContingencyTitle == m_contOutputArray[jjj].m_strDependantContingecyTitle)
+                   && ( m_contOutputArray[iii].m_strContingencyTitle != BLANK))
+                {
+                    Temp = m_contOutputArray[iii];
+                    m_contOutputArray[iii] = m_contOutputArray[jjj];
+                    m_contOutputArray[jjj] = Temp;
+                }
+             }
+         }
 }
 void ReportOutput::generateText()
 {

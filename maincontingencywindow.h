@@ -66,6 +66,27 @@ private slots:
     void on_cont19TitleComboBox_activated(const QString &arg1);
     void on_cont20TitleComboBox_activated(const QString &arg1);
 
+    void on_cont6CustomLineEdit_editingFinished();
+    void on_cont5CustomLineEdit_editingFinished();
+    void on_cont1CustomLineEdit_editingFinished();
+    void on_cont2CustomLineEdit_editingFinished();
+    void on_cont3CustomLineEdit_editingFinished();
+    void on_cont4CustomLineEdit_editingFinished();
+    void on_cont7CustomLineEdit_editingFinished();
+    void on_cont8CustomLineEdit_editingFinished();
+    void on_cont9CustomLineEdit_editingFinished();
+    void on_cont10CustomLineEdit_editingFinished();
+    void on_cont11CustomLineEdit_editingFinished();
+    void on_cont12CustomLineEdit_editingFinished();
+    void on_cont13CustomLineEdit_editingFinished();
+    void on_cont14CustomLineEdit_editingFinished();
+    void on_cont15CustomLineEdit_editingFinished();
+    void on_cont16CustomLineEdit_editingFinished();
+    void on_cont17CustomLineEdit_editingFinished();
+    void on_cont18CustomLineEdit_editingFinished();
+    void on_cont19CustomLineEdit_editingFinished();
+    void on_cont20CustomLineEdit_editingFinished();
+
     void on_cont1dateEdit_userDateChanged(const QDate &date);
     void on_cont2dateEdit_userDateChanged(const QDate &date);
     void on_cont3dateEdit_userDateChanged(const QDate &date);
@@ -150,26 +171,47 @@ private slots:
     void on_cont19BusinessDayCheckBox_clicked();
     void on_cont20BusinessDayCheckBox_clicked();
 
-    void on_cont1CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont2CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont3CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont4CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont8CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont5CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont6CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont7CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont9CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont10CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont11CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont12CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont13CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont14CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont15CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont16CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont17CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont18CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont19CustomLineEdit_textChanged(const QString &arg1);
-    void on_cont20CustomLineEdit_textChanged(const QString &arg1);
+    void on_cont1DepCont_comboBox_activated(const QString &arg1);
+    void on_cont2DepCont_comboBox_activated(const QString &arg1);
+    void on_cont3DepCont_comboBox_activated(const QString &arg1);
+    void on_cont4DepCont_comboBox_activated(const QString &arg1);
+    void on_cont5DepCont_comboBox_activated(const QString &arg1);
+    void on_cont6DepCont_comboBox_activated(const QString &arg1);
+    void on_cont7DepCont_comboBox_activated(const QString &arg1);
+    void on_cont8DepCont_comboBox_activated(const QString &arg1);
+    void on_cont9DepCont_comboBox_activated(const QString &arg1);
+    void on_cont10DepCont_comboBox_activated(const QString &arg1);
+    void on_cont11DepCont_comboBox_activated(const QString &arg1);
+    void on_cont12DepCont_comboBox_activated(const QString &arg1);
+    void on_cont13DepCont_comboBox_activated(const QString &arg1);
+    void on_cont14DepCont_comboBox_activated(const QString &arg1);
+    void on_cont15DepCont_comboBox_activated(const QString &arg1);
+    void on_cont16DepCont_comboBox_activated(const QString &arg1);
+    void on_cont17DepCont_comboBox_activated(const QString &arg1);
+    void on_cont18DepCont_comboBox_activated(const QString &arg1);
+    void on_cont19DepCont_comboBox_activated(const QString &arg1);
+    void on_cont20DepCont_comboBox_activated(const QString &arg1);
+
+//    void on_cont1CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont2CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont3CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont4CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont5CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont6CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont7CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont8CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont9CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont10CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont11CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont12CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont13CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont14CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont15CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont16CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont17CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont18CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont19CustomLineEdit_textChanged(const QString &arg1);
+//    void on_cont20CustomLineEdit_textChanged(const QString &arg1);
 
     void on_pushButton_Show_5_More_clicked();
     void on_pushButton_Show_5_Fewer_clicked();
@@ -181,47 +223,15 @@ private slots:
     void on_actionSave_As_triggered();
     void on_actionSave_triggered();
 
-    void on_cont1DepCont_comboBox_activated(const QString &arg1);
 
-    //void on_cont1DepCont_comboBox_currentTextChanged(const QString &arg1);
 
-    void on_cont2DepCont_comboBox_activated(const QString &arg1);
+    void on_actionClear_All_triggered();
 
-    void on_cont3DepCont_comboBox_activated(const QString &arg1);
+    void on_actionReset_Defaults_triggered();
 
-    void on_cont4DepCont_comboBox_activated(const QString &arg1);
 
-    void on_cont5DepCont_comboBox_activated(const QString &arg1);
 
-    void on_cont6DepCont_comboBox_activated(const QString &arg1);
 
-    void on_cont7DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont8DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont9DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont10DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont11DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont12DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont13DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont14DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont15DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont16DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont17DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont18DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont19DepCont_comboBox_activated(const QString &arg1);
-
-    void on_cont20DepCont_comboBox_activated(const QString &arg1);
 
 private:
 

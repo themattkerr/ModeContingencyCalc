@@ -689,6 +689,143 @@ void MainContingencyWindow::on_cont20TitleComboBox_activated(const QString &arg1
     refreshFields();
 }
 
+void MainContingencyWindow::on_cont1CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 0;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont2CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 1;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont3CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 2;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont4CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 3;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont5CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 4;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+void MainContingencyWindow::on_cont6CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 5;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont7CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 6;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont8CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 7;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont9CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 8;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont10CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 9;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont11CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 10;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont12CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 11;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont13CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 12;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont14CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 13;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont15CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 14;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont16CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 15;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont17CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 16;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont18CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 17;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont19CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 18;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
+
+void MainContingencyWindow::on_cont20CustomLineEdit_editingFinished()
+{
+    int nContingencyIndex = 19;
+    m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
+    refreshFields();
+}
 
 void MainContingencyWindow::on_cont1dateEdit_userDateChanged(const QDate &date)
 {
@@ -1198,229 +1335,6 @@ void MainContingencyWindow::on_cont20BusinessDayCheckBox_clicked()
     refreshFields();
 }
 
-void MainContingencyWindow::on_cont1CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 0;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont2CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 1;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont3CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 2;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont4CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 3;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont5CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 4;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont6CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 5;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont7CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 6;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-void MainContingencyWindow::on_cont8CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 7;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont9CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 8;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont10CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 9;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont11CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 10;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont12CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 11;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont13CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 12;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont14CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 13;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont15CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 14;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont16CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 15;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont17CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 16;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont18CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 17;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont19CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 18;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-void MainContingencyWindow::on_cont20CustomLineEdit_textChanged(const QString &arg1)
-{
-    int nContingencyIndex = 19;
-    m_contData.enterCustomText(arg1, nContingencyIndex);
-    refreshFields();
-}
-
-
-void MainContingencyWindow::on_pushButton_Sort_Contingencies_clicked()
-{
-    //refreshComboBoxes();
-    m_contData.sortContingenciesAcending();
-    refreshFields();
-}
-
-void MainContingencyWindow::on_pushButton_Generate_Report_clicked()
-{
-    refreshFields();
-    ReportOutput *Report = new ReportOutput(this, &m_contData, &m_nReporType );
-    Report->show();
-}
-
-
-void MainContingencyWindow::on_actionOpen_triggered()
-{
-    m_FileName = QFileDialog::getOpenFileName (this, tr("Open MileStoneFile"), "",tr("*.MDRN"));
-
-    bool ok;
-    QMessageBox openStatus;
-    openStatus.setWindowTitle("");
-    ok = openMilestoneFile(m_FileName, m_contData, &m_nReporType, &m_nRowsToShow );
-    if(ok)
-    {
-        openStatus.setText("Open Successful!");
-        m_bUnsavedData = false;
-    }
-    else
-    {
-        openStatus.setText("Open Failed!!!");
-    }
-    refreshFields();
-    openStatus.exec();
-}
-
-void MainContingencyWindow::on_actionSave_As_triggered()
-{
-    m_FileName = QFileDialog::getSaveFileName (this, tr("Save As MileStone File"), "",tr( "*.MDRN"));
-
-            bool ok;
-            QMessageBox SaveStatus;
-            SaveStatus.setWindowTitle("");
-            ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType, &m_nRowsToShow );
-            if(ok)
-            {
-                SaveStatus.setText("Save Successful!");
-                m_bUnsavedData = false;
-            }
-            else
-            {
-                SaveStatus.setText("File NOT saved.");
-                SaveStatus.raise();
-            }
-            SaveStatus.exec();
-}
-
-void MainContingencyWindow::on_actionSave_triggered()
-{
-    if(m_FileName == "")
-    {
-      on_actionSave_As_triggered();
-      return;
-    }
-
-
-    bool ok;
-    QMessageBox SaveStatus;
-    SaveStatus.setWindowTitle("");
-    ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType , &m_nRowsToShow );
-    if(ok)
-    {
-        SaveStatus.setText("Save Successful!");
-        m_bUnsavedData = false;
-    }
-    else
-    {
-        SaveStatus.raise();
-        SaveStatus.setText("File NOT saved.");
-    }
-    SaveStatus.exec();
-}
-
 void MainContingencyWindow::on_cont1DepCont_comboBox_activated(const QString &arg1)
 {
     int nContingencyIndex = 0;
@@ -1561,3 +1475,242 @@ void MainContingencyWindow::on_cont20DepCont_comboBox_activated(const QString &a
     m_contData.enterDependantContingencyTitle(arg1, nContingencyIndex);
     refreshFields();
 }
+
+//void MainContingencyWindow::on_cont1CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 0;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont2CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 1;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont3CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 2;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont4CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 3;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont5CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 4;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont6CustomLineEdit_textChanged(const QString &arg1)
+//{
+////    int nContingencyIndex = 5;
+////    m_contData.enterCustomText(arg1, nContingencyIndex);
+////    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont7CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 6;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+//void MainContingencyWindow::on_cont8CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 7;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont9CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 8;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont10CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 9;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont11CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 10;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont12CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 11;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont13CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 12;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont14CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 13;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont15CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 14;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont16CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 15;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont17CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 16;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont18CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 17;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont19CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 18;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+//void MainContingencyWindow::on_cont20CustomLineEdit_textChanged(const QString &arg1)
+//{
+//    int nContingencyIndex = 19;
+//    m_contData.enterCustomText(arg1, nContingencyIndex);
+//    refreshFields();
+//}
+
+
+void MainContingencyWindow::on_pushButton_Sort_Contingencies_clicked()
+{
+    //refreshComboBoxes();
+    m_contData.sortContingenciesAcending();
+    refreshFields();
+}
+
+void MainContingencyWindow::on_pushButton_Generate_Report_clicked()
+{
+    refreshFields();
+    ReportOutput *Report = new ReportOutput(this, &m_contData, &m_nReporType );
+    Report->show();
+}
+
+
+void MainContingencyWindow::on_actionOpen_triggered()
+{
+    m_FileName = QFileDialog::getOpenFileName (this, tr("Open MileStoneFile"), "",tr("*.MDRN"));
+
+    bool ok;
+    QMessageBox openStatus;
+    openStatus.setWindowTitle("");
+    ok = openMilestoneFile(m_FileName, m_contData, &m_nReporType, &m_nRowsToShow );
+    if(ok)
+    {
+        openStatus.setText("Open Successful!");
+        m_bUnsavedData = false;
+    }
+    else
+    {
+        openStatus.setText("Open Failed!!!");
+    }
+    refreshFields();
+    openStatus.exec();
+}
+
+void MainContingencyWindow::on_actionSave_As_triggered()
+{
+    m_FileName = QFileDialog::getSaveFileName (this, tr("Save As MileStone File"), "",tr( "*.MDRN"));
+
+            bool ok;
+            QMessageBox SaveStatus;
+            SaveStatus.setWindowTitle("");
+            ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType, &m_nRowsToShow );
+            if(ok)
+            {
+                SaveStatus.setText("Save Successful!");
+                m_bUnsavedData = false;
+            }
+            else
+            {
+                SaveStatus.setText("File NOT saved.");
+                SaveStatus.raise();
+            }
+            SaveStatus.exec();
+}
+
+void MainContingencyWindow::on_actionSave_triggered()
+{
+    if(m_FileName == "")
+    {
+      on_actionSave_As_triggered();
+      return;
+    }
+
+
+    bool ok;
+    QMessageBox SaveStatus;
+    SaveStatus.setWindowTitle("");
+    ok = saveMilestoneFile( m_FileName, m_contData, &m_nReporType , &m_nRowsToShow );
+    if(ok)
+    {
+        SaveStatus.setText("Save Successful!");
+        m_bUnsavedData = false;
+    }
+    else
+    {
+        SaveStatus.raise();
+        SaveStatus.setText("File NOT saved.");
+    }
+    SaveStatus.exec();
+}
+
+void MainContingencyWindow::on_actionClear_All_triggered()
+{
+    m_contData.clearAll();
+    refreshFields();
+}
+
+void MainContingencyWindow::on_actionReset_Defaults_triggered()
+{
+    m_contData.setDefaults();
+    refreshFields();
+}
+
+
+
+
