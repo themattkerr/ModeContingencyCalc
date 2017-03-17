@@ -127,7 +127,7 @@ private:
 
     void calculateDaysFromDate(int nContingencyNum );
     void calculateDateFromDays(int nContingencyNum , QString &strReasons);
-
+    void calculateDepContDates();
     void refreshData();
 
 

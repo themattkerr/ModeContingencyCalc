@@ -86,12 +86,13 @@ void ContingencyData::enterDays(int nDays, int nContingencyNum)
 void ContingencyData::enterDependantContingencyTitle(QString DepContTitle, int nContingencyNum)
 {
     m_Contingency[nContingencyNum].m_strDependantContingecyTitle = DepContTitle;
-    int nIndexOfDependantContingency;
-    for (int iii = 0 ; iii < MAX_NUM_CONTINGENCIES; iii++)
-    {
-        if(m_Contingency[iii].m_strContingencyTitle == DepContTitle)
-            m_Contingency[nContingencyNum].m_dtDateOfContingency = m_Contingency[iii].m_dtDateOfContingency;
-    }
+//    int nIndexOfDependantContingency;
+//    for (int iii = 0 ; iii < MAX_NUM_CONTINGENCIES; iii++)
+//    {
+//        if(m_Contingency[iii].m_strContingencyTitle == DepContTitle)
+//            m_Contingency[nContingencyNum].m_dtDateOfContingency = m_Contingency[iii].m_dtDateOfContingency;
+//    }
+    refreshData();
 }
 
 void ContingencyData::setCalcType(int nCalcType, int nContingencyNum)
@@ -559,10 +560,25 @@ void ContingencyData::refreshData()
         default:
             break;
         }
+        calculateDepContDates();
         setContingencyReportText(iii);
     }
 
 
+}
+
+void ContingencyData::calculateDepContDates()
+{
+    for (int iii = 0 ; iii < MAX_NUM_CONTINGENCIES ; iii++)
+    {
+        for (int jjj = 0; jjj < MAX_NUM_CONTINGENCIES ; jjj++) // There is something very wreong with this logic
+        {
+            if(m_Contingency[jjj].m_strDependantContingecyTitle != BLANK)
+                if(m_Contingency[iii].m_strContingencyTitle == m_Contingency[jjj].m_strDependantContingecyTitle)
+                   m_Contingency[jjj].m_dtDateOfContingency = m_Contingency[iii].m_dtDateOfContingency;
+
+        }
+    }
 }
 
 //QString ContingencyData::generateReport()
