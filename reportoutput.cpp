@@ -95,38 +95,84 @@ void ReportOutput::copyContingenciesToArray()
 }
 void ReportOutput::sortAscending()
 {
+//    int nAllContingencies = (MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES);
+//    m_OutData.sortContingenciesAcending(nAllContingencies);
+//        Contingency Temp;
 
-        Contingency Temp;
+//        for(int iii = 0; iii < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;iii++)
+//        {
+//            for(int jjj = 0; jjj < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;jjj++)
+//            {
 
-        for(int iii = 0; iii < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;iii++)
+//                if((m_contOutputArray[iii].m_dtDateOfContingency < m_contOutputArray[jjj].m_dtDateOfContingency)
+//                   && ( m_contOutputArray[iii].m_strContingencyTitle != BLANK))
+//                {
+//                    Temp = m_contOutputArray[iii];
+//                    m_contOutputArray[iii] = m_contOutputArray[jjj];
+//                    m_contOutputArray[jjj] = Temp;
+
+//                }
+
+//            }
+//        }
+//        for(int iii = 0; iii < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;iii++)
+//        {
+//            for(int jjj = 0; jjj < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;jjj++)
+//            {
+//                if((m_contOutputArray[iii].m_strContingencyTitle == m_contOutputArray[jjj].m_strDependantContingecyTitle)
+//                   && ( m_contOutputArray[iii].m_strContingencyTitle != BLANK))
+//                {
+//                    Temp = m_contOutputArray[iii];
+//                    m_contOutputArray[iii] = m_contOutputArray[jjj];
+//                    m_contOutputArray[jjj] = Temp;
+//                }
+//             }
+//         }
+
+    Contingency Temp;
+    int nLastContingency = MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;
+
+    for(int iii = 0; iii < nLastContingency;iii++)
+    {
+        for(int jjj = 0; jjj < nLastContingency;jjj++)
         {
-            for(int jjj = 0; jjj < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;jjj++)
+            if(m_contOutputArray[iii].m_strContingencyTitle != BLANK && m_contOutputArray[jjj].m_strContingencyTitle == BLANK)
             {
-                //if(m_contOutputArray[iii].m_dtDateOfContingency != m_contOutputArray[jjj].m_dtDateOfContingency)
-                if((m_contOutputArray[iii].m_dtDateOfContingency < m_contOutputArray[jjj].m_dtDateOfContingency)
-                   && ( m_contOutputArray[iii].m_strContingencyTitle != BLANK))
+                Temp = m_contOutputArray[iii];
+                m_contOutputArray[iii] = m_contOutputArray[jjj];
+                m_contOutputArray[jjj] = Temp;
+            }
+
+            if((m_contOutputArray[iii].m_dtDateOfContingency < m_contOutputArray[jjj].m_dtDateOfContingency)
+               && ( m_contOutputArray[iii].m_strContingencyTitle != BLANK))
+            {
+                Temp = m_contOutputArray[iii];
+                m_contOutputArray[iii] = m_contOutputArray[jjj];
+                m_contOutputArray[jjj] = Temp;
+            }
+            if((m_contOutputArray[iii].m_dtDateOfContingency == m_contOutputArray[jjj].m_dtDateOfContingency)
+               && ( m_contOutputArray[iii].m_strContingencyTitle != BLANK))
+                if(m_contOutputArray[iii].m_strContingencyTitle < m_contOutputArray[jjj].m_strContingencyTitle)
                 {
                     Temp = m_contOutputArray[iii];
                     m_contOutputArray[iii] = m_contOutputArray[jjj];
                     m_contOutputArray[jjj] = Temp;
-
                 }
-
+        }
+    }
+    for(int iii = 0; iii < nLastContingency;iii++)
+    {
+        for(int jjj = 0; jjj < nLastContingency;jjj++)
+        {
+            if(m_contOutputArray[iii].m_strContingencyTitle == m_contOutputArray[jjj].m_strDependantContingecyTitle && iii > jjj && m_contOutputArray[iii].m_strContingencyTitle != BLANK)
+            {
+                Temp = m_contOutputArray[iii];
+                m_contOutputArray[iii] = m_contOutputArray[jjj];
+                m_contOutputArray[jjj] = Temp;
             }
         }
-        for(int iii = 0; iii < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;iii++)
-        {
-            for(int jjj = 0; jjj < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;jjj++)
-            {
-                if((m_contOutputArray[iii].m_strContingencyTitle == m_contOutputArray[jjj].m_strDependantContingecyTitle)
-                   && ( m_contOutputArray[iii].m_strContingencyTitle != BLANK))
-                {
-                    Temp = m_contOutputArray[iii];
-                    m_contOutputArray[iii] = m_contOutputArray[jjj];
-                    m_contOutputArray[jjj] = Temp;
-                }
-             }
-         }
+    }
+
 }
 void ReportOutput::generateText()
 {
@@ -154,7 +200,8 @@ void ReportOutput::generateText()
                 m_strOutputText.append(x->m_strContingencyTitle).append("\n");
             }
 //            m_strOutputText.append("</b>");
-            m_strOutputText.append(x->m_dtDateOfContingency.toString(LONG_DATE_FORMAT));
+            if(x->m_nCalcFrom != OTHER_CONT)
+                m_strOutputText.append(x->m_dtDateOfContingency.toString(LONG_DATE_FORMAT));
             switch (x->m_nCalcFrom) {
                 case CALC_FROM_AO:      { m_strOutputText.append("  (").append(QString::number(x->m_nNumOfDays,10));
                                             if(x->m_bUseBusinessDays)
@@ -169,6 +216,14 @@ void ReportOutput::generateText()
                                             break;
                                         }
                 case HARD_DATE:         { m_strOutputText.append("\n"); break;}
+
+                case OTHER_CONT:      { m_strOutputText.append("(").append(QString::number(x->m_nNumOfDays,10));
+                                            if(x->m_bUseBusinessDays)
+                                                m_strOutputText.append(" business");
+                                            m_strOutputText.append(" days from the satisfaction of ");
+                                                    m_strOutputText.append(x->m_strDependantContingecyTitle).append(")\n");
+                                            break;
+                                        }
 
                 break;
             default:

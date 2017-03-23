@@ -33,6 +33,10 @@
 #define HOA_DOCS_REVIEW_BUYER "HOA docs review buyer"
 #define COVENANTS_RESTRICTIONS_DELIVERY_BUYER "cov and res delivery"
 #define COVENANTS_RESTRICTIONS_REVIEW_BUYER "cov and restrictions review buyer"
+#define REVIEW_CONDO_DOCS_BUYER " Text for buyer review of condo docs-------"
+#define CONDITON_REPORT_REVIEW_BUYER "text for reviewing condition report -----------------"
+
+//-----------------------------------------
 
 #define ACCEPTED_OFFER_SELLER ""
 #define CLOSING_SELLER "You will need a valid driver's license and either a cashier's check or a wire transfer of any funds you are bringing to closing. The title company will provide a closing disclosure to you a week or so prior to closing.  The disclosure will list the funds you will need to bring to closing in order to close the transaction."
@@ -63,11 +67,15 @@
 #define HOA_DOCS_REVIEW_SELLER "HOA review seller "
 #define COVENANTS_RESTRICTIONS_DELIVERY_SELLER "Covenants and restrictions delivery"
 #define COVENANTS_RESTRICTIONS_REVIEW_SELLER "review covenants restrictions review"
+#define REVIEW_CONDO_DOCS_SELLER " Text for SELLER review of condo docs-------"
+#define CONDITON_REPORT_REVIEW_SELLER "text for reviewing condition report -----------------"
 
+
+//-----------------------------------------
 
 #define BLANK "-"
 #define EARNEST_MONEY_TITLE "Earnest Money"
-#define CONDITION_REPORT_TITLE "Condition Report"
+#define CONDITION_REPORT_TITLE "Delivery Of Condition Report"
 #define FINANCING_TITLE "Financing"
 #define APPRAISAL_TITLE "Appraisal"
 #define INSPECTION_TITLE "Inspection"
@@ -75,7 +83,7 @@
 #define WELL_SEPTIC_TITLE "Well & Septic"
 #define FINAL_WALKTHROUGH_TITLE "Final Walk-through"
 #define HOME_INSURENCE_TITLE "Home-Owner Insurance"
-#define CONDO_DOCS_TITLE "Condo Docs Delivery"
+#define CONDO_DOCS_TITLE "Delivery Of Condo Docs"
 #define COMFORT_LETTER_TITLE "Comfort Letter"
 #define ENVIRONMENTAL_TEST_TITLE "Environmental Test"
 #define ATTORNEY_REVIEW_TITLE "Attorney Review"
@@ -83,15 +91,20 @@
 #define ZONING_TITLE "Zoning"
 #define SURVEY_TITLE "Survey"
 #define RATE_LOCK_TITLE "Loan Rate Lock Expiration"
+
 #define ORDER_TITLE_TITLE "Order Title"
-#define HOA_DOCS_DELIVERY_TITLE "HOA Document Delivery"
+#define HOA_DOCS_DELIVERY_TITLE "Delivery Of HOA Documents"
 #define HOA_DOCS_REVIEW_TITLE "Review HOA Documents"
-#define COVENANTS_RESTRICTIONS_DELIVERY_TITLE "Covenants And Restrictions Delivery"
+#define COVENANTS_RESTRICTIONS_DELIVERY_TITLE "Delivery Of Covenants And Restrictions"
 #define COVENANTS_RESTRICTIONS_REVIEW_TITLE "Review Covenants and Restrictions"
+#define CONDITION_REPORT_REVIEW_TITLE "Review of Condition Report"
+#define CONDO_DOCS_REVIEW_TITLE "Review Condo Docs"
+
 
 #define CUSTOM_TITLE "-Custom-"
 #define ACCEPTED_OFFER_TITLE "Offer Accepted"
 #define CLOSING_TITLE "Closing"
+
 
 
 

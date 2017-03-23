@@ -90,6 +90,8 @@ void MainContingencyWindow::setupTitles()
                 << HOA_DOCS_REVIEW_TITLE
                 << COVENANTS_RESTRICTIONS_DELIVERY_TITLE
                 << COVENANTS_RESTRICTIONS_REVIEW_TITLE
+                << CONDITION_REPORT_REVIEW_TITLE
+                << CONDO_DOCS_REVIEW_TITLE
                 << CUSTOM_TITLE;
     m_strlTitles.removeAll("");
 }
@@ -1619,7 +1621,7 @@ void MainContingencyWindow::on_cont20DepCont_comboBox_activated(const QString &a
 void MainContingencyWindow::on_pushButton_Sort_Contingencies_clicked()
 {
     //refreshComboBoxes();
-    m_contData.sortContingenciesAcending();
+    m_contData.sortContingenciesAcending(MAX_NUM_CONTINGENCIES);
     refreshFields();
 }
 
@@ -1714,3 +1716,10 @@ void MainContingencyWindow::on_actionReset_Defaults_triggered()
 
 
 
+
+//void MainContingencyWindow::on_cont6DaysSpinBox_editingFinished()
+//{
+//        int nContingencyIndex = 5;
+//        m_contData.enterDays(m_allSpinBoxes[nContingencyIndex]->value(), nContingencyIndex);
+//        refreshFields();
+//}

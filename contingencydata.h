@@ -1,7 +1,7 @@
 #ifndef CONTINGENCYDATA_H
 #define CONTINGENCYDATA_H
 
-#define CURRENT_VERSION "2.1.0"
+#define CURRENT_VERSION "2.1.0 beta"
 #define LONG_DATE_FORMAT "dddd  MMMM d, yyyy"
 #define FROM_CLOSING_MESSAGE "From Closing"
 #define FROM_AO_MESSAGE ""
@@ -104,7 +104,7 @@ public:
     void setDefaults();
     void clearAll();
     void resetContingency(int nContingencyNum);
-    void sortContingenciesAcending();
+    void sortContingenciesAcending(int nLastContingency);
     void sortContingenciesDecending();
     
 private:
