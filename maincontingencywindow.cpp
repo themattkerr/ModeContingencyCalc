@@ -51,24 +51,60 @@ void MainContingencyWindow::setupGUI()
 
 void MainContingencyWindow::dateErrorCheck()
 {
-    bool bShowErrorText = false;
+    QDate dtTestDate;
+    bool bShowAfterClosingErrorText = false;
+    bool bShowBeforeAccepanceErrorText = false;
+    QString strErrorList;
+    strErrorList.clear();
+    strErrorList.append("Please confrim dates for the following:\n");
+
     for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
-        if(m_contData.getDateOfContingency(iii)>m_contData.getClosingDate() )
+        if(m_contData.getCalcFrom(iii) == OTHER_CONT)
         {
-            bShowErrorText = true;
+            dtTestDate = m_contData.getDateOfContingency(iii).addDays(m_contData.getNumOfDays(iii) ) ;
+        }
+        else
+            dtTestDate = m_contData.getDateOfContingency(iii);
+
+
+        if(dtTestDate > m_contData.getClosingDate() )
+        {
+            bShowAfterClosingErrorText = true;
+            if(m_contData.getContingencyTitle(iii) != CUSTOM_TITLE)
+                strErrorList.append(m_contData.getContingencyTitle(iii)).append("\n");
+            else
+                strErrorList.append(m_contData.getCustomText(iii)).append("\n");
+        }
+        if(dtTestDate < m_contData.getAODate() )
+        {
+            bShowBeforeAccepanceErrorText = true;
+            if(m_contData.getContingencyTitle(iii) != CUSTOM_TITLE)
+                strErrorList.append(m_contData.getContingencyTitle(iii)).append("\n");
+            else
+                strErrorList.append(m_contData.getCustomText(iii)).append("\n");
         }
     }
-    if(bShowErrorText)
+    if(bShowAfterClosingErrorText)
     {
         ui->label_Warning->show();
         ui->label_WarningMessage->show();
     }
     else
+        ui->label_WarningMessage->hide();
+    if(bShowBeforeAccepanceErrorText)
+    {
+        ui->label_Warning->show();
+        ui->label_WarningBeforeAO->show();
+    }
+    else
+        ui->label_WarningBeforeAO->hide();
+    if(!(bShowAfterClosingErrorText || bShowBeforeAccepanceErrorText))
     {
         ui->label_Warning->hide();
-        ui->label_WarningMessage->hide();
+        strErrorList.clear();
     }
+    ui->label_ErrorList->setText(strErrorList);
 }
 
 void MainContingencyWindow::hideCustomLineEdits()
