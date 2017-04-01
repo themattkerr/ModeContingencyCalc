@@ -49,6 +49,28 @@ void MainContingencyWindow::setupGUI()
     refreshDepContComboBoxes();
 }
 
+void MainContingencyWindow::dateErrorCheck()
+{
+    bool bShowErrorText = false;
+    for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+    {
+        if(m_contData.getDateOfContingency(iii)>m_contData.getClosingDate() )
+        {
+            bShowErrorText = true;
+        }
+    }
+    if(bShowErrorText)
+    {
+        ui->label_Warning->show();
+        ui->label_WarningMessage->show();
+    }
+    else
+    {
+        ui->label_Warning->hide();
+        ui->label_WarningMessage->hide();
+    }
+}
+
 void MainContingencyWindow::hideCustomLineEdits()
 {
     for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
@@ -214,7 +236,7 @@ void MainContingencyWindow::loadCalcFrom()
 
 void MainContingencyWindow::refreshFields()
 {
-    showRows();
+    //showRows();
 
     m_bUnsavedData = true;
     if( m_contData.getPropertyAddress() != "")
@@ -292,6 +314,8 @@ void MainContingencyWindow::refreshFields()
     }
     refreshComboBoxes();
     refreshDepContComboBoxes();
+
+    dateErrorCheck();
 }
 
 void MainContingencyWindow::loadDateLabels()
@@ -317,7 +341,7 @@ void MainContingencyWindow::showRows()
     ui->Row2->hide();
     ui->Row3->hide();
     ui->Row4->hide();
-    adjustSize();
+    //adjustSize();
     switch (m_nRowsToShow) {
     case 4: ui->Row4->show();
     case 3: ui->Row3->show();
@@ -329,10 +353,10 @@ void MainContingencyWindow::showRows()
             ui->Row2->hide();
             ui->Row3->hide();
             ui->Row4->hide();
-            adjustSize();
+            //adjustSize();
         break;
     }
-   adjustSize();
+   //adjustSize();
 }
 
 
@@ -1478,144 +1502,6 @@ void MainContingencyWindow::on_cont20DepCont_comboBox_activated(const QString &a
     refreshFields();
 }
 
-//void MainContingencyWindow::on_cont1CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 0;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont2CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 1;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont3CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 2;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont4CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 3;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont5CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 4;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont6CustomLineEdit_textChanged(const QString &arg1)
-//{
-////    int nContingencyIndex = 5;
-////    m_contData.enterCustomText(arg1, nContingencyIndex);
-////    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont7CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 6;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-//void MainContingencyWindow::on_cont8CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 7;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont9CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 8;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont10CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 9;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont11CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 10;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont12CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 11;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont13CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 12;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont14CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 13;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont15CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 14;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont16CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 15;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont17CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 16;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont18CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 17;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont19CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 18;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
-
-//void MainContingencyWindow::on_cont20CustomLineEdit_textChanged(const QString &arg1)
-//{
-//    int nContingencyIndex = 19;
-//    m_contData.enterCustomText(arg1, nContingencyIndex);
-//    refreshFields();
-//}
 
 
 void MainContingencyWindow::on_pushButton_Sort_Contingencies_clicked()
@@ -1651,6 +1537,7 @@ void MainContingencyWindow::on_actionOpen_triggered()
         openStatus.setText("Open Failed!!!");
     }
     refreshFields();
+    showRows();
     openStatus.exec();
 }
 
@@ -1705,12 +1592,14 @@ void MainContingencyWindow::on_actionClear_All_triggered()
 {
     m_contData.clearAll();
     refreshFields();
+    showRows();
 }
 
 void MainContingencyWindow::on_actionReset_Defaults_triggered()
 {
     m_contData.setDefaults();
     refreshFields();
+    showRows();
 }
 
 

@@ -193,26 +193,7 @@ private slots:
     void on_cont19DepCont_comboBox_activated(const QString &arg1);
     void on_cont20DepCont_comboBox_activated(const QString &arg1);
 
-//    void on_cont1CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont2CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont3CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont4CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont5CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont6CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont7CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont8CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont9CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont10CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont11CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont12CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont13CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont14CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont15CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont16CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont17CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont18CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont19CustomLineEdit_textChanged(const QString &arg1);
-//    void on_cont20CustomLineEdit_textChanged(const QString &arg1);
+
 
     void on_pushButton_Show_5_More_clicked();
     void on_pushButton_Show_5_Fewer_clicked();
@@ -243,6 +224,7 @@ private:
 
 
     void setupGUI();
+    void dateErrorCheck();
     void hideCustomLineEdits();
 
     void setupTitles();
