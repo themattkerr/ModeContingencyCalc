@@ -55,14 +55,20 @@ void MainContingencyWindow::dateErrorCheck()
     bool bShowAfterClosingErrorText = false;
     bool bShowBeforeAccepanceErrorText = false;
     QString strErrorList;
+    QString strTemp;
     strErrorList.clear();
     strErrorList.append("Please confrim dates for the following:\n");
 
     for(int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
+    if(m_contData.getContingencyTitle(iii) != BLANK)
+    {
         if(m_contData.getCalcFrom(iii) == OTHER_CONT)
         {
-            dtTestDate = m_contData.getDateOfContingency(iii).addDays(m_contData.getNumOfDays(iii) ) ;
+            if(m_contData.getUseBusinessDays(iii))
+                dtTestDate = dateBusinessDaysAway( m_contData.getDateOfContingency(iii), m_contData.getNumOfDays(iii), strTemp);
+            else
+                dtTestDate = m_contData.getDateOfContingency(iii).addDays(m_contData.getNumOfDays(iii) ) ;
         }
         else
             dtTestDate = m_contData.getDateOfContingency(iii);
@@ -71,6 +77,7 @@ void MainContingencyWindow::dateErrorCheck()
         if(dtTestDate > m_contData.getClosingDate() )
         {
             bShowAfterClosingErrorText = true;
+            strErrorList.append("->  ");
             if(m_contData.getContingencyTitle(iii) != CUSTOM_TITLE)
                 strErrorList.append(m_contData.getContingencyTitle(iii)).append("\n");
             else
@@ -79,11 +86,13 @@ void MainContingencyWindow::dateErrorCheck()
         if(dtTestDate < m_contData.getAODate() )
         {
             bShowBeforeAccepanceErrorText = true;
+            strErrorList.append("->  ");
             if(m_contData.getContingencyTitle(iii) != CUSTOM_TITLE)
                 strErrorList.append(m_contData.getContingencyTitle(iii)).append("\n");
             else
                 strErrorList.append(m_contData.getCustomText(iii)).append("\n");
         }
+    }
     }
     if(bShowAfterClosingErrorText)
     {

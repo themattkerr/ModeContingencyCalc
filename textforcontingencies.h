@@ -28,13 +28,14 @@
 #define SURVEY_BUYER "The survey must be completed and any lot line issues resolved by this date."
 #define RATE_LOCK_BUYER "Financing issues can arise if the closing date is pushed out past this date."
 
-#define ORDER_TITLE_BUYER "tile order buyer"
-#define HOA_DOCS_DELIVERY_BUYER "HOA docs delivery bueyr"
-#define HOA_DOCS_REVIEW_BUYER "HOA docs review buyer"
-#define COVENANTS_RESTRICTIONS_DELIVERY_BUYER "cov and res delivery"
-#define COVENANTS_RESTRICTIONS_REVIEW_BUYER "cov and restrictions review buyer"
-#define REVIEW_CONDO_DOCS_BUYER " Text for buyer review of condo docs-------"
-#define CONDITON_REPORT_REVIEW_BUYER "text for reviewing condition report -----------------"
+#define ORDER_TITLE_BUYER "The way that a seller ensures that they are providing good title to the property is through a title insurance policy. This is the seller’s responsibility and the listing agent will usually order it and coordinate with the title company. The title company will then provide us and your lender a copy of the policy."
+#define HOA_DOCS_DELIVERY_BUYER "Home Owner’s documents may include association bylaws, meeting minutes, budgets, and a reserve funds statement."
+#define HOA_DOCS_REVIEW_BUYER "This is your opportunity to look over all the home owner’s association documentation. During this time period, you have the ability to object to items contained within the documents and possibly end the purchase contract."
+#define COVENANTS_RESTRICTIONS_DELIVERY_BUYER "The covenants and restrictions document lays out what you can do on or to your property within a given development or neighborhood. The seller has until this date to deliver this documentation to you for review."
+#define COVENANTS_RESTRICTIONS_REVIEW_BUYER "During this timeframe you can review and object to limitations, such as the ability to build a fence, in writing to the seller.  If an objection is found, you may be able to cancel the transaction."
+#define REVIEW_CONDO_DOCS_BUYER "This is your opportunity to review the rules for the condominium and to determine how well the association is managed.  Meeting minutes and budgets will give clues to the health of the association.  You must object to any items during this timeframe."
+#define CONDITON_REPORT_REVIEW_BUYER "During this time, you should carefully review conditions disclosed by the seller on this report. It is generally not reasonable to have a buyer try to claim money or cures for items listed in the condition report during negotiations of an inspection contingency."
+
 
 //-----------------------------------------
 
@@ -62,13 +63,13 @@
 #define SURVEY_SELLER "The survey must be completed and any lot line issues resolved by this date."
 #define RATE_LOCK_SELLER "Financing issues can arise if the closing date is pushed out past this date."
 
-#define ORDER_TITLE_SELLER "Title text for seller"
-#define HOA_DOCS_DELIVERY_SELLER "HOA delievery text for seller"
-#define HOA_DOCS_REVIEW_SELLER "HOA review seller "
-#define COVENANTS_RESTRICTIONS_DELIVERY_SELLER "Covenants and restrictions delivery"
-#define COVENANTS_RESTRICTIONS_REVIEW_SELLER "review covenants restrictions review"
-#define REVIEW_CONDO_DOCS_SELLER " Text for SELLER review of condo docs-------"
-#define CONDITON_REPORT_REVIEW_SELLER "text for reviewing condition report -----------------"
+#define ORDER_TITLE_SELLER "You are required to show that you are providing good title to the property. In Wisconsin, this is done through a title insurance policy. We will order it and coordinate with the title company on your behalf. There can sometimes be a discount if you have a copy of your previous title policy. The title company will then provide the buyer’s lender a copy of the new policy."
+#define HOA_DOCS_DELIVERY_SELLER "You are required to deliver of these to the buyer. Home Owner’s documents may include association bylaws, meeting minutes, budgets, and a reserve funds statement."
+#define HOA_DOCS_REVIEW_SELLER "This is the buyer’s opportunity to look over all the home owner’s association documentation. During this time, the buyer a has the ability to object to items contained within the documents and possibly end the purchase contract."
+#define COVENANTS_RESTRICTIONS_DELIVERY_SELLER "The covenants and restrictions document lays out what you can do on or to your property within a given development or neighborhood. You have until this date to deliver this documentation to the buyer for review."
+#define COVENANTS_RESTRICTIONS_REVIEW_SELLER "During this timeframe, the buyer can review and object to limitations, such as the ability to build a fence, in writing.  If an objection is found, the buyer may be able to cancel the transaction."
+#define REVIEW_CONDO_DOCS_SELLER "This is the buyer’s opportunity to review the rules for the condominium and to determine how well the association is managed.  Meeting minutes and budgets will give clues to the health of the association.  The buyer must object to any items during this timeframe."
+#define CONDITON_REPORT_REVIEW_SELLER "The buyer will review the conditions disclosed by you. It is generally not reasonable to have a buyer try to claim money or cures for items listed in the condition report during negotiations of an inspection contingency."
 
 
 //-----------------------------------------

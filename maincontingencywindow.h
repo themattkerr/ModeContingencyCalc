@@ -5,14 +5,7 @@
 #include <QList>
 #include <QStringList>
 #include <QMessageBox>
-
 #include <qfiledialog.h>
-#include "contingencydata.h"
-#include "textforcontingencies.h"
-#include "reportoutput.h"
-#include "saveandloadfunctions.h"
-
-
 #include <QComboBox>
 #include <QLineEdit>
 #include <QDateEdit>
@@ -20,6 +13,14 @@
 #include <QSpinBox>
 #include <QRadioButton>
 #include <QCheckBox>
+
+#include "contingencydata.h"
+#include "textforcontingencies.h"
+#include "reportoutput.h"
+#include "saveandloadfunctions.h"
+#include "mattcalculations.h"
+
+
 
 namespace Ui {
 class MainContingencyWindow;
