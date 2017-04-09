@@ -9,18 +9,27 @@ MainContingencyWindow::MainContingencyWindow(QWidget *parent) :
     m_FileName = "";
     setupGUI();
     adjustSize();
+    m_bUnsavedData = false;
 }
 
 MainContingencyWindow::~MainContingencyWindow()
 {
-//    if(m_bUnsavedData)
-//    {
+    if(m_bUnsavedData)
+    {
+        bool bSave = false;
+        UnsavedChangesDialog SaveAndExit(this, &bSave);
+        SaveAndExit.exec() ;
+        if(bSave)
+            on_actionSave_As_triggered();
+
+
+
 //        QMessageBox UnsavedWarning;
 //        UnsavedWarning.setWindowTitle("");
 //        UnsavedWarning.setText("Warning!!! There is unsaved data present!");
 //        UnsavedWarning.exec();
 //        on_actionSave_As_triggered();
-//    }
+    }
     delete ui;
 }
 
@@ -601,7 +610,6 @@ void MainContingencyWindow::on_pushButton_Show_5_More_clicked()
         m_nRowsToShow = 4;
     showRows();
 }
-
 void MainContingencyWindow::on_pushButton_Show_5_Fewer_clicked()
 {
     m_nRowsToShow--;
@@ -609,55 +617,48 @@ void MainContingencyWindow::on_pushButton_Show_5_Fewer_clicked()
         m_nRowsToShow = 1;
     showRows();
 }
-
+//--------------------Top field entry --------------------------
 void MainContingencyWindow::on_dateEditAODate_userDateChanged(const QDate &date)
 {
     m_contData.enterAODate(date);
     refreshFields();
 }
-
 void MainContingencyWindow::on_pushButtonSetToToday_clicked()
 {
     m_contData.enterAODate(QDate::currentDate());
     refreshFields();
 }
-
 void MainContingencyWindow::on_spinBoxDaysToClosing_valueChanged(int arg1)
 {
     m_contData.enterDaysClosing(arg1);
     refreshFields();
 }
-
 void MainContingencyWindow::on_dateEditClosingDate_userDateChanged(const QDate &date)
 {
     m_contData.enterClosingDate(date);
     refreshFields();
 }
-
 void MainContingencyWindow::on_lineEditPropertyAddress_editingFinished()
 {
     m_contData.enterPropertyAddress(ui->lineEditPropertyAddress->text());
     refreshFields();
 }
-
 void MainContingencyWindow::on_lineEditMLSNum_editingFinished()
 {
     m_contData.enterMLSNumber(ui->lineEditMLSNum->text());
     refreshFields();
 }
-
 void MainContingencyWindow::on_lineEditEarnestMoney_editingFinished()
 {
     m_contData.enterEarnestMoneyAmount(ui->lineEditEarnestMoney->text());
     refreshFields();
 }
-
 void MainContingencyWindow::on_lineEditListingBrokerTrustName_editingFinished()
 {
     m_contData.enterListingBrokerTrustName(ui->lineEditListingBrokerTrustName->text());
     refreshFields();
 }
-
+// ------------ Contingency entry -------------------
 
 void MainContingencyWindow::on_cont1TitleComboBox_activated(const QString &arg1)
 {
@@ -766,21 +767,18 @@ void MainContingencyWindow::on_cont1CustomLineEdit_editingFinished()
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont2CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 1;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont3CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 2;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont4CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 3;
@@ -799,129 +797,110 @@ void MainContingencyWindow::on_cont6CustomLineEdit_editingFinished()
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont7CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 6;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont8CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 7;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont9CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 8;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont10CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 9;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont11CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 10;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont12CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 11;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont13CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 12;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont14CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 13;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont15CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 14;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont16CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 15;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont17CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 16;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont18CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 17;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont19CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 18;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont20CustomLineEdit_editingFinished()
 {
     int nContingencyIndex = 19;
     m_contData.enterCustomText(m_allCustomLineEdits[nContingencyIndex]->text(), nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont1dateEdit_userDateChanged(const QDate &date)
 {
-
     int nContingency1Index = 0;
     m_contData.enterDateOfContingency(date, nContingency1Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont2dateEdit_userDateChanged(const QDate &date)
 {
-
     int nContingency2Index = 1;
     m_contData.enterDateOfContingency(date, nContingency2Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont3dateEdit_userDateChanged(const QDate &date)
 {
-
     int nContingency3Index = 2;
     m_contData.enterDateOfContingency(date, nContingency3Index);
     refreshFields();
 }
 void MainContingencyWindow::on_cont4dateEdit_userDateChanged(const QDate &date)
 {
-
     int nContingency4Index = 3;
     m_contData.enterDateOfContingency(date, nContingency4Index);
     refreshFields();
@@ -1031,28 +1010,24 @@ void MainContingencyWindow::on_cont1DaysSpinBox_valueChanged(int arg1)
     m_contData.enterDays(arg1, nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont2DaysSpinBox_valueChanged(int arg1)
 {
     int nContingencyIndex = 1;
     m_contData.enterDays(arg1, nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont3DaysSpinBox_valueChanged(int arg1)
 {
     int nContingencyIndex = 2;
     m_contData.enterDays(arg1, nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont4DaysSpinBox_valueChanged(int arg1)
 {
     int nContingencyIndex = 3;
     m_contData.enterDays(arg1, nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont5DaysSpinBox_valueChanged(int arg1)
 {
     int nContingencyIndex = 4;
@@ -1065,7 +1040,6 @@ void MainContingencyWindow::on_cont6DaysSpinBox_valueChanged(int arg1)
     m_contData.enterDays(arg1, nContingencyIndex);
     refreshFields();
 }
-
 void MainContingencyWindow::on_cont7DaysSpinBox_valueChanged(int arg1)
 {
     int nContingencyIndex = 6;
@@ -1551,7 +1525,6 @@ void MainContingencyWindow::on_cont20DepCont_comboBox_activated(const QString &a
 
 void MainContingencyWindow::on_pushButton_Sort_Contingencies_clicked()
 {
-    //refreshComboBoxes();
     m_contData.sortContingenciesAcending(MAX_NUM_CONTINGENCIES);
     refreshFields();
 }
@@ -1581,8 +1554,12 @@ void MainContingencyWindow::on_actionOpen_triggered()
     {
         openStatus.setText("Open Failed!!!");
     }
-    refreshFields();
-    showRows();
+    if(!m_bUnsavedData)
+    {
+        refreshFields();
+        showRows();
+    m_bUnsavedData = false;
+    }
     openStatus.exec();
 }
 
@@ -1638,6 +1615,7 @@ void MainContingencyWindow::on_actionClear_All_triggered()
     m_contData.clearAll();
     refreshFields();
     showRows();
+
 }
 
 void MainContingencyWindow::on_actionReset_Defaults_triggered()
@@ -1647,13 +1625,3 @@ void MainContingencyWindow::on_actionReset_Defaults_triggered()
     showRows();
 }
 
-
-
-
-
-//void MainContingencyWindow::on_cont6DaysSpinBox_editingFinished()
-//{
-//        int nContingencyIndex = 5;
-//        m_contData.enterDays(m_allSpinBoxes[nContingencyIndex]->value(), nContingencyIndex);
-//        refreshFields();
-//}

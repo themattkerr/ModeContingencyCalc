@@ -14,6 +14,7 @@
 #include <QRadioButton>
 #include <QCheckBox>
 
+#include "unsavedchangesdialog.h"
 #include "contingencydata.h"
 #include "textforcontingencies.h"
 #include "reportoutput.h"

@@ -28,7 +28,8 @@ SOURCES += main.cpp\
     contingencydata.cpp \
     mattcalculations.cpp \
     reportoutput.cpp \
-    saveandloadfunctions.cpp
+    saveandloadfunctions.cpp \
+    unsavedchangesdialog.cpp
 
 HEADERS  += maincontingencywindow.h \
     constsants.h \
@@ -36,7 +37,9 @@ HEADERS  += maincontingencywindow.h \
     mattcalculations.h \
     reportoutput.h \
     textforcontingencies.h \
-    saveandloadfunctions.h
+    saveandloadfunctions.h \
+    unsavedchangesdialog.h
 
 FORMS    += maincontingencywindow.ui \
-    reportoutput.ui
+    reportoutput.ui \
+    unsavedchangesdialog.ui
