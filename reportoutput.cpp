@@ -152,12 +152,28 @@ void ReportOutput::sortAscending()
             }
             if((m_contOutputArray[iii].m_dtDateOfContingency == m_contOutputArray[jjj].m_dtDateOfContingency)
                && ( m_contOutputArray[iii].m_strContingencyTitle != BLANK))
+            {
                 if(m_contOutputArray[iii].m_strContingencyTitle < m_contOutputArray[jjj].m_strContingencyTitle)
                 {
                     Temp = m_contOutputArray[iii];
                     m_contOutputArray[iii] = m_contOutputArray[jjj];
                     m_contOutputArray[jjj] = Temp;
                 }
+                if(m_contOutputArray[jjj].m_strContingencyTitle == CLOSING_TITLE )
+                {
+                    Temp = m_contOutputArray[iii];
+                    m_contOutputArray[iii] = m_contOutputArray[jjj];
+                    m_contOutputArray[jjj] = Temp;
+                }
+                if(m_contOutputArray[iii].m_strContingencyTitle == ACCEPTED_OFFER_TITLE )
+                {
+                    Temp = m_contOutputArray[iii];
+                    m_contOutputArray[iii] = m_contOutputArray[jjj];
+                    m_contOutputArray[jjj] = Temp;
+                }
+
+
+            }
         }
     }
     for(int iii = 0; iii < nLastContingency;iii++)
