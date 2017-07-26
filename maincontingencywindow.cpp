@@ -150,7 +150,8 @@ void MainContingencyWindow::setupTitles()
                 << APPRAISAL_TITLE
                 << INSPECTION_TITLE
                 << RADON_TITLE
-                << WELL_SEPTIC_TITLE
+                << WELL_TITLE
+                << SEPTIC_TITLE
                 << FINAL_WALKTHROUGH_TITLE
                 << HOME_INSURENCE_TITLE
                 << CONDO_DOCS_TITLE

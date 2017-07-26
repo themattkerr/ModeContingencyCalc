@@ -22,7 +22,7 @@ bool openMilestoneFile(QString strFileName ,ContingencyData &openData, int *pnRe
     QString strSoftwareVer;
 
     stream >> strSoftwareVer;
-    if( strSoftwareVer == "2.1.0 beta")
+    if( strSoftwareVer == "2.1.0 beta" || strSoftwareVer == "2.1.1")
     {
         stream >> *pnReportType;
         stream >> *pnRowsToShow;

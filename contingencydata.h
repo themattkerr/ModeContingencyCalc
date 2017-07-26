@@ -1,7 +1,7 @@
 #ifndef CONTINGENCYDATA_H
 #define CONTINGENCYDATA_H
 
-#define CURRENT_VERSION "2.1.0 beta"
+#define CURRENT_VERSION "2.1.1"
 #define LONG_DATE_FORMAT "dddd  MMMM d, yyyy"
 #define FROM_CLOSING_MESSAGE "From Closing"
 #define FROM_AO_MESSAGE ""

@@ -402,8 +402,11 @@ void ContingencyData::setContingencyReportText(int nContingencyNum)
     if(x->m_strContingencyTitle == RADON_TITLE)               {x->m_strReportInfoBuyer.append(RADON_BUYER );
                                                                x->m_strReportInfoSeller.append(RADON_SELLER );}
 
-    if(x->m_strContingencyTitle == WELL_SEPTIC_TITLE)         {x->m_strReportInfoBuyer.append(WELL_SEPTIC_BUYER );
-                                                               x->m_strReportInfoSeller.append(WELL_SEPTIC_SELLER );  }
+    if(x->m_strContingencyTitle == WELL_TITLE)                {x->m_strReportInfoBuyer.append(WELL_BUYER );
+                                                               x->m_strReportInfoSeller.append(WELL_SELLER );  }
+
+    if(x->m_strContingencyTitle == SEPTIC_TITLE)              {x->m_strReportInfoBuyer.append(SEPTIC_BUYER );
+                                                               x->m_strReportInfoSeller.append(SEPTIC_SELLER );  }
 
     if(x->m_strContingencyTitle == FINAL_WALKTHROUGH_TITLE)   {x->m_strReportInfoBuyer.append(FINAL_WALKTHROUGH_BUYER );
                                                                x->m_strReportInfoSeller.append(FINAL_WALKTHROUGH_SELLER ); }
