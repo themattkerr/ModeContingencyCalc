@@ -1,6 +1,11 @@
 #ifndef TEXTFORCONTINGENCIES_H
 #define TEXTFORCONTINGENCIES_H
-
+ /*
+  * To add a new contingency:
+  *     1) Add titles, buyer text, and seller text to this file
+  *     2) Add to function --> ContingencyData::setContingencyReportText
+  *     3) Add title to    --> MainContingencyWindow::setupTitles()
+  */
 
 #define ACCEPTED_OFFER_BUYER ""
 #define CLOSING_BUYER "You will need a valid driver's license and either a cashier's check or a wire transfer for any funds you will bring to closing. Roughly a week prior to closing your lender will provide a closing disclosure which will list all the funds you will need to bring to closing in order to close the transaction."
@@ -38,6 +43,7 @@
 #define REVIEW_CONDO_DOCS_BUYER "This is your opportunity to review the rules for the condominium and to determine how well the association is managed.  Meeting minutes and budgets will give clues to the health of the association.  You must object to any items during this timeframe."
 #define CONDITON_REPORT_REVIEW_BUYER "During this time, you should carefully review conditions disclosed by the seller on this report. It is generally not reasonable to have a buyer try to claim money or cures for items listed in the condition report during negotiations for an inspection contingency."
 
+#define UTILITIES_BUYER "Test Text Buyer.  Don't forget to order your utilities."
 
 //-----------------------------------------
 
@@ -75,7 +81,7 @@
 #define REVIEW_CONDO_DOCS_SELLER "This is the buyer’s opportunity to review the rules for the condominium and to determine how well the association is managed.  Meeting minutes and budgets will give clues to the health of the association.  The buyer must object to any items during this timeframe."
 #define CONDITON_REPORT_REVIEW_SELLER "The buyer will review the conditions disclosed by you. It is generally not reasonable to have a buyer try to claim money or cures for items listed in the condition report during negotiations for an inspection contingency."
 
-
+#define UTILITIES_SELLER "Test Utils text seller. Dont't forget to cancel your utilities."
 
 //-----------------------------------------
 
@@ -107,12 +113,13 @@
 #define CONDITION_REPORT_REVIEW_TITLE "Review of Condition Report"
 #define CONDO_DOCS_REVIEW_TITLE "Review Condo Docs"
 
+#define UTILITIES_TITLE "Utilities"
 
 #define CUSTOM_TITLE "-Custom-"
 #define ACCEPTED_OFFER_TITLE "Offer Accepted"
 #define CLOSING_TITLE "Closing"
 
-
+#define DISCLAIMER ""
 
 
 #endif // TEXTFORCONTINGENCIES_H

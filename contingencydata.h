@@ -1,17 +1,17 @@
 #ifndef CONTINGENCYDATA_H
 #define CONTINGENCYDATA_H
 
-#define CURRENT_VERSION "2.1.1"
+#include <QDate>
+#include <QString>
+#include <QTime>
+#include "textforcontingencies.h"
+
+#define CURRENT_VERSION "2.1.2"
 #define LONG_DATE_FORMAT "dddd  MMMM d, yyyy"
 #define FROM_CLOSING_MESSAGE "From Closing"
 #define FROM_AO_MESSAGE ""
 
 #define MAX_NUM_CONTINGENCIES 20
-
-#include <QDate>
-#include <QString>
-#include <QTime>
-#include "textforcontingencies.h"
 
 #define HARD_DATE_TEXT "Hard Date"
 #define CALC_FROM_AO_TEXT "Days From AO"

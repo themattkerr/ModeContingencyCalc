@@ -169,6 +169,7 @@ void MainContingencyWindow::setupTitles()
                 << COVENANTS_RESTRICTIONS_REVIEW_TITLE
                 << CONDITION_REPORT_REVIEW_TITLE
                 << CONDO_DOCS_REVIEW_TITLE
+                << UTILITIES_TITLE
                 << CUSTOM_TITLE;
     m_strlTitles.removeAll("");
 }

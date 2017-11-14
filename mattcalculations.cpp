@@ -1,8 +1,13 @@
 #include "mattcalculations.h"
-#include "constsants.h"
+
 #include <qstring.h>
 #include <qlocale.h>
 #include <QDate>
+#include <random>
+#include <stdlib.h>
+#include <qmath.h>
+#include <QTime>
+#include <qglobal.h>
 
 
 
@@ -246,4 +251,266 @@ int   numOfBusinessDaysBetween(QDate dtStartDate, QDate dtEndDate, QString &strL
     strListOfDaysOff = "Error";
     return -1;
 }
+QString createFeetInchesString(int nInputSixteenths, unsigned int nFormat, bool &ok)
+{
+    if (nInputSixteenths < 0)
+    {
+        ok = false;
+        return "input error. input less than 0";
+    }
+    if(!(nFormat == WORDS || nFormat == MARKS))
+    {
+        ok = false;
+        return "format error.";
+    }
 
+    QString strOutput;
+    int nFeet=0; int nInches=0; int nSixteenths=0;
+    int nHalf =0; int nQuarters=0; int nEighths=0; int nSixteens=0;
+    ok = convertSixteenthsToFeetInchesSixteenths(nInputSixteenths, nFeet, nInches, nSixteenths);
+    ok = reduceSixteethsFractions(nSixteenths, nHalf, nQuarters, nEighths, nSixteens  );
+    QString strFraction = makeFractionString( nHalf, nQuarters, nEighths, nSixteens );
+
+    strOutput.append(QString::number(nFeet));
+    if(nFormat == WORDS)    {strOutput.append(" ").append("feet ");}
+    if(nFormat == MARKS)    {strOutput.append("' - ");}
+
+    strOutput.append(QString::number(nInches)).append(" ").append(strFraction);
+    if(nFormat == WORDS)    {strOutput.append(" ").append("inches ");}
+    if(nFormat == MARKS)    {strOutput.append("\" ");}
+
+    return strOutput;
+}
+
+bool convertSixteenthsToFeetInchesSixteenths(int inputSixteeths, int &nFeet, int &nInches, int &nSixteenths)
+{
+    int nNumOf16thsPerFoot = 192;
+    int nNumOf16thsPerInch = 16;
+    int nTempRemainder16ths = 0;
+
+    nFeet = inputSixteeths / nNumOf16thsPerFoot;
+    nTempRemainder16ths = inputSixteeths - (nNumOf16thsPerFoot * nFeet);
+    nInches = nTempRemainder16ths / nNumOf16thsPerInch;
+    nTempRemainder16ths = nTempRemainder16ths - (nNumOf16thsPerInch * nInches );
+    nSixteenths = nTempRemainder16ths;
+    if( nFeet >= 0 && nInches >=0 && nTempRemainder16ths >=0 )
+        return true;
+    else
+        return false;
+}
+QString makeFractionString(int nHalf, int nQuarters, int nEighths, int nSixteens )
+{
+    if(!( (nHalf >= 0 && nHalf < 2)           &&
+             (nQuarters >= 0 && nQuarters < 4)   &&
+             (nEighths >=0 && nEighths < 8)      &&
+             (nSixteens >= 0 && nSixteens < 16)  ))
+           return "input error";
+
+       QString strOutput;
+       strOutput.append("/");
+       if (nHalf > 0)
+       {
+           strOutput.prepend(QString::number(nHalf));
+           strOutput.append("2");
+           return strOutput;
+       }
+       if (nQuarters > 0)
+       {
+           strOutput.prepend(QString::number(nQuarters));
+           strOutput.append("4");
+           return strOutput;
+       }
+       if (nEighths > 0)
+       {
+           strOutput.prepend(QString::number(nEighths));
+           strOutput.append("8");
+           return strOutput;
+       }
+       if (nSixteens > 0)
+       {
+           strOutput.prepend(QString::number(nSixteens));
+           strOutput.append("16");
+           return strOutput;
+       }
+       return "";
+}
+bool reduceSixteethsFractions(int inputSixteenths, int &nHalf, int &nQuarters, int &nEighths, int &nSixteens )
+{
+    nHalf = 0;
+    nQuarters = 0;
+    nEighths = 0;
+    nSixteens = 0;
+
+    if (inputSixteenths >= 16 || inputSixteenths <= -16)
+    {
+        nHalf = -1;
+        nQuarters = -1;
+        nEighths = -1;
+        nSixteens = -1;
+        return false;
+    }
+
+    if(inputSixteenths == 0){return true;}
+    if(!(inputSixteenths%8))  {nHalf = inputSixteenths / 8;       return true;  }
+    if(!(inputSixteenths%4))  {nQuarters = inputSixteenths / 4;   return true;  }
+    if(!(inputSixteenths%2))  {nEighths = inputSixteenths / 2;    return true;  }
+    nSixteens = inputSixteenths;
+    return false;
+}
+
+
+int convertFeetInchestSixteenthsToSixteenths(int nFeet, int nInches, int nSixteenths)
+{
+    int nNumOf16thsPerFoot = 192;
+    int nNumOf16thsPerInch = 16;
+    int nTempFeet = nNumOf16thsPerFoot * nFeet;
+    int nTempInches = nNumOf16thsPerInch * nInches;
+    return (nTempFeet + nTempInches + nSixteenths);
+}
+
+int randomInt (int nBegining, int nEnd)
+{
+    qsrand(QDateTime::currentMSecsSinceEpoch()/1000);
+    int x = qrand() % ((nEnd+1)-nBegining) + nBegining;
+    return x;
+}
+
+QString splitString(QString CSVLine)
+{
+    int nLength = CSVLine.length();
+    bool bSkipComma = false;
+    for(int iii = 0; iii < nLength; iii++)
+    {
+        if(CSVLine[iii] == '"')//skip comma toggle funtion
+        {
+            if(bSkipComma)
+                bSkipComma = false;
+            else
+                bSkipComma = true;
+        }
+        if (!bSkipComma)
+            if(CSVLine[iii] == ',')
+                CSVLine[iii] = '|';
+    }
+    CSVLine.remove('"');
+    return CSVLine;
+}
+
+QString intToLetters(int nInputNum)
+{
+    if (nInputNum > 702 || nInputNum <= 0) //Only works 1 == A to 702 == ZZ
+        return "input error";
+    QString strLetter;
+    int nTens = 0;
+    int nOnes = 1;
+    for (int iii = 1; iii < nInputNum; iii++)
+    {
+        nOnes++;
+        if (!(iii%26))
+        {
+            nTens++;
+            nOnes = 1;
+         }
+    }
+    if (nTens >0)
+        strLetter.append(nTens+64);//64 is the ascii offset
+    strLetter.append(nOnes+64);
+    return strLetter;
+}
+
+
+double roundDoubleToPoints(double dInput, unsigned int nNumberOfDecimalPlaces )
+{
+    double dTemp = 0;
+
+    for(int iii = 1; iii <= nNumberOfDecimalPlaces; iii++)
+    {
+        dInput = dInput * 10;
+    }
+    if (dInput >= 0)
+        dTemp = static_cast<int>(dInput + .5);
+    else
+    {
+        dTemp = static_cast<int>(dInput - .5);
+    }
+
+    for(int iii = 1; iii <= nNumberOfDecimalPlaces; iii++)
+    {
+        dTemp = dTemp / 10;
+    }
+    return dTemp;
+}
+
+// largest num 2147483647
+QString addCommasToDouble(double dInput, unsigned int nNumberOfDecimalPlaces)
+{
+    dInput = roundDoubleToPoints(dInput, nNumberOfDecimalPlaces);
+    for(int iii = 1; iii <= nNumberOfDecimalPlaces; iii++)
+    {
+        dInput = dInput*10;
+    }
+    QString strTemp = QString::number(dInput,'g',10);
+    strTemp = addDecimalPoint(strTemp,nNumberOfDecimalPlaces);
+    strTemp = addCommasToString(strTemp);
+    return strTemp;
+}
+QString addCommasToString (QString strInput)
+{
+    QString strTemp = reverseQString(strInput);
+    int nLength = strTemp.length();
+    int nIndexOfDecimal = strTemp.indexOf('.');
+    int nCountOfPlaces = 0;
+    for(int iii = (nIndexOfDecimal+1);iii < nLength; iii++)
+    {
+        nCountOfPlaces++;
+        if(nCountOfPlaces == 4)
+        {
+            if(strTemp[iii] != '-' )
+                strTemp.insert(iii, ',');
+            nLength++;
+            nCountOfPlaces = 0;
+        }
+
+    }//end for loop
+    QString strOutput;
+    strOutput = reverseQString(strTemp);
+    return strOutput;
+}
+
+QString addDecimalPoint (QString strInput, unsigned int nNumberOfDecimalPlaces)
+{
+    if(nNumberOfDecimalPlaces > 0 && nNumberOfDecimalPlaces <= strInput.length())
+    {
+        QString strOutput = reverseQString(strInput);
+        strOutput.insert(nNumberOfDecimalPlaces, '.');
+        strOutput = reverseQString(strOutput);
+        return strOutput;
+    }
+    return strInput;
+}
+
+QString reverseQString(QString strInput)
+{
+    QString strOutput;
+    QString strTemp = strInput;
+    int nLength = strTemp.length();
+    int nCurrentLength = strTemp.length();
+    int nEndIndex = nCurrentLength - 1;
+    for(int iii = 0; iii < (nCurrentLength/2); iii++)
+    {
+        QString strCopy;
+        strCopy[0] = strTemp[iii];
+        strTemp[iii] = strTemp[nEndIndex];
+        strTemp[nEndIndex] = strCopy[0];
+        nEndIndex--;
+    }
+    strOutput = strTemp;
+    return strOutput;
+}
+void swapChar(QChar &cA, QChar &cB)
+{
+    QChar cTemp;
+    cTemp = cA;
+    cA = cB;
+    cB = cTemp;
+}

@@ -251,16 +251,7 @@ void ContingencyData::setDefaults()
     for(int iii = 5; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
         resetContingency(iii);
-//        x =  &m_Contingency[iii];
-//        x->m_strContingencyTitle = "-";
-//        x->m_nNumOfDays = 0;
-//        x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
-//        x->m_nCalcFrom = CALC_FROM_AO;
-//        x->m_strReportInfoBuyer.clear();
-//        x->m_bUseBusinessDays = false;
-//        x->m_strBusinessDayReasons.clear();
     }
-
 
     x=0;
 
@@ -463,6 +454,9 @@ void ContingencyData::setContingencyReportText(int nContingencyNum)
                                                               {x->m_strReportInfoBuyer.append(CONDITON_REPORT_REVIEW_BUYER );
                                                                x->m_strReportInfoSeller.append(CONDITON_REPORT_REVIEW_SELLER ); }
 
+    if(x->m_strContingencyTitle == UTILITIES_TITLE )
+                                                              {x->m_strReportInfoBuyer.append(UTILITIES_BUYER );
+                                                               x->m_strReportInfoSeller.append(UTILITIES_SELLER ); }
 
     if(x->m_strContingencyTitle == CUSTOM_TITLE)              {}
     x = 0;
