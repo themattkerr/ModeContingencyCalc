@@ -2,7 +2,7 @@
 #define TEXTFORCONTINGENCIES_H
  /*
   * To add a new contingency:
-  *     1) Add titles, buyer text, and seller text to this file
+  *     1) Add titles, buyer text, and seller text to this file.
   *     2) Add to function --> ContingencyData::setContingencyReportText
   *     3) Add title to    --> MainContingencyWindow::setupTitles()
   */
@@ -119,6 +119,7 @@
 #define ACCEPTED_OFFER_TITLE "Offer Accepted"
 #define CLOSING_TITLE "Closing"
 
+//---------------------------------------------------------------------------
 #define DISCLAIMER ""
 
 

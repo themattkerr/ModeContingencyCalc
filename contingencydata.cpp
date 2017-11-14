@@ -183,9 +183,11 @@ bool    ContingencyData::getUseBusinessDays(int nContingencyNum)
 //----Public functions ------------------------------------------------------------------------------------
 void ContingencyData::setDefaults()
 {
-     m_dtAODate = QDate::currentDate();
 
-     m_nDaysClosing = 60;
+    m_dtAODate = QDate::currentDate();
+
+
+     m_nDaysClosing = 40;
      m_dtClosingDate = m_dtAODate.addDays(m_nDaysClosing);
 
      m_strListingBrokerTrustName = "";
@@ -193,7 +195,8 @@ void ContingencyData::setDefaults()
      m_strMLSNumber = "";
      m_strPropertyAddress = "";
 
-     Contingency *x =  &m_Contingency[0];
+     int nContNum = 0;
+     Contingency *x =  &m_Contingency[nContNum];
      x->m_strContingencyTitle = EARNEST_MONEY_TITLE;
      x->m_nNumOfDays = 5;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
@@ -204,9 +207,10 @@ void ContingencyData::setDefaults()
      x->m_strBusinessDayReasons.clear();
      x->m_strDependantContingecyTitle = BLANK;
 
-     x =  &m_Contingency[1];
+     nContNum++;
+     x =  &m_Contingency[nContNum];
      x->m_strContingencyTitle = FINANCING_TITLE;
-     x->m_nNumOfDays = 45;
+     x->m_nNumOfDays = 35;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
      x->m_strReportInfoBuyer.clear();
@@ -215,9 +219,10 @@ void ContingencyData::setDefaults()
      x->m_strBusinessDayReasons.clear();
      x->m_strDependantContingecyTitle = BLANK;
 
-     x =  &m_Contingency[2];
+     nContNum++;
+     x =  &m_Contingency[nContNum];
      x->m_strContingencyTitle = APPRAISAL_TITLE;
-     x->m_nNumOfDays = 40;
+     x->m_nNumOfDays = 25;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
      x->m_nCalcFrom = CALC_FROM_AO;
      x->m_strReportInfoBuyer.clear();
@@ -226,7 +231,8 @@ void ContingencyData::setDefaults()
      x->m_strBusinessDayReasons.clear();
      x->m_strDependantContingecyTitle = BLANK;
 
-     x =  &m_Contingency[3];
+     nContNum++;
+     x =  &m_Contingency[nContNum];
      x->m_strContingencyTitle = INSPECTION_TITLE;
      x->m_nNumOfDays = 14;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
@@ -237,7 +243,8 @@ void ContingencyData::setDefaults()
      x->m_strBusinessDayReasons.clear();
      x->m_strDependantContingecyTitle = BLANK;
 
-     x =  &m_Contingency[4];
+     nContNum++;
+     x =  &m_Contingency[nContNum];
      x->m_strContingencyTitle = RADON_TITLE;
      x->m_nNumOfDays = 14;
      x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
@@ -248,7 +255,45 @@ void ContingencyData::setDefaults()
      x->m_strBusinessDayReasons.clear();
      x->m_strDependantContingecyTitle = BLANK;
 
-    for(int iii = 5; iii < MAX_NUM_CONTINGENCIES; iii++)
+     nContNum++;
+     x =  &m_Contingency[nContNum];
+     x->m_strContingencyTitle = HOME_INSURENCE_TITLE ;
+     x->m_nNumOfDays = 0;
+     //x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
+     x->m_nCalcFrom = OTHER_CONT ;
+     x->m_strReportInfoBuyer.clear();
+     x->m_strReportInfoSeller.clear();
+     x->m_bUseBusinessDays = false;
+     x->m_strBusinessDayReasons.clear();
+     x->m_strDependantContingecyTitle = INSPECTION_TITLE;
+
+     nContNum++;
+     x =  &m_Contingency[nContNum];
+     x->m_strContingencyTitle = UTILITIES_TITLE;
+     x->m_nNumOfDays = -7;
+     x->m_dtDateOfContingency = m_dtClosingDate.addDays(x->m_nNumOfDays);
+     x->m_nCalcFrom = CALC_FROM_CLOSING;
+     x->m_strReportInfoBuyer.clear();
+     x->m_strReportInfoSeller.clear();
+     x->m_bUseBusinessDays = false;
+     x->m_strBusinessDayReasons.clear();
+     x->m_strDependantContingecyTitle = BLANK;
+
+     nContNum++;
+     x =  &m_Contingency[nContNum];
+     x->m_strContingencyTitle = ORDER_TITLE_TITLE;
+     x->m_nNumOfDays = 5;
+     x->m_dtDateOfContingency = m_dtAODate.addDays(x->m_nNumOfDays);
+     x->m_nCalcFrom = CALC_FROM_AO;
+     x->m_strReportInfoBuyer.clear();
+     x->m_strReportInfoSeller.clear();
+     x->m_bUseBusinessDays = false;
+     x->m_strBusinessDayReasons.clear();
+     x->m_strDependantContingecyTitle = BLANK;
+
+
+    nContNum++;
+    for(int iii = nContNum; iii < MAX_NUM_CONTINGENCIES; iii++)
     {
         resetContingency(iii);
     }

@@ -10,6 +10,7 @@ MainContingencyWindow::MainContingencyWindow(QWidget *parent) :
     setupGUI();
     adjustSize();
     m_bUnsavedData = false;
+    on_pushButton_Sort_Contingencies_clicked();
 }
 
 MainContingencyWindow::~MainContingencyWindow()
@@ -36,7 +37,7 @@ MainContingencyWindow::~MainContingencyWindow()
 //========GUI Setup Functions =============================================
 void MainContingencyWindow::setupGUI()
 {
-    m_nRowsToShow = 1;
+    m_nRowsToShow = 2;
     showRows();
     setupComboBoxQList();
     setupCustomLineEditQList();
@@ -349,11 +350,7 @@ void MainContingencyWindow::refreshFields()
         case OTHER_CONT:            {m_allCalcFrom[iii]->setCurrentText(CALC_FROM_CONTINGENCY_TEXT);
                                                            m_allDateLabels[iii]->hide();
                                                            m_allDateEdit[iii]->hide();
-                                                           //m_allSpinBoxes[iii]->hide();
-                                                           //m_allCalcFrom[iii]->hide();
                                                            m_allDepContComboxes[iii]->show();
-                                                           //m_allBusinessDaysCheckBoxes[iii]->hide();
-
                                                            break;}
 
             break;
