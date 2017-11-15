@@ -123,7 +123,7 @@
 #define CLOSING_TITLE "Closing"
 
 //---------------------------------------------------------------------------
-#define DISCLAIMER ""
+#define DISCLAIMER "This document is intended for convenience only and does not represent a comprehensive list of obligations for this transaction.  Refer to the Offer to Purchase for clarification. "
 
 
 #endif // TEXTFORCONTINGENCIES_H

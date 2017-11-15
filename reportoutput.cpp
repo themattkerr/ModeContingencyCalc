@@ -219,6 +219,8 @@ void ReportOutput::generateText()
             m_strOutputText.append("\n");
         }
     }
+    if (*m_nReportType != MILESTONES_ONLY)
+        m_strOutputText.append("\n\n").append(DISCLAIMER );
 }
 
 void ReportOutput::on_radioButton_Buyers_clicked()
