@@ -20,7 +20,7 @@
 #define INSPECTION_BUYER "We must complete the inspection and any negotiations for repairs by this date."
 #define APPRAISAL_BUYER "Your lender will schedule the appraisal.  Lenders want an independent third party to verify the fair market value of the home so they require an appraisal as part of the loan application.  This contingency also protects you in the event the home does not appraise for the offer price."
 #define FINANCING_BUYER "To satisfy this contingency, your lender will provide a loan commitment letter to you.  You will need to direct us in writing to deliver the letter to the seller.  Delivery of the loan commitment waives your financing contingency even if there are still lender conditions to be met, so review your loan commitment carefully prior to delivering it to the seller."
-#define FINAL_WALKTHROUGH_BUYER "This is your last opportunity to look over the property to make sure that it is in the same relative condition as you remember.   The offer states ...Property shall be in broom swept condition and free of all debris and personal property...  See lines 57 - 60."
+#define FINAL_WALKTHROUGH_BUYER "This is your last opportunity to look over the property to make sure that it is in the same relative condition as you remember.   The offer states ...Property shall be in broom swept condition and free of all debris and personal property... "
 #define RADON_BUYER "Radon test must be completed and negotiated by this date but we will likely have it done at the same time as the inspection."
 #define CONDO_DOCS_BUYER "This is your opportunity to review any Condominium Documents such as the Rules and Regulations or the Minutes and Budget.  If you have questions with regard to anything in these documents, you may want to have an attorney review them for you."
 #define WELL_BUYER "For properties served by a well, you will need to have a separate inspection of those components performed by a specialist. Any water testing must be asked for in the Offer."
@@ -44,6 +44,7 @@
 #define CONDITON_REPORT_REVIEW_BUYER "During this time, you should carefully review conditions disclosed by the seller on this report. It is generally not reasonable to have a buyer try to claim money or cures for items listed in the condition report during negotiations for an inspection contingency."
 
 #define UTILITIES_BUYER "It is a good idea to not wait until the last minute to order your utilities for your new home.  Generally, the water service will be transferred to your name for you by the title company.  You will need to setup the other utilities, like gas and electric, in your name and should begin the day of closing."
+#define WATER_TEST_BUYER "test text for water - Buyer"
 
 //-----------------------------------------
 
@@ -58,7 +59,7 @@
 #define INSPECTION_SELLER "The buyer must complete the home inspection and any negotiations for repairs by this date."
 #define APPRAISAL_SELLER "The buyer’s lender will usually schedule the appraisal.  Lenders want an independent third party to verify the fair market value of the home so they require an appraisal as part of the loan application. You will not need to be present for this."
 #define FINANCING_SELLER "Delivery of the loan commitment waives the buyer’s financing contingency even if there are still lender conditions."
-#define FINAL_WALKTHROUGH_SELLER "This is the buyer’s last opportunity to look over the property to make sure that it is in the same relative condition as when they last saw it.   The offer states ...Property shall be in broom swept condition and free of all debris and personal property...  See lines 57 - 60."
+#define FINAL_WALKTHROUGH_SELLER "This is the buyer’s last opportunity to look over the property to make sure that it is in the same relative condition as when they last saw it.   The offer states ...Property shall be in broom swept condition and free of all debris and personal property..."
 #define RADON_SELLER "Radon testing and negotiations must be completed by this date. The buyer will likely have it done at the same time as the inspection."
 #define CONDO_DOCS_SELLER "You are required to provide any condominium documents, such as the Rules and Regulations or the Minutes and Budget, to the buyer by this date.  The buyer will then have five business days after receipt to rescind the offer."
 #define WELL_SELLER "The buyer will need to have a separate inspection of the well performed by a specialist. Any water testing must be asked for in the offer."
@@ -82,6 +83,7 @@
 #define CONDITON_REPORT_REVIEW_SELLER "The buyer will review the conditions disclosed by you. It is generally not reasonable to have a buyer try to claim money or cures for items listed in the condition report during negotiations for an inspection contingency."
 
 #define UTILITIES_SELLER "Don’t forget to cancel your current utilities like gas and electric. These services should be set to stop on the day of closing.   The water service will be transferred to the new owners by the title company on your behalf."
+#define WATER_TEST_SELLER "Test text - water test - Seller"
 
 //-----------------------------------------
 
@@ -114,6 +116,7 @@
 #define CONDO_DOCS_REVIEW_TITLE "Review Condo Docs"
 
 #define UTILITIES_TITLE "Utilities"
+#define WATER_TEST_TITLE "Water Test"
 
 #define CUSTOM_TITLE "-Custom-"
 #define ACCEPTED_OFFER_TITLE "Offer Accepted"

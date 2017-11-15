@@ -171,6 +171,7 @@ void MainContingencyWindow::setupTitles()
                 << CONDITION_REPORT_REVIEW_TITLE
                 << CONDO_DOCS_REVIEW_TITLE
                 << UTILITIES_TITLE
+                << WATER_TEST_TITLE
                 << CUSTOM_TITLE;
     m_strlTitles.removeAll("");
 }

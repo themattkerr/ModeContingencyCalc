@@ -296,6 +296,18 @@ void ContingencyData::setDefaults()
      x->m_strBusinessDayReasons.clear();
      x->m_strDependantContingecyTitle = BLANK;
 
+     nContNum++;
+     x =  &m_Contingency[nContNum];
+     x->m_strContingencyTitle = FINAL_WALKTHROUGH_TITLE ;
+     x->m_nNumOfDays = 0;
+     x->m_dtDateOfContingency = m_dtClosingDate.addDays(x->m_nNumOfDays);
+     x->m_nCalcFrom = CALC_FROM_CLOSING ;
+     x->m_strReportInfoBuyer.clear();
+     x->m_strReportInfoSeller.clear();
+     x->m_bUseBusinessDays = false;
+     x->m_strBusinessDayReasons.clear();
+     x->m_strDependantContingecyTitle = BLANK;
+
 
     nContNum++;
     for(int iii = nContNum; iii < MAX_NUM_CONTINGENCIES; iii++)
@@ -507,6 +519,10 @@ void ContingencyData::setContingencyReportText(int nContingencyNum)
     if(x->m_strContingencyTitle == UTILITIES_TITLE )
                                                               {x->m_strReportInfoBuyer.append(UTILITIES_BUYER );
                                                                x->m_strReportInfoSeller.append(UTILITIES_SELLER ); }
+
+    if(x->m_strContingencyTitle == WATER_TEST_TITLE )
+                                                              {x->m_strReportInfoBuyer.append(WATER_TEST_BUYER );
+                                                               x->m_strReportInfoSeller.append(WATER_TEST_SELLER ); }
 
     if(x->m_strContingencyTitle == CUSTOM_TITLE)              {}
     x = 0;
