@@ -43,7 +43,7 @@
 #define REVIEW_CONDO_DOCS_BUYER "This is your opportunity to review the rules for the condominium and to determine how well the association is managed.  Meeting minutes and budgets will give clues to the health of the association.  You must object to any items during this timeframe."
 #define CONDITON_REPORT_REVIEW_BUYER "During this time, you should carefully review conditions disclosed by the seller on this report. It is generally not reasonable to have a buyer try to claim money or cures for items listed in the condition report during negotiations for an inspection contingency."
 
-#define UTILITIES_BUYER "Test Text Buyer.  Don't forget to order your utilities."
+#define UTILITIES_BUYER "It is a good idea to not wait until the last minute to order your utilities for your new home.  Generally, the water service will be transferred to your name for you by the title company.  You will need to setup the other utilities, like gas and electric, in your name and should begin the day of closing."
 
 //-----------------------------------------
 
@@ -81,7 +81,7 @@
 #define REVIEW_CONDO_DOCS_SELLER "This is the buyer’s opportunity to review the rules for the condominium and to determine how well the association is managed.  Meeting minutes and budgets will give clues to the health of the association.  The buyer must object to any items during this timeframe."
 #define CONDITON_REPORT_REVIEW_SELLER "The buyer will review the conditions disclosed by you. It is generally not reasonable to have a buyer try to claim money or cures for items listed in the condition report during negotiations for an inspection contingency."
 
-#define UTILITIES_SELLER "Test Utils text seller. Dont't forget to cancel your utilities."
+#define UTILITIES_SELLER "Don’t forget to cancel your current utilities like gas and electric. These services should be set to stop on the day of closing.   The water service will be transferred to the new owners by the title company on your behalf."
 
 //-----------------------------------------
 

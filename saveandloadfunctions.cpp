@@ -16,13 +16,67 @@ bool openMilestoneFile(QString strFileName ,ContingencyData &openData, int *pnRe
     QString strEarnestMoneyAmout;
     QString strMLSNumber;
     QString strPropertyAddress;
+    QString strClientNames;
 
     Contingency aContingency[MAX_NUM_CONTINGENCIES];
 
     QString strSoftwareVer;
 
     stream >> strSoftwareVer;
-    if( strSoftwareVer == "2.1.0 beta" || strSoftwareVer == "2.1.1" || strSoftwareVer == "2.1.2")
+    if( strSoftwareVer == "2.1.2")
+    {
+        stream >> *pnReportType;
+        stream >> *pnRowsToShow;
+        stream >> dtAODate;
+        stream >> dtClosingDate;
+        stream >> nDaysClosing;
+
+        stream >> strListingBrokerTrustName;
+        stream >> strEarnestMoneyAmout;
+        stream >> strMLSNumber;
+        stream >> strPropertyAddress;
+        stream >> strClientNames;
+
+        Contingency *x = 0;
+        for (int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+        {
+            x = &aContingency[iii];
+            stream >> x->m_bUseBusinessDays;
+            stream >> x->m_dtDateOfContingency;
+            stream >> x->m_nCalcFrom;
+            stream >> x->m_nNumOfDays;
+            stream >> x->m_strContingencyTitle;
+            stream >> x->m_strCustomText;
+            stream >> x->m_strDependantContingecyTitle;
+        }
+        x=0;
+
+        openData.enterAODate(dtAODate);
+        openData.enterClosingDate(dtClosingDate);
+        openData.enterDaysClosing(nDaysClosing);
+        openData.enterListingBrokerTrustName(strListingBrokerTrustName);
+        openData.enterEarnestMoneyAmount(strEarnestMoneyAmout);
+        openData.enterMLSNumber(strMLSNumber);
+        openData.enterPropertyAddress(strPropertyAddress);
+        openData.enterClientNames(strClientNames);
+
+        for (int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
+        {
+            x = &aContingency[iii];
+            openData.setUseBusinessDays( x->m_bUseBusinessDays, iii);
+            openData.enterDateOfContingency( x->m_dtDateOfContingency, iii );
+            openData.setCalcType( x->m_nCalcFrom, iii );
+
+            openData.enterContingencyTitle( x->m_strContingencyTitle, iii);
+            openData.enterCustomText( x->m_strCustomText, iii );
+            openData.enterDependantContingencyTitle(x->m_strDependantContingecyTitle, iii);
+            openData.enterDays(  x->m_nNumOfDays, iii );
+
+        }
+        return true;
+    }
+
+    if( strSoftwareVer == "2.1.0 beta" || strSoftwareVer == "2.1.1" )
     {
         stream >> *pnReportType;
         stream >> *pnRowsToShow;
@@ -143,6 +197,7 @@ bool saveMilestoneFile(QString strFileName ,ContingencyData &saveData, int *pnRe
         stream << saveData.getEarnestMoneyAmout();
         stream << saveData.getMLSNumber();
         stream << saveData.getPropertyAddress();
+        stream << saveData.getClientNames();
 
         for (int iii = 0; iii < MAX_NUM_CONTINGENCIES; iii++)
         {

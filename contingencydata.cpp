@@ -55,6 +55,14 @@ void ContingencyData::enterPropertyAddress(QString strPropertyAddress)
     refreshData();
 }
 
+void ContingencyData::enterClientNames(QString strClientNames)
+{
+    m_strClientNames = strClientNames;
+}
+
+
+
+
 void ContingencyData::enterContingencyTitle(QString strContingencyTitle, int nContingencyNum)
 {
     m_Contingency[nContingencyNum].m_strContingencyTitle.clear();
@@ -139,6 +147,10 @@ QString ContingencyData::getMLSNumber()
 QString ContingencyData::getPropertyAddress()
 {
     return m_strPropertyAddress;
+}
+QString ContingencyData::getClientNames()
+{
+    return m_strClientNames;
 }
 
 QString ContingencyData::getContingencyTitle(int nContingencyNum)

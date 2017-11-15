@@ -59,6 +59,7 @@ public:
     void enterEarnestMoneyAmount(QString strEarnestMoneyAmout);
     void enterMLSNumber(QString strMLSNumber);
     void enterPropertyAddress(QString strPropertyAddress);
+    void enterClientNames(QString strClientNames);
 
     void enterContingencyTitle(QString strContingencyTitle, int nContingencyNum);
     void enterCustomText(QString strCustomText, int nContingencyNum);
@@ -84,6 +85,7 @@ public:
     QString getEarnestMoneyAmout();
     QString getMLSNumber();
     QString getPropertyAddress();
+    QString getClientNames();
 
     QString getContingencyTitle(int nContingencyNum);
     QString getCustomText(int nContingencyNum);
@@ -118,6 +120,7 @@ private:
     QString m_strEarnestMoneyAmout;
     QString m_strMLSNumber;
     QString m_strPropertyAddress;
+    QString m_strClientNames;
 
     Contingency m_Contingency[MAX_NUM_CONTINGENCIES];
 

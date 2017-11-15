@@ -304,10 +304,12 @@ void MainContingencyWindow::refreshFields()
     ui->dateEditAODate->setDate(m_contData.getAODate());
     ui->spinBoxDaysToClosing->setValue(m_contData.getDaysClosing());
     ui->dateEditClosingDate->setDate(m_contData.getClosingDate());
+    ui->lineEditClientNames->setText(m_contData.getClientNames() );
     ui->lineEditPropertyAddress->setText(m_contData.getPropertyAddress());
     ui->lineEditMLSNum->setText(m_contData.getMLSNumber());
     ui->lineEditEarnestMoney->setText(m_contData.getEarnestMoneyAmout());
     ui->lineEditListingBrokerTrustName->setText(m_contData.getListingBrokerTrustName());
+
 
 
     setupTitles();// if the title is not in the list it cannot be set to it
@@ -1624,3 +1626,10 @@ void MainContingencyWindow::on_actionReset_Defaults_triggered()
     showRows();
 }
 
+
+void MainContingencyWindow::on_lineEditClientNames_editingFinished()
+{
+    m_contData.enterClientNames(ui->lineEditClientNames->text() );
+    refreshFields();
+    showRows();
+}

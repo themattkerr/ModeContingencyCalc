@@ -219,6 +219,8 @@ private slots:
 
 //    void on_cont6DaysSpinBox_editingFinished();
 
+    void on_lineEditClientNames_editingFinished();
+
 private:
 
     Ui::MainContingencyWindow *ui;
