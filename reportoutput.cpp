@@ -15,7 +15,9 @@ ReportOutput::ReportOutput(QWidget *parent, ContingencyData *contData, int *nRep
     copyContingenciesToArray();
     sortAscending();
     generateText();
+
     ui->textBrowser->setText(m_strOutputText);
+    ui->textBrowser->setFont(ui->fontComboBox->font());
 }
 
 ReportOutput::~ReportOutput()

@@ -10,6 +10,7 @@
 #define ACCEPTED_OFFER_BUYER ""
 #define CLOSING_BUYER "You will need a valid driver's license and either a cashier's check or a wire transfer for any funds you will bring to closing. Roughly a week prior to closing your lender will provide a closing disclosure which will list all the funds you will need to bring to closing in order to close the transaction."
 #define CONDITION_REPORT_BUYER "Seller must provide a condition report; if they do not provide one, you will have two business days to rescind the offer."
+
 #define EARNEST_MONEY1_BUYER "Check should be made out to "
 #define EARNEST_MONEY_SUB1_BUYER "the listing broker's trust account"
 #define EARNEST_MONEY2_BUYER " for "
@@ -17,6 +18,7 @@
 #define EARNEST_MONEY3_BUYER ". Please write "
 #define EARNEST_MONEY_SUB3_BUYER  "the property's address"
 #define EARNEST_MONEY4_BUYER " on the memo line."
+
 #define INSPECTION_BUYER "We must complete the inspection and any negotiations for repairs by this date."
 #define APPRAISAL_BUYER "Your lender will schedule the appraisal.  Lenders want an independent third party to verify the fair market value of the home so they require an appraisal as part of the loan application.  This contingency also protects you in the event the home does not appraise for the offer price."
 #define FINANCING_BUYER "To satisfy this contingency, your lender will provide a loan commitment letter to you.  You will need to direct us in writing to deliver the letter to the seller.  Delivery of the loan commitment waives your financing contingency even if there are still lender conditions to be met, so review your loan commitment carefully prior to delivering it to the seller."

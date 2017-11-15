@@ -10,10 +10,19 @@
     <height>594</height>
    </rect>
   </property>
+  <property name="font">
+   <font>
+    <family>Arial</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QFontComboBox" name="fontComboBox"/>
+   </item>
    <item>
     <widget class="QTextBrowser" name="textBrowser">
      <property name="sizePolicy">
@@ -24,7 +33,7 @@
      </property>
      <property name="font">
       <font>
-       <family>Arial</family>
+       <family>Courier</family>
        <pointsize>14</pointsize>
       </font>
      </property>
@@ -87,5 +96,22 @@
   </layout>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>fontComboBox</sender>
+   <signal>currentFontChanged(QFont)</signal>
+   <receiver>textBrowser</receiver>
+   <slot>setCurrentFont(QFont)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>116</x>
+     <y>22</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>117</x>
+     <y>52</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
