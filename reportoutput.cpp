@@ -95,40 +95,6 @@ void ReportOutput::copyContingenciesToArray()
 }
 void ReportOutput::sortAscending()
 {
-//    int nAllContingencies = (MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES);
-//    m_OutData.sortContingenciesAcending(nAllContingencies);
-//        Contingency Temp;
-
-//        for(int iii = 0; iii < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;iii++)
-//        {
-//            for(int jjj = 0; jjj < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;jjj++)
-//            {
-
-//                if((m_contOutputArray[iii].m_dtDateOfContingency < m_contOutputArray[jjj].m_dtDateOfContingency)
-//                   && ( m_contOutputArray[iii].m_strContingencyTitle != BLANK))
-//                {
-//                    Temp = m_contOutputArray[iii];
-//                    m_contOutputArray[iii] = m_contOutputArray[jjj];
-//                    m_contOutputArray[jjj] = Temp;
-
-//                }
-
-//            }
-//        }
-//        for(int iii = 0; iii < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;iii++)
-//        {
-//            for(int jjj = 0; jjj < MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;jjj++)
-//            {
-//                if((m_contOutputArray[iii].m_strContingencyTitle == m_contOutputArray[jjj].m_strDependantContingecyTitle)
-//                   && ( m_contOutputArray[iii].m_strContingencyTitle != BLANK))
-//                {
-//                    Temp = m_contOutputArray[iii];
-//                    m_contOutputArray[iii] = m_contOutputArray[jjj];
-//                    m_contOutputArray[jjj] = Temp;
-//                }
-//             }
-//         }
-
     Contingency Temp;
     int nLastContingency = MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;
 
@@ -171,8 +137,6 @@ void ReportOutput::sortAscending()
                     m_contOutputArray[iii] = m_contOutputArray[jjj];
                     m_contOutputArray[jjj] = Temp;
                 }
-
-
             }
         }
     }
@@ -198,6 +162,8 @@ void ReportOutput::generateText()
     m_strOutputText.append("Offer Milestones: ").append(m_OutData.getPropertyAddress()).append("\n");
     if(m_OutData.getMLSNumber() != "" )
         m_strOutputText.append("MLS #: ").append(m_OutData.getMLSNumber());
+    if(*m_nReportType == MILESTONES_ONLY )
+        m_strOutputText.append("\n").append("Clients: ").append(m_OutData.getClientNames() );
     m_strOutputText.append("\n\n");
 
     int nAllMilestones = MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;
