@@ -40,7 +40,10 @@ void ContingencyData::enterListingBrokerTrustName(QString strListingBrokerTrustN
 void ContingencyData::enterEarnestMoneyAmount(QString strEarnestMoneyAmout)
 {
     double dTemp;
+
     dTemp = usDollarsStringToDouble(strEarnestMoneyAmout);
+    if(dTemp <0)
+        dTemp = 0;
     m_strEarnestMoneyAmout = doubleToCurrency(dTemp, US_DOLLARS);
     refreshData();
 }

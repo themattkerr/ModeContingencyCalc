@@ -22,14 +22,6 @@ MainContingencyWindow::~MainContingencyWindow()
         SaveAndExit.exec() ;
         if(bSave)
             on_actionSave_As_triggered();
-
-
-
-//        QMessageBox UnsavedWarning;
-//        UnsavedWarning.setWindowTitle("");
-//        UnsavedWarning.setText("Warning!!! There is unsaved data present!");
-//        UnsavedWarning.exec();
-//        on_actionSave_As_triggered();
     }
     delete ui;
 }
@@ -650,7 +642,12 @@ void MainContingencyWindow::on_lineEditMLSNum_editingFinished()
     m_contData.enterMLSNumber(ui->lineEditMLSNum->text());
     refreshFields();
 }
-void MainContingencyWindow::on_lineEditEarnestMoney_editingFinished()
+//void MainContingencyWindow::on_lineEditEarnestMoney_editingFinished()
+//{
+//    m_contData.enterEarnestMoneyAmount(ui->lineEditEarnestMoney->text());
+//    refreshFields();
+//}
+void MainContingencyWindow::on_lineEditEarnestMoney_textChanged(const QString &arg1)
 {
     m_contData.enterEarnestMoneyAmount(ui->lineEditEarnestMoney->text());
     refreshFields();
@@ -1634,3 +1631,5 @@ void MainContingencyWindow::on_lineEditClientNames_editingFinished()
     refreshFields();
     showRows();
 }
+
+

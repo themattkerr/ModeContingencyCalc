@@ -37,8 +37,9 @@ QString doubleToCurrency (double dInput, unsigned int nCurrency = US_DOLLARS)
     {
         case US_DOLLARS:     {qstrCurrency = "$ "; break;}
     }
-
-    qstrCurrency.append(QLocale (QLocale::English).toString(dInput));
+//                                                                        <-----------------------------------<<<
+    //qstrCurrency.append(QLocale (QLocale::English).toString(dInput));
+    qstrCurrency.append(addCommasToDouble(dInput,0));
     return qstrCurrency;
 }
 

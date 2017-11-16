@@ -44,7 +44,8 @@ private slots:
     void on_dateEditClosingDate_userDateChanged(const QDate &date);
     void on_lineEditPropertyAddress_editingFinished();
     void on_lineEditMLSNum_editingFinished();
-    void on_lineEditEarnestMoney_editingFinished();
+//    void on_lineEditEarnestMoney_editingFinished();
+    void on_lineEditEarnestMoney_textChanged(const QString &arg1);
     void on_lineEditListingBrokerTrustName_editingFinished();
 
     void on_cont1TitleComboBox_activated(const QString &arg1);
@@ -220,6 +221,8 @@ private slots:
 //    void on_cont6DaysSpinBox_editingFinished();
 
     void on_lineEditClientNames_editingFinished();
+
+
 
 private:
 
