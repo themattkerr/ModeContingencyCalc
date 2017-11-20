@@ -44,7 +44,8 @@ void ContingencyData::enterEarnestMoneyAmount(QString strEarnestMoneyAmout)
     dTemp = usDollarsStringToDouble(strEarnestMoneyAmout);
     if(dTemp <0)
         dTemp = 0;
-    m_strEarnestMoneyAmout = doubleToCurrency(dTemp, US_DOLLARS);
+    int nNumOfDecimalPlaces = 0;
+    m_strEarnestMoneyAmout = doubleToCurrency(dTemp, nNumOfDecimalPlaces, US_DOLLARS);
     refreshData();
 }
 void ContingencyData::enterMLSNumber(QString strMLSNumber)
@@ -419,7 +420,8 @@ void ContingencyData::setContingencyReportText(int nContingencyNum)
                                                                  else
                                                                      x->m_strReportInfoBuyer.append("'").append(m_strListingBrokerTrustName).append("'");
                                                                 x->m_strReportInfoBuyer.append(EARNEST_MONEY2_BUYER);
-                                                                if (m_strEarnestMoneyAmout == "" || m_strEarnestMoneyAmout == doubleToCurrency(0,US_DOLLARS ) )
+                                                                int nNumOfDecimalPlaces = 0;
+                                                                if (m_strEarnestMoneyAmout == "" || m_strEarnestMoneyAmout == doubleToCurrency(0,nNumOfDecimalPlaces, US_DOLLARS ) )
                                                                     x->m_strReportInfoBuyer.append(EARNEST_MONEY_SUB2_BUYER);
                                                                 else
                                                                     x->m_strReportInfoBuyer.append(m_strEarnestMoneyAmout);

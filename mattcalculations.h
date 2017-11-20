@@ -1,7 +1,7 @@
 #ifndef MATTCALCULATIONS
 #define MATTCALCULATIONS
 
-#define VERSION_OF_MATTCALCULATIONS "1.2.4" //11/14/2017
+#define VERSION_OF_MATTCALCULATIONS "1.2.5" //11/19/2017
 
 #include <qstring.h>
 #include <QDate>
@@ -27,7 +27,7 @@ enum feetInchesFormat{
 bool doubleIsEqual (double x, double y, unsigned int nNumberOfDecimalPlaces);
 
 double  usDollarsStringToDouble(QString qstrDollars);
-QString doubleToCurrency (double dInput, unsigned int nCurrency);
+QString doubleToCurrency (double dInput, unsigned int nNumOfDecimalPoints, unsigned int nCurrency);
 QString millisecondsToHoursMinsSec (int nMilliseconds);
 
 bool  isBusinessDay(QDate dtDayToTest, QString &strReason);

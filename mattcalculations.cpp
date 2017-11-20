@@ -30,7 +30,7 @@ double usDollarsStringToDouble(QString qstrDollars)
         return 0;
 }
 
-QString doubleToCurrency (double dInput, unsigned int nCurrency = US_DOLLARS)
+QString doubleToCurrency (double dInput, unsigned int nNumOfDecimalPoints ,unsigned int nCurrency = US_DOLLARS)
 {
     QString qstrCurrency;
     switch (nCurrency)
@@ -39,7 +39,7 @@ QString doubleToCurrency (double dInput, unsigned int nCurrency = US_DOLLARS)
     }
 //                                                                        <-----------------------------------<<<
     //qstrCurrency.append(QLocale (QLocale::English).toString(dInput));
-    qstrCurrency.append(addCommasToDouble(dInput,0));
+    qstrCurrency.append(addCommasToDouble(dInput, nNumOfDecimalPoints));
     return qstrCurrency;
 }
 
