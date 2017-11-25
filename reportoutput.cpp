@@ -163,9 +163,9 @@ void ReportOutput::generateText()
 
     m_strOutputText.append("Offer Milestones: ");//.append("\n");
     if(m_OutData.getPropertyAddress() != "")
-        m_strOutputText.append(m_OutData.getPropertyAddress()).append("\n");
+        m_strOutputText.append(m_OutData.getPropertyAddress());//.append("\n");
     if(m_OutData.getMLSNumber() != "" )
-        m_strOutputText.append("MLS #: ").append(m_OutData.getMLSNumber());
+        m_strOutputText.append("\n").append("MLS #: ").append(m_OutData.getMLSNumber());
     if(*m_nReportType == MILESTONES_ONLY )
         if(m_OutData.getClientNames() != "")
             m_strOutputText.append("\n").append("Client(s): ").append(m_OutData.getClientNames() );
