@@ -161,11 +161,14 @@ void ReportOutput::generateText()
     Contingency *x = 0;
     m_strOutputText.clear();
 
-    m_strOutputText.append("Offer Milestones: ").append(m_OutData.getPropertyAddress()).append("\n");
+    m_strOutputText.append("Offer Milestones: ");//.append("\n");
+    if(m_OutData.getPropertyAddress() != "")
+        m_strOutputText.append(m_OutData.getPropertyAddress()).append("\n");
     if(m_OutData.getMLSNumber() != "" )
         m_strOutputText.append("MLS #: ").append(m_OutData.getMLSNumber());
     if(*m_nReportType == MILESTONES_ONLY )
-        m_strOutputText.append("\n").append("Clients: ").append(m_OutData.getClientNames() );
+        if(m_OutData.getClientNames() != "")
+            m_strOutputText.append("\n").append("Client(s): ").append(m_OutData.getClientNames() );
     m_strOutputText.append("\n\n");
 
     int nAllMilestones = MAX_NUM_CONTINGENCIES+ADDITIONALCONTINGENCIES;
@@ -206,6 +209,8 @@ void ReportOutput::generateText()
                                                 m_strOutputText.append(" business");
                                             m_strOutputText.append(" days from the satisfaction of ");
                                                     m_strOutputText.append(x->m_strDependantContingecyTitle).append(")\n");
+                                            m_strOutputText.append(AddBlankLine("Satisfaction Date")).append("\n");
+                                            m_strOutputText.append(AddBlankLine("Deadline Date")).append("\n");
                                             break;
                                         }
 
@@ -218,12 +223,45 @@ void ReportOutput::generateText()
                 m_strOutputText.append(x->m_strReportInfoBuyer).append("\n");
             if(*m_nReportType == SELLERS)
                 m_strOutputText.append(x->m_strReportInfoSeller).append("\n");
+            if(*m_nReportType == MILESTONES_ONLY)
+            {
+                if (x->m_strContingencyTitle == CLOSING_TITLE )
+                {
+                    m_strOutputText.append(AddBlankLine("Location") ).append("\n");
+                    m_strOutputText.append(AddBlankLine("Time") ).append("\n");
+
+                    //  <=========================  This is where you put the blank lines!!! ======================================================================<<<
+                }
+            }
+
             m_strOutputText.append("\n");
         }
     }
     if (*m_nReportType != MILESTONES_ONLY)
         m_strOutputText.append("\n\n").append(DISCLAIMER );
 }
+
+QString ReportOutput::AddBlankLine(QString strInputText)
+{
+    int nMaxLength = 33;
+    if(strInputText.length() > nMaxLength || strInputText.length() < 0 )
+        return "Error: Input string length";
+
+    QString strOutputText = strInputText;
+    strOutputText.append(": ");
+
+    QString strLineMark = "_";
+    int nLineMarksToAdd = nMaxLength - strInputText.length();
+    for (int iii = 1; iii <= nLineMarksToAdd; iii++ )
+    {
+        strOutputText.append(strLineMark);
+    }
+
+    return strOutputText;
+}
+
+
+
 
 void ReportOutput::on_radioButton_Buyers_clicked()
 {

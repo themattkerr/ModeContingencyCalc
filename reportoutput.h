@@ -45,6 +45,8 @@ private:
     void copyContingenciesToArray();
     void sortAscending();
     void generateText();
+    QString AddBlankLine(QString strInputText);
+
 };
 
 #endif // REPORTOUTPUT_H
