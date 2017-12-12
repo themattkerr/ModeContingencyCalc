@@ -44,6 +44,7 @@ private:
     void setupGUI();
     void copyContingenciesToArray();
     void sortAscending();
+    void shiftArrayItems(int nStartIndex, int nNumOfItemToBeMoved);
     void generateText();
     QString AddBlankLine(QString strInputText);
 

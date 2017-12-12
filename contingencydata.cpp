@@ -649,12 +649,18 @@ void ContingencyData::refreshData()
 
 void ContingencyData::calculateDepContDates()
 {
+
+    QString iiiContigencyName;
     for (int iii = 0 ; iii < MAX_NUM_CONTINGENCIES ; iii++)
     {
-        for (int jjj = 0; jjj < MAX_NUM_CONTINGENCIES ; jjj++) // There is something very wreong with this logic
+        if(m_Contingency[iii].m_strContingencyTitle == CUSTOM_TITLE)
+            iiiContigencyName = m_Contingency[iii].m_strCustomText;
+        else
+            iiiContigencyName = m_Contingency[iii].m_strContingencyTitle;
+        for (int jjj = 0; jjj < MAX_NUM_CONTINGENCIES ; jjj++)
         {
             if(m_Contingency[jjj].m_strDependantContingecyTitle != BLANK)
-                if(m_Contingency[iii].m_strContingencyTitle == m_Contingency[jjj].m_strDependantContingecyTitle)
+                if(iiiContigencyName == m_Contingency[jjj].m_strDependantContingecyTitle)
                    m_Contingency[jjj].m_dtDateOfContingency = m_Contingency[iii].m_dtDateOfContingency;
 
         }

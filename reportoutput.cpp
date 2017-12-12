@@ -118,15 +118,30 @@ void ReportOutput::sortAscending()
                 m_contOutputArray[iii] = m_contOutputArray[jjj];
                 m_contOutputArray[jjj] = Temp;
             }
+            //aphabitizes
             if((m_contOutputArray[iii].m_dtDateOfContingency == m_contOutputArray[jjj].m_dtDateOfContingency)
                && ( m_contOutputArray[iii].m_strContingencyTitle != BLANK))
             {
-                if(m_contOutputArray[iii].m_strContingencyTitle < m_contOutputArray[jjj].m_strContingencyTitle)
+                QString striiiSortName;
+                QString strjjjSortName;
+                if(m_contOutputArray[iii].m_strContingencyTitle == CUSTOM_TITLE)
+                    striiiSortName = m_contOutputArray[iii].m_strCustomText;
+                else
+                    striiiSortName = m_contOutputArray[iii].m_strContingencyTitle;
+                if(m_contOutputArray[jjj].m_strContingencyTitle == CUSTOM_TITLE)
+                    strjjjSortName = m_contOutputArray[jjj].m_strCustomText;
+                else
+                    strjjjSortName = m_contOutputArray[jjj].m_strContingencyTitle;
+
+
+                if(striiiSortName < strjjjSortName)
                 {
                     Temp = m_contOutputArray[iii];
                     m_contOutputArray[iii] = m_contOutputArray[jjj];
                     m_contOutputArray[jjj] = Temp;
                 }
+
+
                 if(m_contOutputArray[jjj].m_strContingencyTitle == CLOSING_TITLE )
                 {
                     Temp = m_contOutputArray[iii];
@@ -144,18 +159,47 @@ void ReportOutput::sortAscending()
     }
     for(int iii = 0; iii < nLastContingency;iii++)
     {
+        QString striiiSortName;
+        if(m_contOutputArray[iii].m_strContingencyTitle == CUSTOM_TITLE)
+            striiiSortName = m_contOutputArray[iii].m_strCustomText;
+        else
+            striiiSortName = m_contOutputArray[iii].m_strContingencyTitle;
+
         for(int jjj = 0; jjj < nLastContingency;jjj++)
         {
-            if(m_contOutputArray[iii].m_strContingencyTitle == m_contOutputArray[jjj].m_strDependantContingecyTitle && iii > jjj && m_contOutputArray[iii].m_strContingencyTitle != BLANK)
+            if(striiiSortName == m_contOutputArray[jjj].m_strDependantContingecyTitle &&
+                    m_contOutputArray[iii].m_strContingencyTitle != BLANK)
             {
-                Temp = m_contOutputArray[iii];
-                m_contOutputArray[iii] = m_contOutputArray[jjj];
-                m_contOutputArray[jjj] = Temp;
+                if(iii < jjj)
+                    shiftArrayItems(iii+1,jjj);
+                else
+                    shiftArrayItems(jjj, iii);
             }
         }
     }
 
 }
+
+void ReportOutput::shiftArrayItems(int nStartIndex, int nNumOfItemToBeMoved)
+{
+    if (nStartIndex == nNumOfItemToBeMoved ||
+            nStartIndex < 0 ||
+            nNumOfItemToBeMoved < 0 ||
+            nStartIndex > nNumOfItemToBeMoved)
+    {
+        return;
+    }
+
+    Contingency Temp = m_contOutputArray[nNumOfItemToBeMoved];
+    for(int iii = nNumOfItemToBeMoved; iii > nStartIndex; iii--)
+    {
+        m_contOutputArray[iii] = m_contOutputArray[iii-1];
+    }
+    m_contOutputArray[nStartIndex] = Temp;
+
+
+}
+
 void ReportOutput::generateText()
 {
     Contingency *x = 0;

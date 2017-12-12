@@ -25,7 +25,7 @@
 #define FINAL_WALKTHROUGH_BUYER "This is your last opportunity to look over the property to make sure that it is in the same relative condition as you remember.   The offer states ...Property shall be in broom swept condition and free of all debris and personal property... "
 #define RADON_BUYER "Radon test must be completed and negotiated by this date but we will likely have it done at the same time as the inspection."
 #define CONDO_DOCS_BUYER "This is your opportunity to review any Condominium Documents such as the Rules and Regulations or the Minutes and Budget.  If you have questions with regard to anything in these documents, you may want to have an attorney review them for you."
-#define WELL_BUYER "For properties served by a well, you will need to have a separate inspection of those components performed by a specialist. Any water testing must be asked for in the Offer."
+#define WELL_BUYER "This inspection will ensure that the mechanical parts of the well are functioning properly and are safe for operation.   This includes the pump, the electrical supply to the pump and the housing. "
 #define SEPTIC_BUYER "For properties served by a septic system, you will need to have a separate inspection of those components performed by a specialist."
 
 #define COMFORT_LETTER_BUYER "We must provide the seller a bank letter by this date."
@@ -46,7 +46,7 @@
 #define CONDITON_REPORT_REVIEW_BUYER "During this time, you should carefully review conditions disclosed by the seller on this report. It is generally not reasonable to have a buyer try to claim money or cures for items listed in the condition report during negotiations for an inspection contingency."
 
 #define UTILITIES_BUYER "It is a good idea to not wait until the last minute to order your utilities for your new home.  Generally, the water service will be transferred to your name for you by the title company.  You will need to setup the other utilities, like gas and electric, in your name and should begin the day of closing."
-#define WATER_TEST_BUYER "test text for water - Buyer"
+#define WATER_TEST_BUYER "The water test will ensure that the water produced is safe for consumption.   The standard tests include: Bacteria, Nitrates and Arsenic, but there can be additional tests performed.   A typical fix might include a point of use system such as a reverse osmosis system. "
 
 //-----------------------------------------
 
@@ -64,7 +64,7 @@
 #define FINAL_WALKTHROUGH_SELLER "This is the buyer’s last opportunity to look over the property to make sure that it is in the same relative condition as when they last saw it.   The offer states ...Property shall be in broom swept condition and free of all debris and personal property..."
 #define RADON_SELLER "Radon testing and negotiations must be completed by this date. The buyer will likely have it done at the same time as the inspection."
 #define CONDO_DOCS_SELLER "You are required to provide any condominium documents, such as the Rules and Regulations or the Minutes and Budget, to the buyer by this date.  The buyer will then have five business days after receipt to rescind the offer."
-#define WELL_SELLER "The buyer will need to have a separate inspection of the well performed by a specialist. Any water testing must be asked for in the offer."
+#define WELL_SELLER "This inspection will ensure that the mechanical parts of the well are functioning properly and are safe for operation.   This includes the pump, the electrical supply to the pump and the housing."
 #define SEPTIC_SELLER "The buyer will need to have a separate inspection of the septic system performed by a specialist."
 
 #define COMFORT_LETTER_SELLER "The buyer must provide the requested assurances by this date."
@@ -85,7 +85,7 @@
 #define CONDITON_REPORT_REVIEW_SELLER "The buyer will review the conditions disclosed by you. It is generally not reasonable to have a buyer try to claim money or cures for items listed in the condition report during negotiations for an inspection contingency."
 
 #define UTILITIES_SELLER "Don’t forget to cancel your current utilities like gas and electric. These services should be set to stop on the day of closing.   The water service will be transferred to the new owners by the title company on your behalf."
-#define WATER_TEST_SELLER "Test text - water test - Seller"
+#define WATER_TEST_SELLER "The water test will ensure that the water produced is safe for consumption.   The standard tests include: Bacteria, Nitrates and Arsenic, but there can be additional tests performed.   A typical fix might include a point of use system such as a reverse osmosis system. "
 
 //-----------------------------------------
 
