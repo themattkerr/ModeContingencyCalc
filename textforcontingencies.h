@@ -3,7 +3,7 @@
  /*
   * To add a new contingency:
   *     1) Add titles, buyer text, and seller text to this file.
-  *     2) Add to function --> ContingencyData::setContingencyReportText
+  *     2) Add to function --> ContingencyData::setContingencyReportText()
   *     3) Add title to    --> MainContingencyWindow::setupTitles()
   */
 
@@ -26,7 +26,7 @@
 #define RADON_BUYER "Radon test must be completed and negotiated by this date but we will likely have it done at the same time as the inspection."
 #define CONDO_DOCS_BUYER "This is your opportunity to review any Condominium Documents such as the Rules and Regulations or the Minutes and Budget.  If you have questions with regard to anything in these documents, you may want to have an attorney review them for you."
 #define WELL_BUYER "This inspection will ensure that the mechanical parts of the well are functioning properly and are safe for operation.   This includes the pump, the electrical supply to the pump and the housing. "
-#define SEPTIC_BUYER "For properties served by a septic system, you will need to have a separate inspection of those components performed by a specialist."
+#define SEPTIC_BUYER "The septic system takes the place of municipal sewer service. There is an onsite holding tank and drain field which processes waste water from the home.  Because these components can be expensive to install or repair, we have them inspected to make sure they are functioning as expected and that there is life left on the system."
 
 #define COMFORT_LETTER_BUYER "We must provide the seller a bank letter by this date."
 #define ENVIRONMENTAL_TEST_BUYER  "Any environmental testing such as asbestos or mold must be completed by this date and asked for in the offer."
@@ -65,7 +65,7 @@
 #define RADON_SELLER "Radon testing and negotiations must be completed by this date. The buyer will likely have it done at the same time as the inspection."
 #define CONDO_DOCS_SELLER "You are required to provide any condominium documents, such as the Rules and Regulations or the Minutes and Budget, to the buyer by this date.  The buyer will then have five business days after receipt to rescind the offer."
 #define WELL_SELLER "This inspection will ensure that the mechanical parts of the well are functioning properly and are safe for operation.   This includes the pump, the electrical supply to the pump and the housing."
-#define SEPTIC_SELLER "The buyer will need to have a separate inspection of the septic system performed by a specialist."
+#define SEPTIC_SELLER "The buyer will need to schedule a separate inspection of the septic system to be performed by a specialist."
 
 #define COMFORT_LETTER_SELLER "The buyer must provide the requested assurances by this date."
 #define ENVIRONMENTAL_TEST_SELLER "Any environmental testing such as asbestos or mold must be completed by this date and asked for in the offer."

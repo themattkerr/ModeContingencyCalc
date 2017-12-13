@@ -165,38 +165,53 @@ void ReportOutput::sortAscending()
         else
             striiiSortName = m_contOutputArray[iii].m_strContingencyTitle;
 
-        for(int jjj = 0; jjj < nLastContingency;jjj++)
+        for(int jjj = 0; jjj < nLastContingency;jjj++) // Change here
         {
             if(striiiSortName == m_contOutputArray[jjj].m_strDependantContingecyTitle &&
                     m_contOutputArray[iii].m_strContingencyTitle != BLANK)
             {
-                if(iii < jjj)
-                    shiftArrayItems(iii+1,jjj);
-                else
-                    shiftArrayItems(jjj, iii);
+                if(iii != (jjj-1))
+                {
+                    if( iii < jjj)
+                        shiftArrayItems(iii+1,jjj);
+                    else
+                        shiftArrayItems(iii, jjj);
+                    if(iii >=1) iii--; //Need to check all items again.
+                }
             }
         }
     }
 
 }
 
-void ReportOutput::shiftArrayItems(int nStartIndex, int nNumOfItemToBeMoved)
+void ReportOutput::shiftArrayItems(int nStartIndex, int nEndIndex)
 {
-    if (nStartIndex == nNumOfItemToBeMoved ||
+    if (nStartIndex == nEndIndex ||
             nStartIndex < 0 ||
-            nNumOfItemToBeMoved < 0 ||
-            nStartIndex > nNumOfItemToBeMoved)
+            nEndIndex < 0 )
+
     {
         return;
     }
-
-    Contingency Temp = m_contOutputArray[nNumOfItemToBeMoved];
-    for(int iii = nNumOfItemToBeMoved; iii > nStartIndex; iii--)
+    Contingency Temp;
+    if(nStartIndex < nEndIndex)
     {
-        m_contOutputArray[iii] = m_contOutputArray[iii-1];
+        Temp = m_contOutputArray[nEndIndex];
+        for(int iii = nEndIndex; iii > nStartIndex; iii--)
+        {
+            m_contOutputArray[iii] = m_contOutputArray[iii-1];
+        }
+        m_contOutputArray[nStartIndex] = Temp;
     }
-    m_contOutputArray[nStartIndex] = Temp;
-
+    if((nStartIndex > nEndIndex))
+    {
+        Temp = m_contOutputArray[nEndIndex];
+        for(int iii = nEndIndex; iii < nStartIndex ; iii++)
+        {
+             m_contOutputArray[iii] = m_contOutputArray[iii+1];
+        }
+        m_contOutputArray[nStartIndex] = Temp;
+    }
 
 }
 
