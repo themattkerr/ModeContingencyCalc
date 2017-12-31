@@ -647,7 +647,7 @@ void MainContingencyWindow::on_lineEditMLSNum_editingFinished()
 //    m_contData.enterEarnestMoneyAmount(ui->lineEditEarnestMoney->text());
 //    refreshFields();
 //}
-void MainContingencyWindow::on_lineEditEarnestMoney_textChanged(const QString &arg1)
+void MainContingencyWindow::on_lineEditEarnestMoney_textChanged()
 {
     m_contData.enterEarnestMoneyAmount(ui->lineEditEarnestMoney->text());
     refreshFields();
@@ -659,102 +659,102 @@ void MainContingencyWindow::on_lineEditListingBrokerTrustName_editingFinished()
 }
 // ------------ Contingency entry -------------------
 
-void MainContingencyWindow::on_cont1TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont1TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont2TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont2TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont3TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont3TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont4TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont4TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont5TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont5TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont6TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont6TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont7TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont7TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont8TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont8TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont9TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont9TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont10TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont10TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont11TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont11TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont12TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont12TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont13TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont13TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont14TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont14TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont15TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont15TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont16TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont16TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont17TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont17TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont18TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont18TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont19TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont19TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();
 }
-void MainContingencyWindow::on_cont20TitleComboBox_activated(const QString &arg1)
+void MainContingencyWindow::on_cont20TitleComboBox_activated()
 {
     refreshComboBoxes();
     refreshFields();

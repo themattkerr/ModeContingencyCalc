@@ -20,8 +20,8 @@
 #include "textforcontingencies.h"
 #include "reportoutput.h"
 #include "saveandloadfunctions.h"
-#include "mattcalculations.h"
-
+//#include "mattcalculations.h"
+#include "../General_Library/mattcalculations.h"
 
 
 namespace Ui {
@@ -46,29 +46,29 @@ private slots:
     void on_lineEditPropertyAddress_editingFinished();
     void on_lineEditMLSNum_editingFinished();
 //    void on_lineEditEarnestMoney_editingFinished();
-    void on_lineEditEarnestMoney_textChanged(const QString &arg1);
+    void on_lineEditEarnestMoney_textChanged();
     void on_lineEditListingBrokerTrustName_editingFinished();
 
-    void on_cont1TitleComboBox_activated(const QString &arg1);
-    void on_cont2TitleComboBox_activated(const QString &arg1);
-    void on_cont3TitleComboBox_activated(const QString &arg1);
-    void on_cont4TitleComboBox_activated(const QString &arg1);
-    void on_cont5TitleComboBox_activated(const QString &arg1);
-    void on_cont6TitleComboBox_activated(const QString &arg1);
-    void on_cont7TitleComboBox_activated(const QString &arg1);
-    void on_cont8TitleComboBox_activated(const QString &arg1);
-    void on_cont9TitleComboBox_activated(const QString &arg1);
-    void on_cont10TitleComboBox_activated(const QString &arg1);
-    void on_cont11TitleComboBox_activated(const QString &arg1);
-    void on_cont12TitleComboBox_activated(const QString &arg1);
-    void on_cont13TitleComboBox_activated(const QString &arg1);
-    void on_cont14TitleComboBox_activated(const QString &arg1);
-    void on_cont15TitleComboBox_activated(const QString &arg1);
-    void on_cont16TitleComboBox_activated(const QString &arg1);
-    void on_cont17TitleComboBox_activated(const QString &arg1);
-    void on_cont18TitleComboBox_activated(const QString &arg1);
-    void on_cont19TitleComboBox_activated(const QString &arg1);
-    void on_cont20TitleComboBox_activated(const QString &arg1);
+    void on_cont1TitleComboBox_activated();
+    void on_cont2TitleComboBox_activated();
+    void on_cont3TitleComboBox_activated();
+    void on_cont4TitleComboBox_activated();
+    void on_cont5TitleComboBox_activated();
+    void on_cont6TitleComboBox_activated();
+    void on_cont7TitleComboBox_activated();
+    void on_cont8TitleComboBox_activated();
+    void on_cont9TitleComboBox_activated();
+    void on_cont10TitleComboBox_activated();
+    void on_cont11TitleComboBox_activated();
+    void on_cont12TitleComboBox_activated();
+    void on_cont13TitleComboBox_activated();
+    void on_cont14TitleComboBox_activated();
+    void on_cont15TitleComboBox_activated();
+    void on_cont16TitleComboBox_activated();
+    void on_cont17TitleComboBox_activated();
+    void on_cont18TitleComboBox_activated();
+    void on_cont19TitleComboBox_activated();
+    void on_cont20TitleComboBox_activated();
 
     void on_cont6CustomLineEdit_editingFinished();
     void on_cont5CustomLineEdit_editingFinished();
@@ -118,7 +118,7 @@ private slots:
     void on_cont3DaysSpinBox_valueChanged(int arg1);
     void on_cont4DaysSpinBox_valueChanged(int arg1);
     void on_cont5DaysSpinBox_valueChanged(int arg1);
-    void on_cont6DaysSpinBox_valueChanged(int arg1); // <=================================== This is the one with an alternitive
+    void on_cont6DaysSpinBox_valueChanged(int arg1);
     void on_cont7DaysSpinBox_valueChanged(int arg1);
     void on_cont8DaysSpinBox_valueChanged(int arg1);
     void on_cont9DaysSpinBox_valueChanged(int arg1);
@@ -215,11 +215,6 @@ private slots:
 
     void on_actionReset_Defaults_triggered();
 
-
-
-
-
-//    void on_cont6DaysSpinBox_editingFinished();
 
     void on_lineEditClientNames_editingFinished();
 

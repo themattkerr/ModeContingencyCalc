@@ -26,21 +26,21 @@ DEFINES += QT_DEPRECATED_WARNINGS
 SOURCES += main.cpp\
         maincontingencywindow.cpp \
     contingencydata.cpp \
-    mattcalculations.cpp \
     reportoutput.cpp \
     saveandloadfunctions.cpp \
     unsavedchangesdialog.cpp \
-    aboutdialog.cpp
+    aboutdialog.cpp \
+    ../General_Library/mattcalculations.cpp
 
 HEADERS  += maincontingencywindow.h \
     constsants.h \
     contingencydata.h \
-    mattcalculations.h \
     reportoutput.h \
     textforcontingencies.h \
     saveandloadfunctions.h \
     unsavedchangesdialog.h \
-    aboutdialog.h
+    aboutdialog.h \
+    ../General_Library/mattcalculations.h
 
 FORMS    += maincontingencywindow.ui \
     reportoutput.ui \

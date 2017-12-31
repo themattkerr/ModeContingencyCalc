@@ -4,7 +4,11 @@
 #include <QDate>
 #include <QString>
 #include <QTime>
+#include <QMessageBox>
+
+//#include "mattcalculations.h"
 #include "textforcontingencies.h"
+#include "../General_Library/mattcalculations.h"
 
 #define CURRENT_VERSION "2.1.2"
 #define BETA_BUILD_INFO "_Beta_Build_1"
