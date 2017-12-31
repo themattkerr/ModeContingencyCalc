@@ -14,6 +14,7 @@
 #include <QRadioButton>
 #include <QCheckBox>
 
+#include "aboutdialog.h"
 #include "unsavedchangesdialog.h"
 #include "contingencydata.h"
 #include "textforcontingencies.h"
@@ -223,6 +224,8 @@ private slots:
     void on_lineEditClientNames_editingFinished();
 
 
+
+    void on_actionAbout_triggered();
 
 private:
 

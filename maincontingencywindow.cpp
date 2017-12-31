@@ -1633,3 +1633,11 @@ void MainContingencyWindow::on_lineEditClientNames_editingFinished()
 }
 
 
+
+void MainContingencyWindow::on_actionAbout_triggered()
+{
+    AboutDialog *x = new AboutDialog(this);
+    x->exec();
+    x = 0;
+    delete x;
+}

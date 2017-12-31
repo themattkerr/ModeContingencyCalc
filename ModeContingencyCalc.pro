@@ -29,7 +29,8 @@ SOURCES += main.cpp\
     mattcalculations.cpp \
     reportoutput.cpp \
     saveandloadfunctions.cpp \
-    unsavedchangesdialog.cpp
+    unsavedchangesdialog.cpp \
+    aboutdialog.cpp
 
 HEADERS  += maincontingencywindow.h \
     constsants.h \
@@ -38,11 +39,13 @@ HEADERS  += maincontingencywindow.h \
     reportoutput.h \
     textforcontingencies.h \
     saveandloadfunctions.h \
-    unsavedchangesdialog.h
+    unsavedchangesdialog.h \
+    aboutdialog.h
 
 FORMS    += maincontingencywindow.ui \
     reportoutput.ui \
-    unsavedchangesdialog.ui
+    unsavedchangesdialog.ui \
+    aboutdialog.ui
 
 DISTFILES += \
     calendar.ico \
@@ -50,3 +53,7 @@ DISTFILES += \
     res.rc
 
 RC_FILE = res.rc
+
+#QMAKE_POST_LINK += windeployqt \"$$system_path($${OUT_PWD}/release/ModeContingencyCalc.exe)\" --dir \"$$system_path($${_PRO_FILE_PWD_}/Deploy)\"
+
+#QMAKE_POST_LINK += && $$QMAKE_COPY \"$$system_path($${OUT_PWD}/release/ModeContingencyCalc.exe)\" \"$$system_path($${_PRO_FILE_PWD_}/Deploy/)\"
