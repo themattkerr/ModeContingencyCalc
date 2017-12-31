@@ -3,7 +3,7 @@
 !define MUI_ICON "calendar.ico"
 !define PRODUCT_PUBLISHER "Matt"
 !define PRODUCT_WEB_SITE "MoveMode.com"
-!define PRODUCT_VERSION "2.1.2_Beta_Build_1"
+!define PRODUCT_VERSION "2.1.2_Beta_Build_2"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\${EXE_NAME}"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"

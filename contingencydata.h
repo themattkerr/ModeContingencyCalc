@@ -11,7 +11,7 @@
 #include "../General_Library/mattcalculations.h"
 
 #define CURRENT_VERSION "2.1.2"
-#define BETA_BUILD_INFO "_Beta_Build_1"
+#define BETA_BUILD_INFO "_Beta_Build_2"
 #define LONG_DATE_FORMAT "dddd  MMMM d, yyyy"
 #define FROM_CLOSING_MESSAGE "From Closing"
 #define FROM_AO_MESSAGE ""

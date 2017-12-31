@@ -290,9 +290,9 @@ void MainContingencyWindow::refreshFields()
 
     m_bUnsavedData = true;
     if( m_contData.getPropertyAddress() != "")
-        this->setWindowTitle(m_contData.getPropertyAddress() + " - Mode RN Milestone Calculator");
+        this->setWindowTitle(m_contData.getPropertyAddress() + " - Milestones");
     else
-        this->setWindowTitle("Mode RN Milestone Calculator");
+        this->setWindowTitle("Mode RN Milestones");
 
     ui->dateEditAODate->setDate(m_contData.getAODate());
     ui->spinBoxDaysToClosing->setValue(m_contData.getDaysClosing());
