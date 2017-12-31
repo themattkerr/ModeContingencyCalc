@@ -43,3 +43,10 @@ HEADERS  += maincontingencywindow.h \
 FORMS    += maincontingencywindow.ui \
     reportoutput.ui \
     unsavedchangesdialog.ui
+
+DISTFILES += \
+    calendar.ico \
+    install.nsi \
+    res.rc
+
+RC_FILE = res.rc

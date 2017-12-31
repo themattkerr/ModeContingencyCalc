@@ -268,8 +268,12 @@ void ReportOutput::generateText()
                                                 m_strOutputText.append(" business");
                                             m_strOutputText.append(" days from the satisfaction of ");
                                                     m_strOutputText.append(x->m_strDependantContingecyTitle).append(")\n");
-                                            m_strOutputText.append(AddBlankLine("Satisfaction Date")).append("\n");
-                                            m_strOutputText.append(AddBlankLine("Deadline Date")).append("\n");
+
+                                            if(x->m_strContingencyTitle != HOME_INSURENCE_TITLE   )
+                                            {
+                                                m_strOutputText.append(AddBlankLine("Satisfaction Date")).append("\n");
+                                                m_strOutputText.append(AddBlankLine("Deadline Date")).append("\n");
+                                            }
                                             break;
                                         }
 
